@@ -4,20 +4,38 @@ import NavItem from "./NavItem"
 
 const mainNavItems = [['About', '/about'], ['Work With Us', '/work-with-us'], ['Blog', '/blog'], ['Contact', '/contact']]
 const beforeContent = "before:content-['•'] before:mr-4 before:text-white"
+const bottomBorder = "absolute bottom-0.5 left-6 w-0 h-[1.5px] bg-white transition-width duration-300 ease peer-hover:w-[calc(100%-1.6rem)]"
 
 const NavLinksHorizontal = () => {
 
     const pathName = usePathname()
     const active = 'border-b-2 border-white'
     const isActive = (href: string) => pathName === href ? active : ''
+    const [ firstItemTitle, firstItemUrl ] = mainNavItems[0]
 
     return (
         <span>
             <nav className="flex-10 flex flex-row items-center justify-end gap-4 text-xl text-white first:before:content-none ">
-                <div><Link className={`${isActive(mainNavItems[0][1])} uppercase font-bold `}href={mainNavItems[0][1]}>{mainNavItems[0][0]}</Link></div>
-                <div className={beforeContent}><Link className={`${isActive(mainNavItems[1][1])} uppercase font-bold`}href={mainNavItems[1][1]}>{mainNavItems[1][0]}</Link></div>
-                <div className={beforeContent}><Link className={`${isActive(mainNavItems[2][1])} uppercase font-bold`}href={mainNavItems[2][1]}>{mainNavItems[2][0]}</Link></div>
-                <div className={beforeContent}><Link className={`${isActive(mainNavItems[3][1])} uppercase font-bold`}href={mainNavItems[3][1]}>{mainNavItems[3][0]}</Link></div>
+                <div className={`relative`}>
+                    <Link 
+                        className={`${isActive(firstItemUrl)} uppercase font-bold relative peer`}
+                        href={firstItemUrl}
+                    >
+                            {firstItemTitle}
+                    </Link>
+                    <span className={`absolute bottom-0.5 left-0 w-0 h-[1.5px] bg-white transition-width duration-300 ease peer-hover:w-full`}></span>
+                </div>
+                {mainNavItems.slice(1).map(([ title, url ], i ) => (
+                    <div key={i} className={`${beforeContent} relative`}>
+                        <Link 
+                            className={`${isActive(url)} uppercase font-bold relative peer`}
+                            href={url}
+                        >
+                            {title}
+                        </Link>
+                        <span className={`${bottomBorder}`}></span>
+                    </div>
+                ))}
             </nav>
         </span>
     )
