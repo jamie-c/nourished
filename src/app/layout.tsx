@@ -23,7 +23,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={transat.className}>
+      <body className={`${transat.className}`}>
         {children}
         <footer className="pb-32 w-screen flex flex-col items-center justify-start">
           <Copyright />
