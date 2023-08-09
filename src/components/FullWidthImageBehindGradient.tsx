@@ -24,7 +24,8 @@ const FullWidthImageBehindGradient: React.FC<OuterProps> = ({variant, children})
             src="/images/NourishedCoJamieandLindsey-04.jpg"
             width={1800}
             height={989}
-            alt=""
+            alt="Large image of Jamie and Lindsey Conway"
+            priority
         />
         <div className="absolute inset-0 bg-gradient-to-b opacity-75 
             from-ndag-500 from-10% 
