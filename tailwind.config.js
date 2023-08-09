@@ -22,6 +22,9 @@ module.exports = {
         'width': 'width',
         'spacing': 'margin, padding',
       },
+      borderWidth: {
+        '3': '3px',
+      },
       colors: {
         nblg: {
           100: "#cceae6",
