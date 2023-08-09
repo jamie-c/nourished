@@ -7,7 +7,6 @@ import Header from "@/components/Header";
 
 export default function Home() {
   return (
-<>
     <main className="top-0 w-screen flex min-h-screen flex-col items-center justify-start">
       <FullWidthImageBehindGradient variant=""><p className="w-screen text-center"></p></FullWidthImageBehindGradient>
       <Header />
@@ -16,10 +15,13 @@ export default function Home() {
         With our targeted guidance and perceptive insights, we help you focus on the actions and habits that will <em>create the health results you&apos;re seeking</em>.
       </FullWidthColorBackground>
       <CircleIconsSubMenu />
+      <FullWidthColorBackground textColor="secondary" variant="tertiary">
+        We&apos;re going to walk alongside you until the changes you&apos;re seeking finally take root.
+      </FullWidthColorBackground>
+      <div className="w-full h-32"></div>
       <FullWidthColorBackground textColor="white" variant="primary">
         <CTAFeelNourished />
       </FullWidthColorBackground>
     </main>
-</>
   )
 }
