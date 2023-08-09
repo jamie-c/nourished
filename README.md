@@ -14,14 +14,19 @@ cd nourished
 npm install
 ```
 
+If you want to test out the form functionality on the contact page, you'll need to create a .env.local file in the root directory of the project and add the following environment variables with your own values. See [nodemailer](https://nodemailer.com/about/) for more information.
+
+```bash
+EMAIL_HOST=
+EMAIL_PORT=
+EMAIL_USER=
+EMAIL_PASS=
+```
+
 Then run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
