@@ -9,8 +9,8 @@ I am currently in the process of migrating our site from Squarespace to Next.js.
 Clone the repository and install dependencies:
 
 ```bash
-git clone $REPOSITORY_URL
-cd repository
+git clone git@github.com:jamie-c/nourished.git
+cd nourished
 npm install
 ```
 
