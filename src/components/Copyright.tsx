@@ -15,7 +15,7 @@ const Copyright = () => (
             className='pt-10 pb-1 m-0' 
             src="/images/NOURISHED_LOGO_NOTAG_NOPAD_RGB.png"
             width={200}
-            height={45}
+            height={30}
             alt="Nourished"
         />
         <p className={`${transatBold.className} text-sm text-[#a2aaad]`}>COPYRIGHT {year}</p>
