@@ -1,3 +1,5 @@
+<img width="1440" alt="nourished-homepage-screenshot" src="https://github.com/jamie-c/nourished/assets/5421944/0452f3ce-d315-4350-a951-fa6f729a8486">
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 I am currently in the process of migrating our site from Squarespace to Next.js. This is a work in progress!
