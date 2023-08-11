@@ -27,7 +27,7 @@ const Form: NextPage = () => {
 
     const [loading, setLoading] = useState(false)
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e: { preventDefault: () => void; }) => {
         setLoading(true)
         e.preventDefault()
     
