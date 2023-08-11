@@ -45,7 +45,7 @@ export const NavLinksVertical = () => {
 
     return (
         <span>
-            <nav className="flex flex-col justify-start items-end gap-8 text-5xl text-white pt-10 pr-8">
+            <nav className="flex flex-col justify-start items-end gap-8 text-4xl text-white pt-10 pr-8">
                 {mainNavItems.map(([ title, url ]) => (
                     <NavItem key={title} title={title} url={url} />
                 ))}
