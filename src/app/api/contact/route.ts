@@ -16,8 +16,8 @@ export async function POST(req: Request) {
         return NextResponse.json({ message: "Invalid input" })
     }
 
-    await sendMail({name:`${firstName} ${lastName}`, email, message}).catch(console.error)
+    const sent = await sendMail({name:`${firstName} ${lastName}`, email, message}).catch(console.error)
     
-    return NextResponse.json({ formData })
+    return NextResponse.json({ sent })
 
 }
