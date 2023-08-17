@@ -1,14 +1,25 @@
 // route to handle contact form submission
 
-import { sendMail } from "@/lib/sendMail"
-import { NextResponse } from "next/server"
+import dbConnect from "@/db/db";
+import Contact from "@/db/models/contact";
+import { NextRequest, NextResponse } from "next/server";
 
-export async function POST(req: Request) {
-    const formData = await req.json()
+export async function POST(request: NextRequest) {
 
-    const { firstName, lastName, email, message } = formData
+    interface FormData {
+        firstName: string;
+        lastName: string;
+        email: string;
+        message: string;
+    }
+
+    await dbConnect()
+
+    const formData: FormData = await request.json()
+
+    const { firstName, lastName, email, message }: FormData = formData
     
-    if (req.method !== "POST") {
+    if (request.method !== "POST") {
         return NextResponse.json({ message: "Method not allowed" })
     }
     
@@ -16,8 +27,15 @@ export async function POST(req: Request) {
         return NextResponse.json({ message: "Invalid input" })
     }
 
-    const sent = await sendMail({name:`${firstName} ${lastName}`, email, message}).catch(console.error)
-    
-    return NextResponse.json({ sent })
+    const newContact = new Contact({
+        firstName,
+        lastName,
+        email,
+        message,
+    })
+
+    await newContact.save()
+
+    return NextResponse.json({ message: "Message received", data: newContact })
 
 }
