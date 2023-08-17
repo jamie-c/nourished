@@ -1,16 +1,16 @@
 // route to handle contact form submission
 
-import dbConnect from "@/db/db";
-import Contact from "@/db/models/contact";
-import { NextRequest, NextResponse } from "next/server";
+import dbConnect from "@/db/db"
+import Contact from "@/db/models/Contact"
+import { NextRequest, NextResponse } from "next/server"
 
 export async function POST(request: NextRequest) {
 
     interface FormData {
-        firstName: string;
-        lastName: string;
-        email: string;
-        message: string;
+        firstName: string
+        lastName: string
+        email: string
+        message: string
     }
 
     await dbConnect()
