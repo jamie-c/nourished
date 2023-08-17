@@ -16,6 +16,7 @@
     "eslint": "8.46.0",
     "eslint-config-next": "13.4.12",
     "googleapis": "^125.0.0",
+    "mongoose": "^7.4.3",
     "next": "13.4.12",
     "nodemailer": "^6.9.4",
     "postcss": "8.4.27",
