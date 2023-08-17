@@ -23,6 +23,9 @@ const Form: NextPage = () => {
     const [response, setResponse] = useState({
         type: '',
         message: '',
+        firstName: '',
+        lastName: '',
+        email: '',
     })
 
     const [loading, setLoading] = useState(false)
@@ -43,10 +46,10 @@ const Form: NextPage = () => {
         try {
             const res = await fetch(endpoint, options)
             const json = await res.json()
-            setResponse(json.formData)
             
             if (res.ok) {
                 setResponse({
+                    ...json.data,
                     type: 'success',
                     message: "We've received your message and will be in touch shortly.",
                 })
@@ -54,6 +57,9 @@ const Form: NextPage = () => {
                 setResponse({
                     type: 'error',
                     message: json.formData.message,
+                    firstName: " ",
+                    lastName: " ",
+                    email: " ",
                 })
             }
         } catch (error) {
@@ -61,6 +67,9 @@ const Form: NextPage = () => {
             setResponse({
                 type: 'error',
                 message: 'An error occurred while submitting the form.',
+                firstName: " ",
+                lastName: " ",
+                email: " ",
             })
         }
         setLoading(false)
@@ -209,7 +218,7 @@ const Form: NextPage = () => {
     if (response?.message) {
         return (
             <FullWidthColorBackground variant="white" textColor="dark">
-                <p className="text-center text-4xl">{response.message}</p>
+                <p className="text-center text-4xl">{`Hi ${response.firstName}. ${response.message}`}</p>
             </FullWidthColorBackground>
         )
     }
