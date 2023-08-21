@@ -16,7 +16,7 @@ const FooterLinks = () => (
             <Link  href="/contact"><button className="border-b-2 border-b-nbrg-500 uppercase disabled:opacity-50 disabled:cursor-not-allowed">Contact</button></Link>
         </span>
         <span className='w-full sm:w-screen-1/3 flex flex-col items-center justify-start gap-6'>
-            <Link  href="/work-with-us"><button disabled className="border-b-2 border-b-nbrg-500 uppercase disabled:opacity-50 disabled:cursor-not-allowed">Work With Us</button></Link>
+            <Link  href="/work-with-us"><button className="border-b-2 border-b-nbrg-500 uppercase disabled:opacity-50 disabled:cursor-not-allowed">Work With Us</button></Link>
             <Link  href="/body-wisdom-mini-course"><button disabled className="border-b-2 border-b-nbrg-500 uppercase disabled:opacity-50 disabled:cursor-not-allowed">Online Classes</button></Link>
             <Link  href="/body-wisdom-mini-course"><button disabled className="border-b-2 border-b-nbrg-500 uppercase disabled:opacity-50 disabled:cursor-not-allowed">Body Wisdom Mini-Course</button></Link>
             <Link  href="/call"><button disabled className="border-b-2 border-b-nbrg-500 uppercase disabled:opacity-50 disabled:cursor-not-allowed">Book A Discovery Call</button></Link>
