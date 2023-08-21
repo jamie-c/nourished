@@ -12,7 +12,6 @@ const CTAFeelNourished = () => (
         <p className={`${chalet1970.className} text-npag-500 text-4xl mb-10 tracking-wide`}>FEEL NOURISHED.</p>
         <Link href={'/work-with-us'}>
             <button 
-                disabled 
                 className='bg-npag-500 rounded-md py-4 px-10 text-lg 
                 hover:bg-opacity-90 disabled:opacity-50 disabled:cursor-not-allowed'
             >
