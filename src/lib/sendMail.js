@@ -16,7 +16,7 @@ export async function sendMail({ name, email, message }) {
     await transporter.sendMail({
         from: `"${name}" <${process.env.EMAIL_USER}>`,
         to: process.env.EMAIL_USER,
-        replyTo: email,
+        replyTo: `"${name}" <${email}>`,
         subject: "New message from the Nourished contact form",
         text: message,
         html: `<p>from: ${name}</p><p>email: ${email}</p><p>${message}</p>`,
