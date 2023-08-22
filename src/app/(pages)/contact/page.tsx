@@ -4,7 +4,6 @@ import FullWidthColorBackground from '@/components/FullWidthColorBackground';
 import type { NextPage } from 'next';
 import localFont from 'next/font/local';
 import { useState } from 'react';
-import { PacmanLoader } from 'react-spinners';
 
 const transatBold = localFont({
     src: '../../../app/fonts/transat/TransatBold.ttf',
@@ -207,11 +206,24 @@ const Form: NextPage = () => {
                         peer-focus:capitalize">Your Questions or Comments:
                 </label>
             </div>
-                <PacmanLoader color="#009681" size={15} cssOverride={{marginLeft:'auto', marginRight:'auto', marginTop:'20px'}} loading={loading}/>
+                {loading ? (
+                <span className="w-full flex flex-row items-center justify-center py-4">
+                <div
+                    className="text-nblg-500 h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite] cursor-not-allowed"
+                    role="status">
+                    <span
+                        className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
+                    >
+                        Loading...
+                    </span>
+                </div>
+                </span>
+                ) : (
                 <input
                 type="submit" 
                 value='SEND'
                 className="mt-10 mb-32 pb-2 pt-3 rounded-md bg-nblg-500 hover:bg-opacity-90 text-white font-semibold text-center block w-full focus:outline-none focus:ring focus:ring-offset-2 focus:ring-rose-500 focus:ring-opacity-80 cursor-pointer" />
+                )}
         </form>
     )
     } 
