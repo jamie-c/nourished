@@ -24,13 +24,7 @@ export default function RootLayout({
                     data-theme-accent="f94525" 
                     data-scrollbar-visible="false"
                 >
-                    <iframe 
-                        className="absolute inset-0 w-full h-full border-0 px-2 pt-8 flex flex-col items-center ml-auto mr-auto"
-                        src="https://my.practicebetter.io?fl_wtc=789D4A&amp;fl_wtac=F94525#/6452605f4c15a8e1b30dd2df/widgets/bookings?s=64527318ed3b9cd1ae61ff22" 
-                        style={{
-                            maxWidth:"550px",
-                        }}>    
-                    </iframe>
+                    
                 </div>
                 <Script 
                     strategy="lazyOnload"
