@@ -2,6 +2,7 @@
 
 import dbConnect from "@/db/db"
 import Contact from "@/db/models/Contact"
+import { sendMail } from "@/lib/sendMail"
 import { NextRequest, NextResponse } from "next/server"
 
 export async function POST(request: NextRequest) {
@@ -35,6 +36,8 @@ export async function POST(request: NextRequest) {
     })
 
     await newContact.save()
+
+    await sendMail({name: `${firstName} ${lastName}`, email, message}).catch(console.error)
 
     return NextResponse.json({ message: "Message received", data: newContact })
 
