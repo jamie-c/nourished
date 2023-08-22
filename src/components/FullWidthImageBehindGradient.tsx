@@ -34,11 +34,12 @@ const colors: gradientColorsType = {
 const FullWidthImageBehindGradient: React.FC<OuterProps> = ({variant, imageUrl, align, children}) => {
 
     const color = colors[variant] ? colors[variant] : colors['primary']
+    const aligned = align ? `object-${align}` : 'object-center'
 
     return (
     <div className="relative h-screen-2/3 w-full">
         <Image
-            className={`absolute inset-0 w-full h-full object-cover object-${align || 'right'}`}
+            className={`absolute inset-0 w-full h-full object-cover ${aligned}`}
             src={imageUrl || "/images/NourishedCoJamieandLindsey-04.jpg"}
             width={1800}
             height={989}
