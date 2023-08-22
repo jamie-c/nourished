@@ -3,6 +3,21 @@
 @tailwind utilities;
 
 
+.better-inline-booking-widget iframe {
+    max-width: 550px;
+    width: 100%;
+    height: 100%;
+    border: none;
+    padding: 32px 8px 0 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    inset: 0;
+    position: absolute;
+}
+
 .ham {
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
