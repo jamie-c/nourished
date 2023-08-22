@@ -23,7 +23,7 @@ export default function Home() {
         </FullWidthColorBackground>
         <WhoWeWorkWithV2 />
         <FullWidthColorBackground variant="white">
-            <PrimaryButton href="/contact" >Book a Strategy Session to Learn More</PrimaryButton>
+            <PrimaryButton href="/call" >Book a Strategy Session to Learn More</PrimaryButton>
         </FullWidthColorBackground>
         <FullWidthColorBackground variant="primary">
             <CTAFeelNourished />
