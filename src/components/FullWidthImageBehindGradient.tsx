@@ -23,18 +23,19 @@ type gradientColorsType = {
     [key: string]: string
 }
 
-const colors: gradientColorsType = {
-    primary: ' from-nblg-500 from-10% via-ndag-500 via-10% to-transparent to-75% dark:from-ndag-700 dark:from-5% dark:via-ndag-500 dark:via-10% dark:to-transparent ',
-    secondary: ' from-nbrg-500 from-10% via-nbrg-500 via-10% to-transparent to-75% dark:from-nbrg-700 dark:from-5% dark:via-nbrg-500 dark:via-10% dark:to-transparent ',
-    tertiary: ' from-npag-500 from-10% via-npag-500 via-10% to-transparent to-75% dark:from-npag-700 dark:from-5% dark:via-npag-500 dark:via-10% dark:to-transparent ',
-    dark: ' from-ndag-500 from-10% via-ndag-500 via-10% to-transparent to-75% dark:from-ndag-700 dark:from-5% dark:via-ndag-500 dark:via-10% dark:to-transparent ',
-    white: 'white',
-}
 
 const FullWidthImageBehindGradient: React.FC<OuterProps> = ({variant, imageUrl, align, children}) => {
 
+    const colors: gradientColorsType = {
+        primary: ' from-nblg-500 from-10% via-ndag-500 via-10% to-transparent to-75% dark:from-ndag-700 dark:from-5% dark:via-ndag-500 dark:via-10% dark:to-transparent ',
+        secondary: ' from-nbrg-500 from-10% via-nbrg-500 via-10% to-transparent to-75% dark:from-nbrg-700 dark:from-5% dark:via-nbrg-500 dark:via-10% dark:to-transparent ',
+        tertiary: ' from-npag-500 from-10% via-npag-500 via-10% to-transparent to-75% dark:from-npag-700 dark:from-5% dark:via-npag-500 dark:via-10% dark:to-transparent ',
+        dark: ' from-ndag-500 from-10% via-ndag-500 via-10% to-transparent to-75% dark:from-ndag-700 dark:from-5% dark:via-ndag-500 dark:via-10% dark:to-transparent ',
+        white: 'white',
+    }
+    const aligns = ['left', 'center', 'right']
     const color = colors[variant] ? colors[variant] : colors['primary']
-    const aligned = align ? `object-${align}` : 'object-center'
+    const aligned = align && aligns.includes(align) ? `object-${align}` : 'object-center'
 
     return (
     <div className="relative h-screen-2/3 w-full">
