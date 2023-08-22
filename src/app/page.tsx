@@ -8,7 +8,7 @@ import Header from "@/components/Header";
 export default function Home() {
   return (
     <main className="top-0 w-screen flex min-h-screen flex-col items-center justify-start">
-      <FullWidthImageBehindGradient variant=""><p className="w-screen text-center"></p></FullWidthImageBehindGradient>
+      <FullWidthImageBehindGradient variant="primary" align="right"><p className="w-screen text-center"></p></FullWidthImageBehindGradient>
       <Header />
       <FxFoodCoaching />
       <FullWidthColorBackground variant="dark">
