@@ -32,6 +32,7 @@ const FullWidthImageBehindGradient: React.FC<OuterProps> = ({variant, imageUrl, 
         tertiary: ' from-npag-500 from-10% via-npag-500 via-10% to-transparent to-75% dark:from-npag-700 dark:from-5% dark:via-npag-500 dark:via-10% dark:to-transparent ',
         dark: ' from-ndag-500 from-10% via-ndag-500 via-10% to-transparent to-75% dark:from-ndag-700 dark:from-5% dark:via-ndag-500 dark:via-10% dark:to-transparent ',
         white: 'white',
+        transparent: 'transparent'
     }
     const aligns = ['left', 'center', 'right']
     const color = colors[variant] ? colors[variant] : colors['primary']
