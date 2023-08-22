@@ -27,10 +27,10 @@ type gradientColorsType = {
 const FullWidthImageBehindGradient: React.FC<OuterProps> = ({variant, imageUrl, align, children}) => {
 
     const colors: gradientColorsType = {
-        primary: 'from-nblg-500 from-10% via-nblg-500 via-15% to-transparent to-75% dark:from-ndag-700 dark:from-5% dark:via-ndag-500 dark:via-10% dark:to-transparent',
-        secondary: 'from-nbrg-500 from-10% via-nbrg-500 via-15% to-transparent to-75% dark:from-nbrg-700 dark:from-5% dark:via-nbrg-500 dark:via-10% dark:to-transparent',
-        tertiary: 'from-npag-500 from-10% via-npag-500 via-15% to-transparent to-75% dark:from-npag-700 dark:from-5% dark:via-npag-500 dark:via-10% dark:to-transparent',
-        dark: 'from-ndag-500 from-10% via-ndag-500 via-15% to-transparent to-75% dark:from-ndag-700 dark:from-5% dark:via-ndag-500 dark:via-10% dark:to-transparent',
+        primary: 'from-nblg-500 via-nblg-500 via-10% to-transparent to-75% dark:from-ndag-700 dark:via-ndag-500 dark:via-10% dark:to-transparent',
+        secondary: 'from-nbrg-500 via-nbrg-500 via-10% to-transparent to-75% dark:from-nbrg-700 dark:via-nbrg-500 dark:via-10% dark:to-transparent',
+        tertiary: 'from-npag-500 via-npag-500 via-10% to-transparent to-75% dark:from-npag-700 dark:via-npag-500 dark:via-10% dark:to-transparent',
+        dark: 'from-ndag-500 via-ndag-500 via-10% to-transparent to-75% dark:from-ndag-700 dark:via-ndag-500 dark:via-10% dark:to-transparent',
         white: 'white',
         transparent: 'transparent'
     }
