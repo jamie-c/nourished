@@ -19,7 +19,7 @@ export default function Home() {
         We&apos;re going to walk alongside you until the changes you&apos;re seeking finally take root.
       </FullWidthColorBackground>
       <div className="w-full h-32"></div>
-      <FullWidthImageBehindGradient variant="transparent" align="center" imageUrl="/images/we-are-not-perfectionists-or-impersonal.png">
+      <FullWidthImageBehindGradient variant="transparent" align="center" imageUrl="/images/we-are-not-perfectionists-or-impersonal.jpg">
       </FullWidthImageBehindGradient>
       <div className="w-full h-32"></div>
       <FullWidthColorBackground textColor="white" variant="primary">
