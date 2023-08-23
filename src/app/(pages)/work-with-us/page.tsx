@@ -10,7 +10,7 @@ export default function Home() {
   return (
 <>
     <main className="top-0 w-screen flex min-h-screen flex-col items-center justify-start">
-        <FullWidthImageBehindGradient variant="primary" imageUrl="/images/lindsey_conway_edible-22.jpg" align="center"><p className={`${transatBold.className} w-screen text-center uppercase`}>Work With Us</p></FullWidthImageBehindGradient>
+        <FullWidthImageBehindGradient variant="tertiary" imageUrl="/images/lindsey_conway_edible-22.jpg" align="center"><p className={`${transatBold.className} w-screen text-center uppercase`}>Work With Us</p></FullWidthImageBehindGradient>
         <FullWidthColorBackground variant="white" textColor="secondary">
             <h1 className={`${transatBold.className} font-extraBold text-3xl sm:text-5xl text-center`}>
                 <span className="text-npag-500 uppercase">Functional </span>
