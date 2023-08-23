@@ -12,7 +12,7 @@ const CircleIconsSubMenu = () => (
             >
             <Image
                 key={imageName}
-                className='py-6 md:py-0 px-16 sm:px-4 md:px-4 lg:px-10 w-auto h-auto' 
+                className='py-6 md:py-0 px-24 sm:px-6 md:px-4 lg:px-10 w-auto h-auto' 
                 src={`/images/circle-icon-${imageName}.png`}
                 width={200}
                 height={200}
