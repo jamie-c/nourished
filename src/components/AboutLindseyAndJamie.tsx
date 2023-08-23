@@ -1,4 +1,4 @@
-import { transatBold } from '@/app/fonts/fonts'
+import { transatBold, transatLight } from '@/app/fonts/fonts'
 import Image from "next/image"
 import StyledButton from './StyledButton'
 
@@ -14,7 +14,7 @@ const AboutLindseyAndJamie = () => (
                 alt="Lindsey Conway"
             />
             <h2 className={`${transatBold.className} uppercase text-2xl`}>FOOD STRATEGY & GUIDANCE WITH LINDSEY</h2>
-            <p className='my-20 text-xl'>&quot;I figure out the best steps to methodically take to move toward the health outcomes and visions you hold for yourself. And then provide encouragement to get there.&quot;</p>
+            <p className={`${transatLight.className} my-20 text-2xl h-48`}>&quot;I figure out the best steps to methodically take to move toward the health outcomes and visions you hold for yourself. And then provide encouragement to get there.&quot;</p>
             <StyledButton href='/about' variant='primary'>
                 ABOUT LINDSEY
             </StyledButton>
@@ -28,7 +28,7 @@ const AboutLindseyAndJamie = () => (
                 alt="Jamie Conway"
             />
             <h2 className={`${transatBold.className} uppercase text-2xl`}>FOOD ALCHEMY & RECIPES WITH JAMIE</h2>
-            <p className='my-20 text-xl'>&quot;I teach you everything you need to know (and nothing you don&apos;t) about how to create approachable, time-honored, and nutrient-dense food to bring to your table.&quot;</p>
+            <p className={`${transatLight.className} my-20 text-2xl h-48`}>&quot;I teach you everything you need to know (and nothing you don&apos;t) about how to create approachable, time-honored, and nutrient-dense food to bring to your table.&quot;</p>
             <StyledButton href='/about' variant='dark'>
                 ABOUT JAMIE
             </StyledButton>
