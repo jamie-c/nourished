@@ -1,14 +1,10 @@
 'use client'
 
+import { transatBold } from '@/app/fonts/fonts';
 import FullWidthColorBackground from '@/components/FullWidthColorBackground';
 import type { NextPage } from 'next';
-import localFont from 'next/font/local';
 import { useState } from 'react';
 
-const transatBold = localFont({
-    src: '../../../app/fonts/transat/TransatBold.ttf',
-    display: 'swap',
-})
 
 const Form: NextPage = () => {
 

@@ -1,9 +1,5 @@
-import localFont from 'next/font/local';
+import { transatBold } from '@/app/fonts/fonts'
 
-const transatBold = localFont({
-    src: '../../fonts/transat/TransatBold.ttf',
-    display: 'swap',
-})
 
 export default function Page() {
     return (

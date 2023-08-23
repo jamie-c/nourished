@@ -1,14 +1,10 @@
+import { transatBold } from '@/app/fonts/fonts';
 import CTAFeelNourished from "@/components/CTAFeelNourished";
 import FullWidthColorBackground from "@/components/FullWidthColorBackground";
 import FullWidthImageBehindGradient from "@/components/FullWidthImageBehindGradient";
+import StyledButton from "@/components/StyledButton";
 import WhoWeWorkWithV2 from "@/components/WhoWeWorkWithV2";
-import PrimaryButton from "@/components/buttons/PrimaryButton";
-import localFont from 'next/font/local';
 
-const transatBold = localFont({
-    src: '../../../app/fonts/transat/TransatBold.ttf',
-    display: 'swap',
-})
 
 export default function Home() {
   return (
@@ -23,7 +19,7 @@ export default function Home() {
         </FullWidthColorBackground>
         <WhoWeWorkWithV2 />
         <FullWidthColorBackground variant="white">
-            <PrimaryButton href="/call" >Book a Strategy Session to Learn More</PrimaryButton>
+            <StyledButton href="/call" >Book a Strategy Session to Learn More</StyledButton>
         </FullWidthColorBackground>
         <FullWidthColorBackground variant="primary">
             <CTAFeelNourished />
