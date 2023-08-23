@@ -8,8 +8,8 @@ const chalet1970 = localFont({
 
 const CTAFeelNourished = () => (
     <>
-        <p className='text-4xl mb-10'>LET&apos;S FIGURE OUT WHAT YOUR BODY NEEDS TO</p>
-        <p className={`${chalet1970.className} text-npag-500 text-4xl mb-10 tracking-wide`}>FEEL NOURISHED.</p>
+        <p className='text-3xl sm:text-4xl mb-10'>LET&apos;S FIGURE OUT WHAT YOUR BODY NEEDS TO</p>
+        <p className={`${chalet1970.className} text-npag-500 text-3xl sm:text-4xl mb-10 tracking-wide`}>FEEL NOURISHED.</p>
         <Link href={'/work-with-us'}>
             <button 
                 className='bg-npag-500 rounded-md py-4 px-10 text-lg 
