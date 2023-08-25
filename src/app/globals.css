@@ -2,6 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+/* POST STYLES */
+#post-content > #inner-html > h2 {
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+
+#post-content > #inner-html > h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+#post-content > #inner-html a {
+  color: #009681;
+  border-bottom: 2px solid #009681;
+}
+
+#post-content > #inner-html  a:hover {
+  color: #009681;
+  border-bottom: 2px solid #009681;
+}
 
 .better-inline-booking-widget iframe {
     max-width: 550px;
