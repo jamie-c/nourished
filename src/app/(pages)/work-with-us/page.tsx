@@ -22,7 +22,7 @@ export default function Home() {
             <StyledButton href="/call" >Book a Strategy Session to Learn More</StyledButton>
         </FullWidthColorBackground>
         <FullWidthColorBackground variant="primary">
-            <CTAFeelNourished />
+            <CTAFeelNourished href='/call'>BOOK NOW</CTAFeelNourished>
         </FullWidthColorBackground>
     </main>
 </>

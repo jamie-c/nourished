@@ -21,7 +21,7 @@ export default function Home() {
         <AboutLindseyAndJamie />
         <WhoWeWorkWith />
         <FullWidthColorBackground variant="primary">
-            <CTAFeelNourished />
+            <CTAFeelNourished>I WANT TO LEARN MORE</CTAFeelNourished>
         </FullWidthColorBackground>
     </main>
 </>

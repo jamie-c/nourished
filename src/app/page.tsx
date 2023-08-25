@@ -23,7 +23,7 @@ export default function Home() {
       </FullWidthImageBehindGradient>
       <div className="w-full h-32"></div>
       <FullWidthColorBackground textColor="white" variant="primary">
-        <CTAFeelNourished />
+        <CTAFeelNourished>I WANT TO LEARN MORE</CTAFeelNourished>
       </FullWidthColorBackground>
     </main>
   )
