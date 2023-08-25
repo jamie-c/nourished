@@ -6,7 +6,7 @@ interface InnerProps {
 
 const InnerProps: React.FC<InnerProps> = ({children}) => {
     return (
-        <div className="absolute w-screen h-full flex flex-row items-center content-center text-white text-5xl sm:text-7xl pt-10">
+        <div className="absolute w-screen h-full flex flex-row items-center content-center text-white text-5xl sm:text-6xl md:text-7xl pt-10">
             {children}
         </div>
     )
@@ -30,7 +30,7 @@ const FullWidthImageBehindGradient: React.FC<OuterProps> = ({variant, imageUrl, 
         primary: 'from-nblg-500 via-nblg-500 via-10% to-transparent to-75% dark:from-ndag-700 dark:via-ndag-500 dark:via-10% dark:to-transparent',
         secondary: 'from-nbrg-500 via-nbrg-500 via-10% to-transparent to-75% dark:from-nbrg-700 dark:via-nbrg-500 dark:via-10% dark:to-transparent',
         tertiary: 'from-npag-500 via-npag-500 via-10% to-transparent to-75% dark:from-npag-700 dark:via-npag-500 dark:via-10% dark:to-transparent',
-        dark: 'from-ndag-500 via-ndag-500 via-10% to-transparent to-75% dark:from-ndag-700 dark:via-ndag-500 dark:via-10% dark:to-transparent',
+        dark: 'from-ndag-500 via-ndag-500 via-50% to-transparent to-95% dark:from-ndag-700 dark:via-ndag-500 dark:via-50% dark:to-transparent dark:to-95%',
         white: 'white',
         transparent: 'transparent'
     }
