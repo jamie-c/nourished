@@ -14,7 +14,7 @@ type variantsType = {
 
 const StyledButton: React.FC<ButtonProps> = ({ href, disabled, variant, children }) => {
 
-    let buttonClass = "rounded-md py-4 px-10 text-lg text-white hover:bg-opacity-90 disabled:opacity-50 disabled:cursor-not-allowed"
+    let buttonClass = "rounded-md pt-5 pb-4 px-10 text-lg text-white hover:bg-opacity-90 disabled:opacity-50 disabled:cursor-not-allowed"
 
     const variants: variantsType = {
         primary: "bg-nblg-500",
