@@ -8,7 +8,7 @@ const transatBold = localFont({
 const FxFoodCoaching = () => {
     return (
         <div className='w-full pl-8 py-32 md:pl-16 max-w-7xl'>
-            <h1 className={`${transatBold.className} font-extraBold text-3xl sm:text-5xl text-left pb-3`}>
+            <h1 className={`${transatBold.className} font-extraBold text-3xl sm:text-5xl text-left pb-3 pr-8`}>
                 <span className="text-npag-500 uppercase">Functional </span>
                 <span className="text-nbrg-500 uppercase">Food </span>
                 <span className="text-nblg-500 uppercase">Coaching</span>
