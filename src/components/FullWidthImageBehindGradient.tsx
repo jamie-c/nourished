@@ -4,18 +4,18 @@ interface InnerProps {
     children: React.ReactNode
 }
 
-const InnerProps: React.FC<InnerProps> = ({children}) => {
+const InnerProps: React.FC<InnerProps> = ({ children }) => {
     return (
-        <div className="absolute w-screen h-full flex flex-row items-center content-center text-white text-5xl sm:text-6xl md:text-7xl pt-10">
+        <div className="absolute w-screen h-full flex flex-row items-center content-center text-white text-4xl sm:text-6xl md:text-7xl pt-10">
             {children}
         </div>
     )
 }
 
 interface OuterProps {
-    variant: string,
-    imageUrl?: string,
-    align?: string,
+    variant: string
+    imageUrl?: string
+    align?: string
     children: React.ReactNode
 }
 
@@ -23,19 +23,25 @@ type gradientColorsType = {
     [key: string]: string
 }
 
-
-const FullWidthImageBehindGradient: React.FC<OuterProps> = ({variant, imageUrl, align, children}) => {
-
+const FullWidthImageBehindGradient: React.FC<OuterProps> = ({
+    variant,
+    imageUrl,
+    align,
+    children,
+}) => {
     const colors: gradientColorsType = {
-        primary: 'from-nblg-500 via-nblg-500 via-10% to-transparent to-75% dark:from-ndag-700 dark:via-ndag-500 dark:via-10% dark:to-transparent',
-        secondary: 'from-nbrg-500 via-nbrg-500 via-10% to-transparent to-75% dark:from-nbrg-700 dark:via-nbrg-500 dark:via-10% dark:to-transparent',
-        tertiary: 'from-npag-500 via-npag-500 via-10% to-transparent to-75% dark:from-npag-700 dark:via-npag-500 dark:via-10% dark:to-transparent',
-        dark: 'from-ndag-500 via-ndag-500 via-50% to-transparent to-95% dark:from-ndag-700 dark:via-ndag-500 dark:via-50% dark:to-transparent dark:to-95%',
-        white: 'white',
-        transparent: 'transparent'
+        primary:
+            "from-nblg-500 via-nblg-500 via-10% to-transparent to-75% dark:from-ndag-700 dark:via-ndag-500 dark:via-10% dark:to-transparent",
+        secondary:
+            "from-nbrg-500 via-nbrg-500 via-10% to-transparent to-75% dark:from-nbrg-700 dark:via-nbrg-500 dark:via-10% dark:to-transparent",
+        tertiary:
+            "from-npag-500 via-npag-500 via-10% to-transparent to-75% dark:from-npag-700 dark:via-npag-500 dark:via-10% dark:to-transparent",
+        dark: "from-ndag-500 via-ndag-500 via-50% to-transparent to-95% dark:from-ndag-700 dark:via-ndag-500 dark:via-50% dark:to-transparent dark:to-95%",
+        white: "white",
+        transparent: "transparent",
     }
-    const aligns = ['left', 'center', 'right']
-    const color = colors[variant] ? colors[variant] : colors['primary']
+    const aligns = ["left", "center", "right"]
+    const color = colors[variant] ? colors[variant] : colors["primary"]
 
     interface imageClassNamesType {
         [key: string]: string
@@ -52,25 +58,25 @@ const FullWidthImageBehindGradient: React.FC<OuterProps> = ({variant, imageUrl, 
     if (align && aligns.includes(align)) {
         imageClassName = imageClassNames[align]
     } else {
-        imageClassName = imageClassNames['center']
+        imageClassName = imageClassNames["center"]
     }
 
     return (
-    <div className="relative h-screen-2/3 w-full">
-        <Image
-            className={imageClassName}
-            src={imageUrl || "/images/NourishedCoJamieandLindsey-04.jpg"}
-            width={1800}
-            height={989}
-            alt="Large image of Jamie and Lindsey Conway"
-            priority
-        />
-        <div className={`absolute inset-0 bg-gradient-to-b opacity-75 ${color}`}
-        />
-        <InnerProps>
-            {children}
-        </InnerProps>
-    </div>
-)}
+        <div className="relative h-screen-2/3 w-full">
+            <Image
+                className={imageClassName}
+                src={imageUrl || "/images/NourishedCoJamieandLindsey-04.jpg"}
+                width={1800}
+                height={989}
+                alt="Large image of Jamie and Lindsey Conway"
+                priority
+            />
+            <div
+                className={`absolute inset-0 bg-gradient-to-b opacity-75 ${color}`}
+            />
+            <InnerProps>{children}</InnerProps>
+        </div>
+    )
+}
 
 export default FullWidthImageBehindGradient
