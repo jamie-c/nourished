@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation"
 import { useEffect } from "react"
 
-export const fetchPDF = async (fileName: string) => {
+const fetchPDF = async (fileName: string) => {
     try {
         const response = await fetch(`/api/pdf/`, {
             method: "GET",
