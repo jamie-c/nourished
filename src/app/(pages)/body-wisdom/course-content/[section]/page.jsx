@@ -1,5 +1,13 @@
+import StyledButton from "@/components/StyledButton"
 import Link from "next/link"
+import { WelcomeStartHere } from "../courseContent"
 import { bodyWisdomCourseSections, titleToUrl } from "../courseSections"
+
+const binderNotesPdf = "binder-notes-nourished-co-body-wisdom.pdf"
+
+const componentMap = {
+    WelcomeStartHere,
+}
 
 const urls = bodyWisdomCourseSections.map(({ title }) => {
     return titleToUrl(title)
@@ -24,13 +32,20 @@ function Page({ params }) {
         return <Link href="/body-wisdom/course-content">Redirecting...</Link>
     }
 
+    const htmlDataName = section
+        .split("-")
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+        .join("")
+
+    const Component = componentMap[htmlDataName]
+
     return (
         <div className="min-h-screen w-screen flex flex-col items-center">
             <div className="max-w-7xl w-screen sm:w-7xl pl-4 pt-16">
                 <h1 className="text-3xl mb-10">{sectionData.title}</h1>
                 <div className="flex flex-col gap-4">
                     {sectionData.sections.map((subSection, index) => {
-                        const { title, uuid, content } = subSection
+                        const { title, uuid } = subSection
                         const subSectionUrl = titleToUrl(title)
                         return (
                             <div
@@ -48,6 +63,12 @@ function Page({ params }) {
                         )
                     })}
                 </div>
+                <div>{Component && <Component />}</div>
+                <StyledButton
+                    href={`/body-wisdom/assets/static/files/${binderNotesPdf}`}
+                >
+                    Download Binder Notes
+                </StyledButton>
             </div>
         </div>
     )
