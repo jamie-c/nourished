@@ -6,7 +6,6 @@ export const bodyWisdomCourseSections = [
     {
         uuid: "359883ba-6d1c-4dfb-beae-07d7f98db541",
         title: "Welcome! Start Here",
-        content: "Welcome to the Body Wisdom Course!",
         sections: [
             {
                 uuid: "fb339ac0-07dd-4aac-9fee-7dca6fc129a9",
