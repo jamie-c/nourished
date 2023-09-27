@@ -20,11 +20,21 @@ const SideNav = () => {
     const [subMenuClassName, setSubMenuClassName] = useState(
         [...sections].map(() => subMenuHiddenClassName)
     )
+    const [active, setActive] = useState(
+        [...bodyWisdomCourseSections].map((section) =>
+            [...section.sections].map(() => false)
+        )
+    )
 
     useEffect(() => {
         if (!pathname) return
-        const sectionIndex = bodyWisdomCourseSections.findIndex(
-            (section) => titleToUrl(section.title) === pathname
+        const sectionIndex = bodyWisdomCourseSections.findIndex((section) =>
+            pathname.includes(titleToUrl(section.title))
+        )
+        const subSectionIndex = bodyWisdomCourseSections[
+            sectionIndex
+        ].sections.findIndex((subSection) =>
+            pathname.includes(titleToUrl(subSection.title))
         )
         if (sectionIndex === -1) return
         setIsExpanded((prev) => {
@@ -35,6 +45,15 @@ const SideNav = () => {
         setSubMenuClassName((prev) => {
             const newState = [...prev]
             newState[sectionIndex] = subMenuShownClassName
+            return newState
+        })
+        setActive((prev) => {
+            const newState = [...prev]
+            newState[sectionIndex] = [...prev[sectionIndex]].map(
+                (subSection, index) => {
+                    return index === subSectionIndex
+                }
+            )
             return newState
         })
     }, [pathname])
@@ -75,20 +94,24 @@ const SideNav = () => {
                             isExpanded[index]
                                 ? "divide-y divide-solid divide-nbrg-500 "
                                 : ""
-                        }
-                        w-full
-                        border-b-1
-                        border-nblg-500
-                        pt-3
-                        pb-2
-                        text-xl
-                        text-nblg-500
-                        font-semibold
-                        uppercase
-                        cursor-pointer`}
-                        onClick={() => toggleSubMenu(index)}
+                        }`}
                     >
-                        <span className="px-4">{section}</span>
+                        <div
+                            className="
+                                w-full
+                                border-b-1
+                                border-nblg-500
+                                pt-3
+                                pb-2
+                                text-xl
+                                text-nblg-500
+                                font-semibold
+                                uppercase
+                                cursor-pointer"
+                            onClick={() => toggleSubMenu(index)}
+                        >
+                            <span className="px-4">{section}</span>
+                        </div>
                         {bodyWisdomCourseSections[index].sections.map(
                             (subSection, subIndex, subArray) => {
                                 if (subArray.length === 1) return null
@@ -106,44 +129,64 @@ const SideNav = () => {
                                                     ? subMenuShownClassName
                                                     : subMenuHiddenClassName
                                             }` +
-                                            " flex flex-col overflow-hidden transition-all duration-500 list-none"
+                                            " flex flex-col overflow-hidden transition-all duration-500"
                                         }
                                     >
                                         <Link href={url} className="group">
                                             <div
                                                 className="
-                                            group
-                                            text-ndag-500
-                                            font-light
-                                            normal-case
-                                            flex
-                                            flex-row
-                                            items-center
-                                            justify-start
-                                            gap-2
-                                            pt-2
-                                            px-4
-                                        "
+                                                    group
+                                                    relative
+                                                    text-ndag-500
+                                                    font-light
+                                                    normal-case
+                                                    flex
+                                                    flex-row
+                                                    items-center
+                                                    justify-start
+                                                    gap-2
+                                                    pt-2
+                                                    pb-1
+                                                    px-4
+                                                "
                                             >
                                                 <span
-                                                    className="
-                                                text-white
-                                                bg-npag-500
-                                                group-hover:bg-nblg-500
-                                                rounded-full
-                                                p-1
-                                                pt-2
-                                                w-6
-                                                h-6
-                                                min-w-6
-                                                max-w-6
-                                                min-h-6
-                                                max-h-6
-                                                inline-flex
-                                                items-center
-                                                justify-center
-                                                mb-1
-                                            "
+                                                    className={`${
+                                                        active[index][subIndex]
+                                                            ? "block "
+                                                            : "hidden "
+                                                    } 
+                                                        group-hover:block
+                                                        absolute
+                                                        top-0
+                                                        left-0
+                                                        w-1
+                                                        h-full
+                                                        bg-nblg-500
+                                                    `}
+                                                />
+                                                <span
+                                                    className={`${
+                                                        active[index][subIndex]
+                                                            ? "bg-nblg-500 "
+                                                            : "bg-npag-500 "
+                                                    }
+                                                        text-white
+                                                        group-hover:bg-nblg-500
+                                                        rounded-full
+                                                        p-1
+                                                        pt-2
+                                                        w-6
+                                                        h-6
+                                                        min-w-6
+                                                        max-w-6
+                                                        min-h-6
+                                                        max-h-6
+                                                        inline-flex
+                                                        items-center
+                                                        justify-center
+                                                        mb-1
+                                                    `}
                                                 >
                                                     {subIndex + 1}
                                                 </span>
