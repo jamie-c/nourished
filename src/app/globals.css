@@ -4,23 +4,23 @@
 
 /* POST STYLES */
 #post-content > #inner-html > h2 {
-  font-size: 1.7rem;
-  font-weight: 700;
+    font-size: 1.7rem;
+    font-weight: 700;
 }
 
 #post-content > #inner-html > h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
+    font-size: 1.5rem;
+    font-weight: 700;
 }
 
 #post-content > #inner-html a {
-  color: #009681;
-  border-bottom: 2px solid #009681;
+    color: #009681;
+    border-bottom: 2px solid #009681;
 }
 
-#post-content > #inner-html  a:hover {
-  color: #009681;
-  border-bottom: 2px solid #009681;
+#post-content > #inner-html a:hover {
+    color: #009681;
+    border-bottom: 2px solid #009681;
 }
 
 .better-inline-booking-widget iframe {
@@ -46,29 +46,29 @@
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none;
-  }
-  .hamRotate.active {
+}
+.hamRotate.active {
     transform: rotate(45deg);
-  }
-  .hamRotate180.active {
+}
+.hamRotate180.active {
     transform: rotate(180deg);
-  }
-  .line {
-    fill:none;
+}
+.line {
+    fill: none;
     transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
-    stroke-width:5.5;
-    stroke-linecap:round;
-  }
-  
-  .ham .top {
+    stroke-width: 5.5;
+    stroke-linecap: round;
+}
+
+.ham .top {
     stroke-dasharray: 40 121;
-  }
-  .ham .bottom {
+}
+.ham .bottom {
     stroke-dasharray: 40 121;
-  }
-  .ham.active .top {
+}
+.ham.active .top {
     stroke-dashoffset: -68px;
-  }
-  .ham.active .bottom {
+}
+.ham.active .bottom {
     stroke-dashoffset: -68px;
-  }
+}
