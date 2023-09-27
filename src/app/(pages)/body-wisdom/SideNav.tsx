@@ -3,32 +3,60 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useEffect, useState } from "react"
-import {
-    bodyWisdomCourseSections,
-    titleToUrl,
-} from "./course-content/courseSections"
+
+const titleToUrl = (title: string) => {
+    return title.replace(/[^a-zA-Z0-9]+/g, "-").toLowerCase()
+}
 
 const SideNav = () => {
     const pathname = usePathname()
+    const [loading, setLoading] = useState(true)
     const subMenuShownClassName = "max-h-96 min-h-fit"
     const subMenuHiddenClassName = "max-h-0 min-h-0"
-    const [sections, setSections] = useState(
-        bodyWisdomCourseSections.map((section) => {
-            return section.title
-        })
+    const [bodyWisdomCourseSections, setBodyWisdomCourseSections] = useState(
+        [] as {
+            uuid: string
+            title: string
+            sections: { uuid: string; title: string; content: string }[]
+        }[]
     )
+    const [sections, setSections] = useState([] as string[])
     const [isExpanded, setIsExpanded] = useState([...sections].map(() => false))
     const [subMenuClassName, setSubMenuClassName] = useState(
         [...sections].map(() => subMenuHiddenClassName)
     )
-    const [active, setActive] = useState(
-        [...bodyWisdomCourseSections].map((section) =>
+    const [active, setActive] = useState([[]] as boolean[][])
+
+    async function getBodyWisdomCourseSections() {
+        const content = await fetch("/body-wisdom/course-content/all-sections")
+        const json = await content.json()
+        setBodyWisdomCourseSections(json)
+    }
+
+    async function getSections() {
+        const sections = await fetch("/body-wisdom/course-content/sections")
+        const json = await sections.json()
+        console.log("🚀 ~ file: SideNav.tsx:34 ~ getSections ~ json:", json)
+        setSections(json)
+    }
+
+    useEffect(() => {
+        getBodyWisdomCourseSections()
+        getSections()
+    }, [])
+
+    useEffect(() => {
+        if (bodyWisdomCourseSections.length === 0) return
+        const newActive = [...bodyWisdomCourseSections].map((section) =>
             [...section.sections].map(() => false)
         )
-    )
+        setActive(newActive)
+    }, [bodyWisdomCourseSections])
 
     useEffect(() => {
         if (!pathname) return
+        if (bodyWisdomCourseSections.length === 0) return
+        if (sections.length === 0) return
         const sectionIndex = bodyWisdomCourseSections.findIndex((section) =>
             pathname.includes(titleToUrl(section.title))
         )
@@ -57,7 +85,8 @@ const SideNav = () => {
             )
             return newState
         })
-    }, [pathname])
+        loading && setLoading(false)
+    }, [pathname, bodyWisdomCourseSections, sections])
 
     const toggleSubMenu = (index: number) => {
         setIsExpanded((prev) => {
@@ -74,7 +103,9 @@ const SideNav = () => {
         })
     }
 
-    return (
+    return loading ? (
+        <div>Loading...</div>
+    ) : (
         <div className="w-md">
             <div
                 className="
