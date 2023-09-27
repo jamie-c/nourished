@@ -1,5 +1,6 @@
 import StyledButton from "@/components/StyledButton"
 import Link from "next/link"
+import SideNav from "../../SideNav"
 import { WelcomeStartHere } from "../courseContent"
 import { bodyWisdomCourseSections, titleToUrl } from "../courseSections"
 
@@ -41,9 +42,9 @@ function Page({ params }) {
 
     return (
         <div className="min-h-screen w-screen flex flex-col items-center">
-            <div className="max-w-7xl w-screen sm:w-7xl pl-4 pt-16">
-                <h1 className="text-3xl mb-10">{sectionData.title}</h1>
-                <div className="flex flex-col gap-4">
+            <div className="max-w-7xl w-screen sm:w-7xl px-4 pt-16">
+                <h1 className="text-4xl mb-10">{sectionData.title}</h1>
+                {/* <div className="flex flex-col gap-4">
                     {sectionData.sections.map((subSection, index) => {
                         const { title, uuid } = subSection
                         const subSectionUrl = titleToUrl(title)
@@ -62,8 +63,11 @@ function Page({ params }) {
                             </div>
                         )
                     })}
+                </div> */}
+                <div className="flex flex-col sm:flex-row justify-between align-top">
+                    <span className="flex-1">{Component && <Component />}</span>
+                    <SideNav />
                 </div>
-                <div>{Component && <Component />}</div>
                 <StyledButton
                     href={`/body-wisdom/assets/static/files/${binderNotesPdf}`}
                 >

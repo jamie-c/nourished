@@ -1,4 +1,5 @@
 import Link from "next/link"
+import SideNav from "../../../SideNav"
 import { bodyWisdomCourseSections, titleToUrl } from "../../courseSections"
 
 const urls = bodyWisdomCourseSections.map(({ title }) => {
@@ -71,6 +72,7 @@ function Page({ params }: { params: { section: string; subSection: string } }) {
                     {subSectionData.title}
                     <div>{subSectionData.content}</div>
                 </div>
+                <SideNav />
             </div>
         </div>
     )
