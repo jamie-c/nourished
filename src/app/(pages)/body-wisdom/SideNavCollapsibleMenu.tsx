@@ -26,9 +26,14 @@ const SideNavCollapsibleMenu = ({
     const [sectionsState, setSectionsState] = useState(sections)
     const [bodyWisdomCourseSectionsState, setBodyWisdomCourseSectionsState] =
         useState(bodyWisdomCourseSections)
-    const [isExpanded, setIsExpanded] = useState(
-        [...sectionsState].map(() => false)
-    )
+    const [isExpanded, setIsExpanded] = useState(() => {
+        const sectionIndex = sectionsState.findIndex((section) =>
+            pathname.includes(titleToUrl(section))
+        )
+        const newState = sectionsState.map(() => false)
+        newState[sectionIndex] = true
+        return newState
+    })
     const [subMenuClassName, setSubMenuClassName] = useState(
         sectionsState.map(() => subMenuHiddenClassName)
     )
@@ -43,34 +48,27 @@ const SideNavCollapsibleMenu = ({
     }, [bodyWisdomCourseSectionsState])
 
     useEffect(() => {
+        const sectionIndex = sectionsState.findIndex((section) =>
+            pathname.includes(titleToUrl(section))
+        )
+        setIsExpanded((prev) => {
+            const newState = [...prev]
+            newState[sectionIndex] = true
+            return newState
+        })
+    }, [pathname])
+
+    useEffect(() => {
         if (!pathname) return
         const sectionIndex = bodyWisdomCourseSectionsState?.findIndex(
             (section) => pathname.includes(titleToUrl(section.title))
-        )
-        console.log(
-            "🚀 ~ file: SideNavCollapsibleMenu.tsx:50 ~ useEffect ~ sectionIndex:",
-            sectionIndex
         )
         const subSectionIndex = bodyWisdomCourseSectionsState[
             sectionIndex
         ]?.sections.findIndex((subSection) =>
             pathname.includes(titleToUrl(subSection.title))
         )
-        console.log(
-            "🚀 ~ file: SideNavCollapsibleMenu.tsx:55 ~ useEffect ~ subSectionIndex:",
-            subSectionIndex
-        )
         if (sectionIndex === -1) return
-        setIsExpanded((prev) => {
-            const newState = [...prev]
-            newState[sectionIndex] = true
-            return newState
-        })
-        setSubMenuClassName((prev) => {
-            const newState = [...prev]
-            newState[sectionIndex] = subMenuShownClassName
-            return newState
-        })
         setActive((prev) => {
             const newState = [...prev]
             newState[sectionIndex] = prev[sectionIndex].map(
@@ -85,16 +83,9 @@ const SideNavCollapsibleMenu = ({
 
     const toggleSubMenu = (index: number) => {
         setIsExpanded((prev) => {
-            const newState = [...prev]
-            newState[index] = !newState[index]
-            return newState
-        })
-        setSubMenuClassName((prev) => {
-            const newState = [...prev]
-            newState[index] = isExpanded[index]
-                ? subMenuHiddenClassName
-                : subMenuShownClassName
-            return newState
+            const newExpanded = [...prev]
+            newExpanded[index] = !newExpanded[index]
+            return newExpanded
         })
     }
 
