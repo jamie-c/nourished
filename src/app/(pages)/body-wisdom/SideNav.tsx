@@ -8,14 +8,15 @@ import {
     titleToUrl,
 } from "./course-content/courseSections"
 
-const sections = bodyWisdomCourseSections.map((section) => {
-    return section.title
-})
-
 const SideNav = () => {
     const pathname = usePathname()
     const subMenuShownClassName = "max-h-96 min-h-fit"
     const subMenuHiddenClassName = "max-h-0 min-h-0"
+    const [sections, setSections] = useState(
+        bodyWisdomCourseSections.map((section) => {
+            return section.title
+        })
+    )
     const [isExpanded, setIsExpanded] = useState([...sections].map(() => false))
     const [subMenuClassName, setSubMenuClassName] = useState(
         [...sections].map(() => subMenuHiddenClassName)
