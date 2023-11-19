@@ -1,11 +1,10 @@
 import { NavLinksVertical } from "@/components/NavLinks"
-import { NextPage } from "next"
 
 type Props = {
     active: string,
 }
 
-const HamburgerIcon:NextPage<Props> = ({ active }) => {
+const HamburgerIcon = ({ active }: Props) => {
 
     const display = active === 'active' ? 'fixed' : 'hidden'
 

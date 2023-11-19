@@ -7,7 +7,12 @@ import Logo from "./Logo"
 import NavLinksHorizontal from "./NavLinks"
 
 const Header = () => {
-    const { data: session } = useSession()
+    const { data: session, status } = useSession()
+
+    useEffect(() => {
+        console.log(session, status)
+    }, [session, status])
+
     const headerClassNames = {
         navLinksHidden:
             "sticky top-0 w-screen z-40 bg-opacity-50 dark:bg-opacity-50 bg-nblg-500 dark:bg-nblg-700 backdrop-filter dark:backdrop-filter backdrop-blur-md dark:backdrop-blur-lg transition-all duration-300",

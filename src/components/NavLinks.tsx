@@ -9,12 +9,12 @@ const mainNavItems = [
     ["Contact", "/contact"],
     ["Login", "/api/auth/signin"],
 ]
-const beforeContent =
-    "before:content-['•'] sm:before:mr-2 before:mr-3 before:text-white before:text-3xl "
-const bottomBorder =
-    "absolute bottom-0.5 left-5 w-0 h-[1.5px] bg-white transition-width duration-300 ease peer-hover:w-[calc(100%-1.4rem)]"
-
 const NavLinksHorizontal = () => {
+    const beforeContent =
+        "before:content-['•'] sm:before:mr-2 before:mr-3 before:text-white before:text-3xl "
+    const bottomBorder =
+        "absolute bottom-0.5 left-5 w-0 h-[1.5px] bg-white transition-width duration-300 ease peer-hover:w-[calc(100%-1.4rem)]"
+
     const pathName = usePathname()
     const active = "border-b-2 border-white"
     const isActive = (href: string) => (pathName === href ? active : "")
