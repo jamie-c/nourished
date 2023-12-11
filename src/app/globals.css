@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("./fonts.css");
+
 /* POST STYLES */
 #post-content > #inner-html > h2 {
     font-size: 1.7rem;

@@ -1,3 +1,5 @@
+import defaultTheme from 'tailwindcss/defaultTheme'
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -7,6 +9,48 @@ module.exports = {
   ],
   theme: {
     extend: {
+            fontFamily: {
+                "transat-light": [
+                    '"Transat Light"',
+                    ...defaultTheme.fontFamily.sans,
+                ],
+                "transat-light-obl": [
+                    '"Transat Light Oblique"',
+                    ...defaultTheme.fontFamily.sans,
+                ],
+                transat: [
+                    '"Transat Standard"',
+                    ...defaultTheme.fontFamily.sans,
+                ],
+                "transat-obl": [
+                    '"Transat Standard Oblique"',
+                    ...defaultTheme.fontFamily.sans,
+                ],
+                "transat-med": [
+                    '"Transat Medium"',
+                    ...defaultTheme.fontFamily.sans,
+                ],
+                "transat-med-obl": [
+                    '"Transat Medium Oblique"',
+                    ...defaultTheme.fontFamily.sans,
+                ],
+                "transat-bold": [
+                    '"Transat Bold"',
+                    ...defaultTheme.fontFamily.sans,
+                ],
+                "transat-bold-obl": [
+                    '"Transat Bold Oblique"',
+                    ...defaultTheme.fontFamily.sans,
+                ],
+                "transat-Black": [
+                    '"Transat Black"',
+                    ...defaultTheme.fontFamily.sans,
+                ],
+                "transat-Black-obl": [
+                    '"Transat Black Oblique"',
+                    ...defaultTheme.fontFamily.sans,
+                ],
+            },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':

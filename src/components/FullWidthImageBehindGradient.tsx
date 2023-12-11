@@ -16,7 +16,7 @@ interface OuterProps {
     variant: string
     imageUrl?: string
     align?: string
-    children: React.ReactNode
+    children?: React.ReactNode
 }
 
 type gradientColorsType = {

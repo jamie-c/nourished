@@ -1,8 +1,9 @@
-import Copyright from '@/components/Copyright'
-import FooterLinks from '@/components/FooterLinks'
-import type { Metadata } from 'next'
-import { transatStandard } from './fonts/fonts'
-import './globals.css'
+import NFCLogoCopyright from '@/components/Copyright';
+import FooterLinks from '@/components/FooterLinks';
+
+import type { Metadata } from 'next';
+
+import './globals.css';
 
 export const metadata: Metadata = {
   title: 'Nourished Co',
@@ -16,10 +17,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${transatStandard.className}`}>
+      <body>
         {children}
-        <footer className="pb-32 w-screen flex flex-col items-center justify-start">
-          <Copyright />
+        <footer className="pt-10 pb-32 w-screen flex flex-col items-center justify-start">
+          <NFCLogoCopyright />
           <FooterLinks />
         </footer>
       </body>

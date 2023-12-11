@@ -1,0 +1,50 @@
+@font-face {
+    font-family: "Transat Light";
+    src: url("./fonts/transat/TransatLight.ttf");
+}
+
+@font-face {
+    font-family: "Transat Light Oblique";
+    src: url("./fonts/transat/TransatLightOblique.ttf");
+}
+
+@font-face {
+    font-family: "Transat Standard";
+    src: url("./fonts/transat/TransatStandard.ttf");
+}
+
+@font-face {
+    font-family: "Transat Standard Oblique";
+    src: url("./fonts/transat/TransatStandardOblique.ttf");
+}
+
+@font-face {
+    font-family: "Transat Medium";
+    src: url("./fonts/transat/TransatMedium.ttf");
+}
+
+@font-face {
+    font-family: "Transat Medium Oblique";
+    src: url("./fonts/transat/TransatMediumOblique.ttf");
+}
+
+@font-face {
+    font-family: "Transat Bold";
+    src: url("./fonts/transat/TransatBold.ttf");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "Transat Bold Oblique";
+    src: url("./fonts/transat/TransatBoldOblique.ttf");
+}
+
+@font-face {
+    font-family: "Transat Black";
+    src: url("./fonts/transat/TransatBlack.ttf");
+}
+
+@font-face {
+    font-family: "Transat Black Oblique";
+    src: url("./fonts/transat/TransatBlackOblique.ttf");
+}
