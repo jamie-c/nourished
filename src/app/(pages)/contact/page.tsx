@@ -246,7 +246,7 @@ function Page() {
             <p>We&apos;ll respond as soon as possible.</p>
         </FullWidthColorBackground>
         <FullWidthColorBackground variant="white" textColor='dark'>
-            <p className="uppercase font-extralight">To get in touch with us, fill out the form.</p>
+            <p className="uppercase font-transat">To get in touch with us, fill out the form.</p>
         </FullWidthColorBackground>
         <div className="px-4 mx-auto max-w-3xl">
             <Form />
