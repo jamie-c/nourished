@@ -1,15 +1,16 @@
-import { authOptions } from "@/app/api/auth/[...nextauth]/route"
-import StyledLink from "@/components/StyledLink"
-import { getServerSession } from "next-auth/next"
+import { auth } from "@/auth";
+import StyledLink from "@/components/StyledLink";
+
+const session = await auth();
 
 export default function BodyWisdomCourseLayout({
     children,
 }: {
     children: React.ReactNode | React.ReactNode[]
 }) {
-    const session = getServerSession(authOptions)
+    console.log("🚀 ~ file: layout.tsx:10 ~ session:", session)
     if (session && session.user?.email) {
-        return { children }
+        return (children)
     } else
         return (
             <>
