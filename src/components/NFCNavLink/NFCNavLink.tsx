@@ -14,6 +14,7 @@ const NFCNavLink: React.FC<NavLinkProps> = ({ url, disabled, title }) => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     const [liveTitle, setLiveTitle] = useState(title);
+    const [updatedUrl, setUpdatedUrl] = useState(url);
 
     useEffect(() => {
         if (session) {
@@ -24,8 +25,9 @@ const NFCNavLink: React.FC<NavLinkProps> = ({ url, disabled, title }) => {
     useEffect(() => {
         if (title === "Login" && isLoggedIn) {
             setLiveTitle("Account");
+            setUpdatedUrl("/account");
         } else {
-            setLiveTitle(title);
+            return;
         }
     }, [isLoggedIn, title]);
 
