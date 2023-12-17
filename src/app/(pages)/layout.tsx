@@ -1,4 +1,4 @@
-import Header from '@/components/Header'
+import NFCHeader from '@/components/NFCHeader/NFCHeader'
 
 export default function RootLayout({
   children,
@@ -8,7 +8,7 @@ export default function RootLayout({
   return (
         <>
             <div className="absolute top-0 w-screen h-16 bg-nblg-500 dark:bg-nblg-700"></div>
-            <Header />
+            <NFCHeader />
             {children}
         </>
   )

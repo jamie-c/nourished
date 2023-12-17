@@ -1,4 +1,5 @@
 import NFCNavLink from "@/components/NFCNavLink/NFCNavLink";
+
 import type { NavLinks } from "@/components/NFCNavLinks/NFCNavLinksTypes";
 
 const mainNavItems: NavLinks[] = [
