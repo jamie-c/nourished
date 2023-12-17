@@ -34,7 +34,9 @@
         "**/*.ts",
         "**/*.tsx",
         ".next/types/**/*.ts",
-        "src/app/(pages)/call/page.jsx"
+        "src/app/(pages)/call/page.jsx",
+        "src/app/(pages)/body-wisdom/course-content/[section]/[subsection]",
+        "src/app/(pages)/body-wisdom/course-content/[section]/page.jsx"
     ],
     "exclude": [
         "node_modules"

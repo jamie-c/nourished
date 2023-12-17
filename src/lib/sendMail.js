@@ -22,10 +22,10 @@ export async function sendMail({ name, email, message }) {
         html: `<p>from: ${name}</p><p>email: ${email}</p><p>${message}</p>`,
     })
         // see https://nodemailer.com/usage
-        console.log("info.messageId: " + info.messageId);
-        console.log("info.envelope: " + info.envelope);
-        console.log("info.accepted: " + info.accepted);
-        console.log("info.rejected: " + info.rejected);
-        console.log("info.pending: " + info.pending);
-        console.log("info.response: " + info.response);
+        // console.log("info.messageId: " + info.messageId);
+        // console.log("info.envelope: " + info.envelope);
+        // console.log("info.accepted: " + info.accepted);
+        // console.log("info.rejected: " + info.rejected);
+        // console.log("info.pending: " + info.pending);
+        // console.log("info.response: " + info.response);
 }
