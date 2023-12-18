@@ -121,6 +121,7 @@ const SideNavCollapsibleMenu = ({
                                 pb-2
                                 text-xl
                                 text-nblg-500
+                                font-transat-med
                                 font-semibold
                                 uppercase
                                 cursor-pointer"
@@ -154,6 +155,7 @@ const SideNavCollapsibleMenu = ({
                                                     group
                                                     relative
                                                     text-ndag-500
+                                                    font-transat-light
                                                     font-light
                                                     normal-case
                                                     flex
@@ -194,6 +196,7 @@ const SideNavCollapsibleMenu = ({
                                                         text-white
                                                         group-hover:bg-nblg-500
                                                         rounded-full
+                                                        font-transat
                                                         p-1
                                                         pt-2
                                                         w-6
