@@ -1,21 +1,16 @@
-import SideNavCollapsibleMenu from "./SideNavCollapsibleMenu"
+import SideNavCollapsibleMenu from "./SideNavCollapsibleMenu";
 
 const SideNav = async () => {
-    async function getBodyWisdomCourseSections() {
-        const content = await fetch(
-            `${process.env.NEXTAUTH_URL}/body-wisdom/course-content/all-sections`
-        )
-        const json = await content.json()
-        return json
-    }
 
-    async function getSections() {
-        const sections = await fetch(
-            `${process.env.NEXTAUTH_URL}/body-wisdom/course-content/sections`
-        )
-        const json = await sections.json()
-        return json
+    async function fetchSections(scope: string) {
+        const results = await fetch(
+            `${process.env.NEXTAUTH_URL}/body-wisdom/course-content/${scope}`
+        );
+        const json = await results.json();
+        return json;
     }
+    async function getBodyWisdomCourseSections() { return await fetchSections('all-sections') };
+    async function getSections() { return await fetchSections('sections') };
 
     const sections = await getSections()
     const bodyWisdomCourseSections = await getBodyWisdomCourseSections()
