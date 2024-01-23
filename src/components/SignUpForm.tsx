@@ -21,58 +21,58 @@ const SignUpForm = () => {
 
     const [loading, setLoading] = useState(false)
 
-    const handleSubmit = async (e: { preventDefault: () => void }) => {
-        setLoading(true)
-        e.preventDefault()
+    // const handleSubmit = async (e: { preventDefault: () => void }) => {
+    //     setLoading(true)
+    //     e.preventDefault()
 
-        const JSONdata = JSON.stringify(formData)
-        const endpoint = "/api/contact"
-        const options = {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSONdata,
-        }
-        try {
-            const res = await fetch(endpoint, options)
-            const json = await res.json()
+    //     const JSONdata = JSON.stringify(formData)
+    //     const endpoint = "/api/contact"
+    //     const options = {
+    //         method: "POST",
+    //         headers: {
+    //             "Content-Type": "application/json",
+    //         },
+    //         body: JSONdata,
+    //     }
+    //     try {
+    //         const res = await fetch(endpoint, options)
+    //         const json = await res.json()
 
-            if (res.ok) {
-                setResponse({
-                    ...json.data,
-                    type: "success",
-                    message:
-                        "We've received your message and will be in touch shortly.",
-                })
-            } else {
-                setResponse({
-                    type: "error",
-                    message: json.formData.message,
-                    firstName: " ",
-                    lastName: " ",
-                    email: " ",
-                })
-            }
-        } catch (error) {
-            console.error("Error:", error)
-            setResponse({
-                type: "error",
-                message: "An error occurred while submitting the form.",
-                firstName: " ",
-                lastName: " ",
-                email: " ",
-            })
-        }
-        setLoading(false)
-    }
+    //         if (res.ok) {
+    //             setResponse({
+    //                 ...json.data,
+    //                 type: "success",
+    //                 message:
+    //                     "We've received your message and will be in touch shortly.",
+    //             })
+    //         } else {
+    //             setResponse({
+    //                 type: "error",
+    //                 message: json.formData.message,
+    //                 firstName: " ",
+    //                 lastName: " ",
+    //                 email: " ",
+    //             })
+    //         }
+    //     } catch (error) {
+    //         console.error("Error:", error)
+    //         setResponse({
+    //             type: "error",
+    //             message: "An error occurred while submitting the form.",
+    //             firstName: " ",
+    //             lastName: " ",
+    //             email: " ",
+    //         })
+    //     }
+    //     setLoading(false)
+    // }
 
     if (!response?.message) {
         return (
             <div className="px-4 mx-auto max-w-3xl">
                 <form
                     className={`${transatBold.className}`}
-                    onSubmit={handleSubmit}
+                    // onSubmit={handleSubmit}
                     method="POST"
                 >
                     <div className="relative">

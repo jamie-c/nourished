@@ -1,7 +1,7 @@
 "use client"
 
 import { transatBold } from "@/app/fonts/fonts"
-import { signIn } from "next-auth/react"
+// import { signIn } from "next-auth/react"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
 import FullWidthColorBackground from "./FullWidthColorBackground"
@@ -23,36 +23,36 @@ const SignUpForm = () => {
 
     const [loading, setLoading] = useState(false)
 
-    const handleSubmit = async () => {
-        setMessage("Signing in...")
-        try {
-            const signInResponse = await signIn("email", {
-                email: formData.email,
-                redirect: false,
-            })
-            console.log(
-                "🚀 ~ file: SignInForm.tsx:33 ~ handleSubmit ~ signInResponse:",
-                signInResponse
-            )
-            if (!signInResponse || signInResponse.ok !== true) {
-                // console.error("Error:", signInResponse.error)
-                setMessage("Something went wrong!")
-            } else {
-                router.refresh()
-            }
-        } catch (error) {
-            console.error("Error:", error)
-            setMessage("Something went wrong!")
-        }
-        setResponse({ ...response, message: message })
-    }
+    // const handleSubmit = async () => {
+    //     setMessage("Signing in...")
+    //     try {
+    //         const signInResponse = await signIn("email", {
+    //             email: formData.email,
+    //             redirect: false,
+    //         })
+    //         console.log(
+    //             "🚀 ~ file: SignInForm.tsx:33 ~ handleSubmit ~ signInResponse:",
+    //             signInResponse
+    //         )
+    //         if (!signInResponse || signInResponse.ok !== true) {
+    //             // console.error("Error:", signInResponse.error)
+    //             setMessage("Something went wrong!")
+    //         } else {
+    //             router.refresh()
+    //         }
+    //     } catch (error) {
+    //         console.error("Error:", error)
+    //         setMessage("Something went wrong!")
+    //     }
+    //     setResponse({ ...response, message: message })
+    // }
 
     if (!response?.message) {
         return (
             <div className="px-4 mx-auto max-w-3xl">
                 <form
                     className={`${transatBold.className}`}
-                    onSubmit={handleSubmit}
+                    // onSubmit={handleSubmit}
                     method="POST"
                 >
                     <div className="mt-10 relative">
