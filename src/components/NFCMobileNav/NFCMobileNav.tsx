@@ -51,15 +51,16 @@ const NFCMobileNav = () => {
   return (
     <header
       className={scrolled ? `drop-shadow-xl ${headerClass}` : headerClass}
+      onClick={handleHamburgerIconClick}
     >
         <div className="px-7 flex flex-row items-center justify-between max-w-7xl h-16 m-auto ">
             <NFCLogo />
-            <div
+            <button
                 className="flex md:hidden flex-row items-center h-16 justify-center m-0 overflow-hidden absolute w-12 right-4 top-0"
                 onClick={handleHamburgerIconClick}
             >
                 <NFCHamIcon active={toggleHam} />
-            </div>
+            </button>
         </div>
             <div className="h-full flex flex-col">{toggleHam && <NFCNavLinksVertical />}</div>
     </header>
