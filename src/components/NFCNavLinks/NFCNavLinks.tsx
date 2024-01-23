@@ -25,7 +25,7 @@ const mainNavItems: NavLinks[] = [
   },
 ];
 
-const NavLinksHorizontal = () => {
+export const NFCNavLinksHorizontal = () => {
   const navItems = mainNavItems.reduce(
     (acc: NavLinks[], { title, url }, i, a) => {
       if (i < a.length - 1) {
@@ -59,16 +59,20 @@ const NavLinksHorizontal = () => {
   );
 };
 
-// export const NavLinksVertical = () => {
-//     return (
-//         <span>
-//             <nav className="flex flex-col justify-start items-end gap-8 text-4xl text-white pt-10 pr-8">
-//                 {mainNavItems.map(([title, url]) => (
-//                     <NavItem key={title} title={title} url={url} />
-//                 ))}
-//             </nav>
-//         </span>
-//     )
-// }
-
-export default NavLinksHorizontal;
+export const NFCNavLinksVertical = () => {
+    return (
+        <span>
+            <nav className="flex flex-col justify-start items-end gap-8 text-4xl text-white pt-10 pr-8">
+                {mainNavItems.map(({ title, url }, i) => {
+                    if (title !== "divider") {
+                        return <NFCNavLink key={title} title={title} url={url} />
+                    }
+                    if (title === "divider") {
+                        return 
+                    }
+                    return;
+                })}
+            </nav>
+        </span>
+    )
+}

@@ -2,7 +2,7 @@ import type { NFCHamIconProps } from "./NFCHamIconTypes";
 
 import { NFCHamIconVariants } from "./NFCHamIconTypes";
 
-const HamburgerIcon = ({ active, color }: NFCHamIconProps) => {
+const NFCHamIcon = ({ active, color }: NFCHamIconProps) => {
   const className = `ham z-50 hamRotate ${active ? "active" : ""}`;
   const variant = NFCHamIconVariants[color ?? "white"];
 
@@ -21,4 +21,4 @@ const HamburgerIcon = ({ active, color }: NFCHamIconProps) => {
   );
 };
 
-export default HamburgerIcon;
+export default NFCHamIcon;

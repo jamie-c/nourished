@@ -2,35 +2,34 @@
 
 // import { useSession } from "next-auth/react"
 import NFCLogo from "@/components/NFCLogo/NFCLogo";
+import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import NFCHamIcon from "../NFCHamIcon/NFCHamIcon";
-import NFCNavLinks from "../NFCNavLinks/NFCNavLinks";
+import { NFCNavLinksVertical } from "../NFCNavLinks/NFCNavLinks";
 
-const Header = () => {
-  // const { data: session, status } = useSession()
+const NFCMobileNav = () => {
+  const { data: session, status } = useSession()
 
-  // useEffect(() => {
-  // console.log(session, status)
-  // }, [session, status])
+  useEffect(() => {
+  console.log(session, status)
+  }, [session, status])
 
   const headerClassNames = {
-    navLinksHidden:
-      "sticky top-0 w-screen z-40 bg-opacity-50 dark:bg-opacity-50 bg-nblg-500 dark:bg-nblg-700 backdrop-filter dark:backdrop-filter backdrop-blur-md dark:backdrop-blur-lg transition-all duration-300",
-    navLinksVisible:
-      "fixed top-0 w-screen h-screen z-40 bg-opacity-50 dark:bg-opacity-50 bg-nblg-500 dark:bg-nblg-700 backdrop-filter dark:backdrop-filter backdrop-blur-md dark:backdrop-blur-lg transition-all duration-300",
+    base: "top-0 left-0 w-screen z-40 bg-opacity-50 dark:bg-opacity-50 bg-nblg-500 dark:bg-nblg-700 backdrop-filter dark:backdrop-filter backdrop-blur-md dark:backdrop-blur-lg transition-all duration-300",
+    mobileNavLinksHidden: "sticky",
+    mobileNavLinksVisible: "fixed h-screen",
   };
 
   const [toggleHam, setToggleHam] = useState(false);
-  const [headerClass, setHeaderClass] = useState(
-    headerClassNames.navLinksHidden,
-  );
+  const [headerClass, setHeaderClass] = useState(`${headerClassNames.mobileNavLinksHidden} ${headerClassNames.base}`,);
 
   const handleHamburgerIconClick = () => {
+    const {base, mobileNavLinksHidden, mobileNavLinksVisible} = headerClassNames;
     setToggleHam(!toggleHam);
     if (toggleHam) {
-      setHeaderClass(headerClassNames.navLinksHidden);
+      setHeaderClass(base + ' ' + mobileNavLinksHidden);
     } else {
-      setHeaderClass(headerClassNames.navLinksVisible);
+      setHeaderClass(base + ' ' + mobileNavLinksVisible);
     }
   };
 
@@ -53,20 +52,18 @@ const Header = () => {
     <header
       className={scrolled ? `drop-shadow-xl ${headerClass}` : headerClass}
     >
-      <div className="px-7 flex flex-row items-center justify-between max-w-7xl h-16 m-auto ">
-        <NFCLogo />
-        <span className="h-full hidden md:flex">
-          <NFCNavLinks />
-        </span>
-        <span
-          className="flex md:hidden flex-row items-center h-16 justify-center m-0 overflow-hidden absolute w-12 right-4 top-0"
-          onClick={handleHamburgerIconClick}
-        >
-          <NFCHamIcon active={toggleHam} />
-        </span>
-      </div>
+        <div className="px-7 flex flex-row items-center justify-between max-w-7xl h-16 m-auto ">
+            <NFCLogo />
+            <div
+                className="flex md:hidden flex-row items-center h-16 justify-center m-0 overflow-hidden absolute w-12 right-4 top-0"
+                onClick={handleHamburgerIconClick}
+            >
+                <NFCHamIcon active={toggleHam} />
+            </div>
+        </div>
+            <div className="h-full flex flex-col">{toggleHam && <NFCNavLinksVertical />}</div>
     </header>
   );
 };
 
-export default Header;
+export default NFCMobileNav;

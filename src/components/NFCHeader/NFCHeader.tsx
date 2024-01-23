@@ -1,5 +1,5 @@
 import NFCLogo from "@/components/NFCLogo/NFCLogo";
-import NFCNavLinks from "../NFCNavLinks/NFCNavLinks";
+import { NFCNavLinksHorizontal } from "../NFCNavLinks/NFCNavLinks";
 
 const Header = () => {
 
@@ -14,16 +14,16 @@ const Header = () => {
     <header
       className={`drop-shadow-xl ${headerClassNames.navLinksHidden}`}
     >
-      <div className="px-7 flex flex-row items-center justify-between max-w-7xl h-16 m-auto ">
+      <div className="px-7 flex flex-row items-center justify-between max-w-7xl h-16 m-auto">
         <NFCLogo />
-        <span className="h-full hidden md:flex">
-          <NFCNavLinks />
-        </span>
-        <span
+        <div className="h-full hidden md:flex">
+          <NFCNavLinksHorizontal />
+        </div>
+        {/* <div
           className="flex md:hidden flex-row items-center h-16 justify-center m-0 overflow-hidden absolute w-12 right-4 top-0"
         >
-          {/* <NFCMobileNav /> */}
-        </span>
+          <NFCMobileNav />
+        </div> */}
       </div>
     </header>
   );
