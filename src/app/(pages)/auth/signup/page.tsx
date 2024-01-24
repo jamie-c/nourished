@@ -1,6 +1,5 @@
 import { transatBold } from "@/app/fonts/fonts"
 import FullWidthColorBackground from "@/components/FullWidthColorBackground"
-import SignUpForm from "@/components/SignUpForm"
 import IconAccountCircleOutline from "@/components/icons/IconAccountCircleOutline"
 
 const SignupPage = () => {
@@ -16,7 +15,7 @@ const SignupPage = () => {
                 <p>Fill out the form to create an account.</p>
             </FullWidthColorBackground>
             <div className="w-full h-32"></div>
-            <SignUpForm />
+            {/* <SignUpForm /> */}
         </>
     )
 }
