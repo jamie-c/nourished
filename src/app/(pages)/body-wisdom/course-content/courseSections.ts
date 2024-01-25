@@ -1,5 +1,8 @@
 export const titleToUrl = (title: string) => {
-    return title.replace(/[^a-zA-Z0-9]+/g, "-").toLowerCase()
+    let url = title.replace(/[^a-zA-Z0-9]+/g, "-").toLowerCase();
+    if (url.endsWith("-")) url = url.slice(0, -1);
+    if (url.startsWith("-")) url = url.slice(1);
+    return url;
 }
 
 export const bodyWisdomCourseSections = [
