@@ -21,7 +21,7 @@ export async function generateStaticParams() {
     }))
 }
 
-function Page({ params }) {
+async function Page({ params }) {
     const { section } = params
     const sectionData = bodyWisdomCourseSections.find(({ title }) => {
         return titleToUrl(title) === section
