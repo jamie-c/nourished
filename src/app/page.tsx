@@ -10,10 +10,10 @@ export default function Home() {
   return (
     <main className="top-0 w-screen flex min-h-screen flex-col items-center justify-start">
       <FullWidthImageBehindGradient variant="primary" align="right"><p className="w-screen text-center"></p></FullWidthImageBehindGradient>
-      <div className="hidden sm:flex">
+      <div className="sticky top-0 hidden sm:flex z-50">
         <NFCHeader />
       </div>
-      <div className="flex sm:hidden">
+      <div className="sticky top-0 flex sm:hidden z-50">
         <NFCMobileNav />
       </div>
       <FxFoodCoaching />
