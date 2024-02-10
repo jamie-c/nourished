@@ -1,6 +1,6 @@
 import { transatBold, transatLight } from '@/app/fonts/fonts'
 import Image from "next/image"
-import StyledButton from './StyledButton'
+import NFCButton from './NFCButton/NFCButton'
 
 
 const AboutLindseyAndJamie = () => (
@@ -9,29 +9,29 @@ const AboutLindseyAndJamie = () => (
             <Image
                 className='mb-4' 
                 src="/images/lindsey-conway.jpg"
-                width={300}
-                height={300}
+                width={320}
+                height={320}
                 alt="Lindsey Conway"
             />
             <h2 className={`${transatBold.className} uppercase text-2xl`}>FOOD STRATEGY & GUIDANCE WITH LINDSEY</h2>
             <p className={`${transatLight.className} my-20 text-2xl h-48`}>&quot;I figure out the best steps to methodically take to move toward the health outcomes and visions you hold for yourself. And then provide encouragement to get there.&quot;</p>
-            <StyledButton href='/about' variant='primary'>
+            <NFCButton href='/about' variant='primary' classes='w-full'>
                 ABOUT LINDSEY
-            </StyledButton>
+            </NFCButton>
         </div>
         <div id="jamie-conway" className="flex flex-col items-center sm:items-start max-w-xs text-center sm:text-left text-ndag-500">
             <Image
                 className='mb-4' 
                 src="/images/jamie-conway.jpg"
-                width={300}
-                height={300}
+                width={320}
+                height={320}
                 alt="Jamie Conway"
             />
             <h2 className={`${transatBold.className} uppercase text-2xl`}>FOOD ALCHEMY & RECIPES WITH JAMIE</h2>
             <p className={`${transatLight.className} my-20 text-2xl h-48`}>&quot;I teach you everything you need to know (and nothing you don&apos;t) about how to create approachable, time-honored, and nutrient-dense food to bring to your table.&quot;</p>
-            <StyledButton href='/about' variant='dark'>
+            <NFCButton href='/about' variant='dark' classes='w-full'>
                 ABOUT JAMIE
-            </StyledButton>
+            </NFCButton>
         </div>
     </div>
 )
