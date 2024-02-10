@@ -62,10 +62,14 @@ export const NFCNavLinksHorizontal = () => {
 export const NFCNavLinksVertical = () => {
     return (
         <span>
-            <nav className="flex flex-col justify-start items-end gap-8 text-4xl text-white pt-10 pr-8">
+            <nav className="flex flex-col justify-start items-end gap-0 text-4xl text-white pt-10 pr-8">
                 {mainNavItems.map(({ title, url }, i) => {
                     if (title !== "divider") {
-                        return <NFCNavLink key={title} title={title} url={url} />
+                        return (
+                            <div key={title} className="h-20">
+                                <NFCNavLink title={title} url={url} />
+                            </div>
+                        )
                     }
                     if (title === "divider") {
                         return 
