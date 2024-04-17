@@ -11,7 +11,7 @@ export default function Home() {
             <main className="top-0 w-screen flex min-h-screen flex-col items-center justify-start">
                 <FullWidthImageBehindGradient
                     variant="tertiary"
-                    imageUrl="/images/lindsey_conway_edible-22.jpg"
+                    imageUrl="/images/work-with-us-header-nourished-co.jpg"
                     align="center"
                 >
                     <p
