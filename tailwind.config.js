@@ -62,9 +62,9 @@ module.exports = {
         'screen-2/3': '66.666667vh',
       },
       transitionProperty: {
-        'height': 'height',
-        'width': 'width',
-        'spacing': 'margin, padding',
+        height: 'height',
+        width: 'width',
+        spacing: 'margin, padding',
       },
       borderWidth: {
         '3': '3px',
