@@ -1,4 +1,3 @@
-import { transatBold } from "@/app/fonts/fonts";
 import Script from "next/script";
 
 export default function NewsletterForm() {
@@ -7,7 +6,7 @@ export default function NewsletterForm() {
             <Script src="https://f.convertkit.com/ckjs/ck.5.js" />
     <form 
         action="https://app.convertkit.com/forms/3036294/subscriptions" 
-        className={`${transatBold.className} seva-form formkit-form w-full max-w-2xl px-4`} 
+        className="font-transat-bold seva-form formkit-form w-full max-w-2xl px-4" 
         method="post" 
         data-sv-form="3036294" 
         data-uid="1da5d3eed3" 
@@ -85,22 +84,16 @@ export default function NewsletterForm() {
                         peer-focus:capitalize">First Name:
                 </label>
             </div>
-                <button 
+                <button
+                    type="submit"
                     data-element="submit" 
                     className="formkit-submit formkit-submit mt-10 mb-32 pb-2 pt-3 rounded-md bg-nblg-500 hover:bg-opacity-90 text-white font-semibold text-center block w-full focus:outline-none focus:ring focus:ring-offset-2 focus:ring-rose-500 focus:ring-opacity-80 cursor-pointer"  
                 >
-                    <div 
-                        className="formkit-spinner"
-                    >
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    </div>
+                    <div className="formkit-spinner"/>
                     <span className="">SUBSCRIBE</span>
                 </button>
             </div>
         </div>
     </form>
     </>
-    )
-    };
+)};

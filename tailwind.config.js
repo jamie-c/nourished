@@ -42,11 +42,11 @@ module.exports = {
                     '"Transat Bold Oblique"',
                     ...defaultTheme.fontFamily.sans,
                 ],
-                "transat-Black": [
+                "transat-black": [
                     '"Transat Black"',
                     ...defaultTheme.fontFamily.sans,
                 ],
-                "transat-Black-obl": [
+                "transat-black-obl": [
                     '"Transat Black Oblique"',
                     ...defaultTheme.fontFamily.sans,
                 ],

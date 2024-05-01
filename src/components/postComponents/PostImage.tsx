@@ -1,4 +1,3 @@
-import { transatBold } from "@/app/fonts/fonts"
 import Image from "next/image"
 
 interface InnerProps {
@@ -8,7 +7,7 @@ interface InnerProps {
 const InnerProps: React.FC<InnerProps> = ({children}) => {
     return (
         <div className="absolute w-full h-full flex flex-row items-center content-center text-white text-2xl p-10">
-            <p className={`${transatBold.className} text-center uppercase`}>{children}</p>
+            <p className="font-transat-bold text-balance text-center uppercase">{children}</p>
         </div>
     )
 }
@@ -51,7 +50,7 @@ const PostImage: React.FC<OuterProps> = ({variant, imageUrl, align, children}) =
     if (align && aligns.includes(align)) {
         imageClassName = imageClassNames[align]
     } else {
-        imageClassName = imageClassNames['center']
+        imageClassName = imageClassNames.center
     }
 
     return (
