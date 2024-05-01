@@ -5,9 +5,9 @@ const Header = () => {
 
   const headerClassNames = {
     navLinksHidden:
-      "sticky top-0 w-screen z-40 bg-opacity-50 dark:bg-opacity-50 bg-nblg-500 dark:bg-nblg-700 backdrop-filter dark:backdrop-filter backdrop-blur-md dark:backdrop-blur-lg transition-all duration-300",
+      "sticky top-0 w-screen z-40 bg-opacity-50 dark:bg-opacity-50 bg-nblg-500 dark:bg-nblg-700 backdrop-blur-xl dark:backdrop-blur-xl transition-all duration-300",
     navLinksVisible:
-      "fixed top-0 w-screen h-screen z-40 bg-opacity-50 dark:bg-opacity-50 bg-nblg-500 dark:bg-nblg-700 backdrop-filter dark:backdrop-filter backdrop-blur-md dark:backdrop-blur-lg transition-all duration-300",
+      "fixed top-0 w-screen h-screen z-40 bg-opacity-50 dark:bg-opacity-50 bg-nblg-500 dark:bg-nblg-700 backdrop-blur-xl dark:backdrop-blur-xl transition-all duration-300",
   };
 
   return (
