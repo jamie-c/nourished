@@ -1,9 +1,9 @@
 import clientPromise from "@/db/mongodb"
 import { MongoDBAdapter } from "@auth/mongodb-adapter"
 import NextAuth from "next-auth"
-import EmailProvider from "next-auth/providers/email"
 import GitHub from "next-auth/providers/github"
 import google from "next-auth/providers/google"
+import Nodemailer from "next-auth/providers/nodemailer"
 
 import type { NextAuthConfig } from "next-auth"
 
@@ -17,7 +17,7 @@ export const config = {
   providers: [
     GitHub,
     google,
-    EmailProvider({
+    Nodemailer({
       server: {
         host: process.env.EMAIL_HOST,
         port: process.env.EMAIL_PORT,
