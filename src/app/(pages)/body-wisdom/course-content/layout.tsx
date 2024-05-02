@@ -1,6 +1,6 @@
 import { auth } from "@/auth";
 import StyledLink from "@/components/StyledLink";
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 
 function BodyWisdomCourseLayout({ children }: { children: ReactNode | ReactNode[] }) {
     const session = Promise.resolve(auth());
@@ -22,7 +22,8 @@ function BodyWisdomCourseLayout({ children }: { children: ReactNode | ReactNode[
                 </div>
             </>
         )
-    } else return (children)
+    }
+    return (children)
 }
 
 export default BodyWisdomCourseLayout;
