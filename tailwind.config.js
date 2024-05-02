@@ -42,11 +42,11 @@ module.exports = {
                     '"Transat Bold Oblique"',
                     ...defaultTheme.fontFamily.sans,
                 ],
-                "transat-Black": [
+                "transat-black": [
                     '"Transat Black"',
                     ...defaultTheme.fontFamily.sans,
                 ],
-                "transat-Black-obl": [
+                "transat-black-obl": [
                     '"Transat Black Oblique"',
                     ...defaultTheme.fontFamily.sans,
                 ],
@@ -62,9 +62,9 @@ module.exports = {
         'screen-2/3': '66.666667vh',
       },
       transitionProperty: {
-        'height': 'height',
-        'width': 'width',
-        'spacing': 'margin, padding',
+        height: 'height',
+        width: 'width',
+        spacing: 'margin, padding',
       },
       borderWidth: {
         '3': '3px',

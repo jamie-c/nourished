@@ -3,8 +3,8 @@ import FooterLinks from '@/components/FooterLinks';
 
 import type { Metadata } from 'next';
 
-import './globals.css';
 import ProviderWrapper from "./ProviderWrapper";
+import './globals.css';
 
 export const metadata: Metadata = {
     title: "Nourished Co",
@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-            <body>
+            <body className='font-transat'>
                 <ProviderWrapper>
                     {children}
                     <footer className="pt-10 pb-32 w-screen flex flex-col items-center justify-start">

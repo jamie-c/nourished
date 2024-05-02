@@ -1,4 +1,3 @@
-import { transatMedium } from "@/app/fonts/fonts"
 import Link from "next/link"
 
 interface ButtonProps {
@@ -40,8 +39,9 @@ const StyledButton: React.FC<ButtonProps> = ({
     return (
         <Link href={href} {...otherProps}>
             <button
+                type="button"
                 disabled={isDisabled}
-                className={`${transatMedium.className} ${buttonClass}`}
+                className={`font-transat-med ${buttonClass}`}
             >
                 {children}
             </button>

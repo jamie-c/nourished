@@ -4,7 +4,7 @@ import Link from "next/link"
 const images = ['about', 'blog', 'newsletter', 'work-with-us']
 
 const CircleIconsSubMenu = () => (
-    <div className="flex flex-col md:flex-row items-center justify-evenly w-full py-28 md:py-32 max-w-7xl">
+    <div className="flex flex-col md:flex-row items-center justify-evenly w-full py-28 md:py-32 max-w-7xl mx-auto">
         {images.map((imageName) => (
             <Link
                 key={`${imageName}-link`}

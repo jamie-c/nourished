@@ -8,6 +8,7 @@ const NFCHamIcon = ({ active, color }: NFCHamIconProps) => {
 
   return (
     <svg className={className} viewBox="0 0 100 100" width="50">
+      <title>Menu Icon</title>
       <path
         className={`line top ${variant}`}
         d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20"
