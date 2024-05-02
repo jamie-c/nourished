@@ -42,10 +42,10 @@ const NFCNavLink: React.FC<NavLinkProps> = ({ url, disabled, title }) => {
                 {liveTitle}
             </Link>
             {!disabled && !active && (
-                <span className="absolute bottom-5 w-0 h-0.5 bg-white transition-width duration-300 ease peer-hover:w-full"></span>
+                <span className="absolute bottom-5 w-0 h-0.5 bg-white transition-width duration-300 ease peer-hover:w-full" />
             )}
             {active && (
-                <span className="absolute bottom-5 w-full h-0.5 bg-white transition-all duration-300 ease"></span>
+                <span className="absolute bottom-5 w-full h-0.5 bg-white transition-all duration-300 ease" />
             )}
         </div>
     );

@@ -1,4 +1,6 @@
 import NFCLogo from "@/components/NFCLogo/NFCLogo";
+import SignIn from "../Auth/SignIn";
+// import { SignOut } from "../Auth/SignOut";
 import { NFCNavLinksHorizontal } from "../NFCNavLinks/NFCNavLinks";
 
 const Header = () => {
@@ -18,6 +20,8 @@ const Header = () => {
         <NFCLogo />
         <div className="h-full hidden md:flex">
           <NFCNavLinksHorizontal />
+          <SignIn />
+          {/* <SignOut /> */}
         </div>
         {/* <div
           className="flex md:hidden flex-row items-center h-16 justify-center m-0 overflow-hidden absolute w-12 right-4 top-0"
