@@ -27,10 +27,10 @@ type gradientColorsType = {
 const PostImage: React.FC<OuterProps> = ({variant, imageUrl, align, children}) => {
 
     const colors: gradientColorsType = {
-        primary: 'absolute inset-0 bg-gradient-to-b opacity-75 from-nblg-500 from-50% to-transparent dark:from-ndag-500 dark:from-50% dark:to-transparent',
-        secondary: 'absolute inset-0 bg-gradient-to-b opacity-75 from-nbrg-500 from-50% to-transparent dark:from-nbrg-500 dark:from-50% dark:to-transparent',
-        tertiary: 'absolute inset-0 bg-gradient-to-b opacity-75 from-npag-500 from-50% to-transparent dark:from-npag-500 dark:from-50% dark:to-transparent',
-        dark: 'absolute inset-0 bg-gradient-to-b opacity-75 from-ndag-500 from-50% to-transparent dark:from-ndag-500 dark:from-50% dark:to-transparent',
+        primary: 'absolute inset-0 bg-gradient-to-b opacity-75 from-bluegreen-500 from-50% to-transparent dark:from-darkgreen-500 dark:from-50% dark:to-transparent',
+        secondary: 'absolute inset-0 bg-gradient-to-b opacity-75 from-brightgreen-500 from-50% to-transparent dark:from-brightgreen-500 dark:from-50% dark:to-transparent',
+        tertiary: 'absolute inset-0 bg-gradient-to-b opacity-75 from-lightgreen-500 from-50% to-transparent dark:from-lightgreen-500 dark:from-50% dark:to-transparent',
+        dark: 'absolute inset-0 bg-gradient-to-b opacity-75 from-darkgreen-500 from-50% to-transparent dark:from-darkgreen-500 dark:from-50% dark:to-transparent',
     }
     const aligns = ['left', 'center', 'right']
     const color = colors[variant] ? colors[variant] : colors['primary']

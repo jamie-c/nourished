@@ -1,10 +1,10 @@
 import type { VariantsOptions } from "@/utilities/globals";
 
 export type NFCHamIconColors =
-	| "stroke-nblg-500"
-	| "stroke-nbrg-500"
-	| "stroke-npag-500"
-	| "stroke-ndag-500"
+	| "stroke-bluegreen-500"
+	| "stroke-brightgreen-500"
+	| "stroke-lightgreen-500"
+	| "stroke-darkgreen-500"
 	| "stroke-white";
 
 export type NFCHamIconVariantTypes = {

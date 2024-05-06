@@ -18,10 +18,10 @@ export default function Home() {
             </FullWidthImageBehindGradient>
             <FullWidthColorBackground variant="white" textColor="secondary">
                 <h1 className="font-transat-black text-balance text-3xl sm:text-5xl text-center">
-                    <span className="text-npag-500 uppercase">
+                    <span className="text-lightgreen-500 uppercase">
                         Functional{" "}
                     </span>
-                    <span className="text-nbrg-500 uppercase">
+                    <span className="text-brightgreen-500 uppercase">
                         Nutrition Counseling
                     </span>
                 </h1>

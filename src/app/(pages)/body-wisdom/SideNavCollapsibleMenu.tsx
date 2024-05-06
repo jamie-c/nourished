@@ -103,7 +103,7 @@ const SideNavCollapsibleMenu = ({
                     shadow-slate-300
                     divide-y
                     divide-solid
-                    divide-nblg-500
+                    divide-bluegreen-500
                 "
             >
                 {sectionsState?.map((section, index) => (
@@ -111,7 +111,7 @@ const SideNavCollapsibleMenu = ({
                         key={`section-${index}`}
                         className={`${
                             isExpanded[index]
-                                ? "divide-y divide-solid divide-nbrg-500 "
+                                ? "divide-y divide-solid divide-brightgreen-500 "
                                 : ""
                         }`}
                     >
@@ -119,11 +119,11 @@ const SideNavCollapsibleMenu = ({
                             className="
                                 w-full
                                 border-b-1
-                                border-nblg-500
+                                border-bluegreen-500
                                 pt-3
                                 pb-2
                                 text-xl
-                                text-nblg-500
+                                text-bluegreen-500
                                 font-transat-med
                                 font-semibold
                                 uppercase
@@ -157,7 +157,7 @@ const SideNavCollapsibleMenu = ({
                                                 className="
                                                     group
                                                     relative
-                                                    text-ndag-500
+                                                    text-darkgreen-500
                                                     font-transat-light
                                                     font-light
                                                     normal-case
@@ -185,7 +185,7 @@ const SideNavCollapsibleMenu = ({
                                                         left-0
                                                         w-1
                                                         h-full
-                                                        bg-nblg-500
+                                                        bg-bluegreen-500
                                                     `}
                                                 />
                                                 <span
@@ -193,8 +193,8 @@ const SideNavCollapsibleMenu = ({
                                                         active[index]?.[
                                                             subIndex
                                                         ]
-                                                            ? "bg-nblg-500 "
-                                                            : "bg-npag-500 "
+                                                            ? "bg-bluegreen-500 "
+                                                            : "bg-lightgreen-500 "
                                                     }
                                                         text-white
                                                         group-hover:bg-nblg-500

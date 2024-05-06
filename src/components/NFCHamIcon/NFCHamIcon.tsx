@@ -1,10 +1,10 @@
 import type { NFCHamIconProps, NFCHamIconVariantTypes } from "./NFCHamIconTypes";
 
 const NFCHamIconVariants: NFCHamIconVariantTypes = {
-	primary: "stroke-nblg-500",
-	secondary: "stroke-nbrg-500",
-	tertiary: "stroke-npag-500",
-	dark: "stroke-ndag-500",
+	primary: "stroke-bluegreen-500",
+	secondary: "stroke-brightgreen-500",
+	tertiary: "stroke-lightgreen-500",
+	dark: "stroke-darkgreen-500",
 	white: "stroke-white",
 };
 
