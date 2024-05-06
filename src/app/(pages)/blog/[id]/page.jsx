@@ -1,4 +1,3 @@
-import { transatBold } from "@/app/fonts/fonts"
 import FullWidthImageBehindGradient from "@/components/FullWidthImageBehindGradient"
 import { getAllPostIds, getPostData } from "@/lib/posts"
 import dayjs from "dayjs"
@@ -45,9 +44,7 @@ async function Page({ params }) {
                 variant="primary"
                 imageUrl={`/images/blog/${id}.jpg`}
             >
-                <p
-                    className={`${transatBold.className} w-screen text-center uppercase px-4 md:px-20`}
-                >
+                <p className="font-transat-bold w-screen text-center text-balance uppercase px-4 md:px-20">
                     {title}
                 </p>
             </FullWidthImageBehindGradient>
@@ -71,6 +68,7 @@ async function Page({ params }) {
                                 strokeLinecap="round"
                                 strokeLinejoin="round"
                             >
+                                <title>Back Chevron Arrow</title>
                                 <path d="M15 18l-6-6 6-6" />
                             </svg>
                             <span className="text-lg relative text-nblg-500 group-hover:text-nblg-700">
@@ -81,14 +79,14 @@ async function Page({ params }) {
                     {/* element containing the title in a heading */}
                     <h1
                         id="post-title"
-                        className="text-3xl md:text-5xl font-bold mt-8 mb-4"
+                        className="text-3xl md:text-5xl font-transat-bold mt-8 mb-4"
                     >
                         {title}
                     </h1>
                     {/* element containing the post content starting with formattedDate, vertical line, link to author */}
                     <div
                         id="post-metadata"
-                        className="flex flex-row items-center justify-start text-sm font-light mb-8 divide-x-2 divide-ndag-500"
+                        className="flex flex-row items-center justify-start text-sm font-transat-light mb-8 divide-x-2 divide-ndag-500"
                     >
                         <div className="text-nbrg-500 pr-6">
                             {formattedDate}

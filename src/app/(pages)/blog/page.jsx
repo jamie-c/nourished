@@ -1,4 +1,3 @@
-import { transatBold, transatLight } from "@/app/fonts/fonts"
 import FullWidthImageBehindGradient from "@/components/FullWidthImageBehindGradient"
 import NewsletterForm from "@/components/NewsletterForm"
 import PostImage from "@/components/postComponents/PostImage"
@@ -35,7 +34,7 @@ const Posts = async () => {
         <>
         <section className="relative">
         <FullWidthImageBehindGradient variant="dark" imageUrl="/images/nourished-typing-on-computer.jpg">
-            <p className={`${transatBold.className} w-screen text-center uppercase`}>Blog</p>
+            <p className="font-transat-bold w-screen text-center uppercase">Blog</p>
         </FullWidthImageBehindGradient>
         </section>
         <section className="relative min-h-screen w-screen px-4 mt-16 flex flex-col items-center">
@@ -54,7 +53,7 @@ const Posts = async () => {
         </div>
         </section>
         <section id="newsletter" className="relative mt-10 w-full flex flex-col items-center">
-            <p className={`${transatLight.className} max-w-xl text-2xl text-center px-4 pb-10`}>Sign up for our newsletter for knowledge, know-how and advice for living an abundantly nourished life:</p>
+            <p className="font-transat-light max-w-xl text-2xl text-center px-4 pb-10">Sign up for our newsletter for knowledge, know-how and advice for living an abundantly nourished life:</p>
             <NewsletterForm />
         </section>
         </>

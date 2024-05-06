@@ -1,6 +1,5 @@
 'use client'
 
-import { transatBold } from '@/app/fonts/fonts';
 import FullWidthColorBackground from '@/components/FullWidthColorBackground';
 import type { NextPage } from 'next';
 import { useState } from 'react';
@@ -72,17 +71,13 @@ const Form: NextPage = () => {
     
     if (!response?.message) {
     return (
-        <form className={`${transatBold.className}`} onSubmit={handleSubmit} method="POST">
+        <form className="font-transat-bold" onSubmit={handleSubmit} method="POST">
             <div className="relative">
                 <input 
                     id="first-name" 
                     type="text" 
                     name="firstName" 
-                    className="peer h-10 p-4 w-full rounded-md
-                        border-3 
-                        border-nblg-500 
-                        text-bnlg-500 placeholder-transparent 
-                        focus:outline-none focus:border-3" 
+                    className="peer h-10 p-4 w-full rounded-md border-3 border-nblg-500 text-bnlg-500 placeholder-transparent focus:outline-none focus:border-3" 
                     placeholder="First Name:" 
                     required
                     value={formData.firstName}
@@ -110,11 +105,7 @@ const Form: NextPage = () => {
                     id="last-name" 
                     type="text" 
                     name="lastName" 
-                    className="peer h-10 p-4 w-full rounded-md
-                        border-3 
-                        border-nblg-500 
-                        text-bnlg-500 placeholder-transparent 
-                        focus:outline-none focus:border-3" 
+                    className="peer h-10 p-4 w-full rounded-md border-3 border-nblg-500 text-bnlg-500 placeholder-transparent focus:outline-none focus:border-3" 
                     placeholder="Last Name:" 
                     required
                     value={formData.lastName}
@@ -142,11 +133,7 @@ const Form: NextPage = () => {
                     id="email" 
                     type="email" 
                     name="email" 
-                    className="peer h-10 p-4 w-full rounded-md
-                        border-3 
-                        border-nblg-500 
-                        text-bnlg-500 placeholder-transparent 
-                        focus:outline-none focus:border-3" 
+                    className="peer h-10 p-4 w-full rounded-md border-3 border-nblg-500 text-bnlg-500 placeholder-transparent focus:outline-none focus:border-3" 
                     placeholder="Email:" 
                     required
                     value={formData.email}
@@ -175,11 +162,7 @@ const Form: NextPage = () => {
                     name="message" 
                     rows={5}
                     cols={30}
-                    className="peer p-4 w-full rounded-md
-                        border-3 
-                        border-nblg-500 
-                        text-bnlg-500 placeholder-transparent 
-                        focus:outline-none focus:border-3" 
+                    className="peer p-4 w-full rounded-md border-3 border-nblg-500 text-bnlg-500 placeholder-transparent focus:outline-none focus:border-3" 
                     placeholder="Your Questions or Comments:"
                     required 
                     value={formData.message}
@@ -218,7 +201,7 @@ const Form: NextPage = () => {
                 <input
                 type="submit" 
                 value='SEND'
-                className="mt-10 mb-32 pb-2 pt-3 rounded-md bg-nblg-500 hover:bg-opacity-90 text-white font-semibold text-center block w-full focus:outline-none focus:ring focus:ring-offset-2 focus:ring-rose-500 focus:ring-opacity-80 cursor-pointer" />
+                className="mt-10 mb-32 pb-2 pt-3 rounded-md bg-nblg-500 hover:bg-opacity-90 text-white font-transat-bold text-center block w-full focus:outline-none focus:ring focus:ring-offset-2 focus:ring-rose-500 focus:ring-opacity-80 cursor-pointer" />
                 )}
         </form>
     )
@@ -240,9 +223,10 @@ function Page() {
         <>
         <FullWidthColorBackground variant="dark">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={0.8} stroke="currentColor" className="w-32 h-32 mx-auto mb-8">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
+                <title>Chat Icon</title>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
             </svg>
-            <p className={`${transatBold.className} uppercase text-4xl sm:text-6xl mb-6`}>Want to Chat?</p>
+            <p className="font-transat-bold uppercase text-4xl sm:text-6xl mb-6">Want to Chat?</p>
             <p>We&apos;ll respond as soon as possible.</p>
         </FullWidthColorBackground>
         <FullWidthColorBackground variant="white" textColor='dark'>

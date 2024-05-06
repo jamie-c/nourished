@@ -14,11 +14,6 @@ export default function Page() {
                     <h2 className={`${transatBold.className} text-4xl text-center uppercase mb-16 text-ndag-500`}>Subscribe to Our Newsletter</h2>
                     <p className="max-w-2xl">Sign up for our exclusive monthly newsletters for knowledge, know-how, and advice for living an abundantly nourished life.</p>
                 </FullWidthColorBackground>
-                {/* <Script 
-                    data-uid="1da5d3eed3"
-                    src="https://nourishedco.ck.page/1da5d3eed3/index.js"
-                    async
-                /> */}
                 <NewsletterForm />
             </main>
         </>
