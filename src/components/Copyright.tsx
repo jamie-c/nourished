@@ -1,5 +1,5 @@
+import { NFCLogoCopyright } from '@nourishedco/ui'
 import localFont from 'next/font/local'
-import Image from "next/image"
 
 const transatBold = localFont({
     src: '../app/fonts/transat/TransatBold.ttf',
@@ -11,14 +11,7 @@ const year = new Date().getFullYear()
 
 const Copyright = () => (
     <div className="flex flex-col items-center justify-start text-center text-2xl gap-0">
-        <Image
-            className='pt-10 pb-1 m-0' 
-            src="/images/NOURISHED_LOGO_NOTAG_NOPAD_RGB.png"
-            width={200}
-            height={30}
-            alt="Nourished"
-        />
-        <p className={`${transatBold.className} text-sm text-[#a2aaad]`}>COPYRIGHT {year}</p>
+        <NFCLogoCopyright imgUrl='/images/NOURISHED_LOGO_NOTAG_NOPAD_RGB.png'/>
     </div>
 )
 

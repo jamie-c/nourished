@@ -21,7 +21,7 @@ const NavLinksHorizontal = () => {
     const [firstItemTitle, firstItemUrl] = mainNavItems[0]
 
     return (
-        <span>
+        <div>
             <nav className="flex-10 flex flex-row items-center justify-end gap-3 text-xl text-white first:before:content-none ">
                 <div
                     className={`relative before:content-[' '] before:text-white before:text-3xl`}
@@ -34,9 +34,7 @@ const NavLinksHorizontal = () => {
                     >
                         {firstItemTitle}
                     </Link>
-                    <span
-                        className={`absolute bottom-0.5 left-0 w-0 h-[1.5px] bg-white transition-width duration-300 ease peer-hover:w-full`}
-                    ></span>
+                    <span className={"absolute bottom-0.5 left-0 w-0 h-[1.5px] bg-white transition-width duration-300 ease peer-hover:w-full"} />
                 </div>
                 {mainNavItems.slice(1).map(([title, url], i) => (
                     <div key={i} className={`${beforeContent} relative`}>
@@ -48,11 +46,11 @@ const NavLinksHorizontal = () => {
                         >
                             {title}
                         </Link>
-                        <span className={`${bottomBorder}`}></span>
+                        <span className={`${bottomBorder}`} />
                     </div>
                 ))}
             </nav>
-        </span>
+        </div>
     )
 }
 
