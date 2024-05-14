@@ -46,7 +46,7 @@ const UserAccountIcon: React.FC = () => {
 					alt="User Account"
 					width={100}
 					height={100}
-					className="rounded-full"
+					className="rounded-full border-2 -translate-y-0.5 border-white/75 cursor-pointer"
 				/>
 				{/* <Button/> */}
 			</div>
