@@ -1,11 +1,10 @@
 "use client";
 
 // import { useSession } from "next-auth/react"
-import NFCLogo from "@/components/NFCLogo/NFCLogo";
+import { NFCHamIcon, NFCLogo } from "@nourishedco/ui";
 import { useSession } from "next-auth/react";
 import type React from "react";
 import { useEffect, useState } from "react";
-import NFCHamIcon from "../NFCHamIcon/NFCHamIcon";
 import { NFCNavLinksVertical } from "../NFCNavLinks/NFCNavLinks";
 
 const NFCMobileNav = () => {

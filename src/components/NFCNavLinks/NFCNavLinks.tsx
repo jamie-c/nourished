@@ -1,4 +1,4 @@
-import NFCNavLink from "@/components/NFCNavLink/NFCNavLink"
+import NavLink from "@/components/NavLink/NavLink"
 
 import type { NavLinks } from "@/components/NFCNavLinks/NFCNavLinksTypes"
 import UserAccountIcon from "../UserAccountIcon"
@@ -46,7 +46,7 @@ export const NFCNavLinksHorizontal = () => {
             <nav className="flex-10 flex flex-row items-center justify-end gap-3 text-xl text-white first:before:content-none h-full">
                 {navItems.map(({ title, url, id }, i, a) => {
                     if (title !== "divider") {
-                        return <NFCNavLink key={id} url={url} title={title} />
+                        return <NavLink key={id} url={url} title={title} />
                     }
                     if (title === "divider") {
                         return (
@@ -73,7 +73,7 @@ export const NFCNavLinksVertical = () => {
                     if (title !== "divider") {
                         return (
                             <div key={title} className="h-20">
-                                <NFCNavLink title={title} url={url} />
+                                <NavLink title={title} url={url} />
                             </div>
                         )
                     }
