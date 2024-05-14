@@ -1,38 +1,21 @@
 "use client"
-import { useSession } from "next-auth/react";
-import { usePathname } from "next/navigation";
 
 import { NFCNavLink } from "@nourishedco/ui";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import type { NavLinkProps } from "./NavLinkTypes";
 
 const NavLink: React.FC<NavLinkProps> = ({ url, disabled, title }) => {
-    const { data: session, update } = useSession()
     const pathName = usePathname();
-    const active = pathName === url;
-    const isDisabled = disabled ? "opacity-50 cursor-not-allowed " : "";
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [active, setActive] = useState<boolean>(pathName === url);
 
-    const [liveTitle, setLiveTitle] = useState(title);
-    const [updatedUrl, setUpdatedUrl] = useState(url);
-
+    // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
     useEffect(() => {
-        if (session) {
-            setIsLoggedIn(true);
-        }
-    }, [session]);
-
-    useEffect(() => {
-        if (title === "Login" && isLoggedIn) {
-            setLiveTitle("Account");
-            setUpdatedUrl("/account");
-        } else {
-            return;
-        }
-    }, [isLoggedIn, title]);
+        setActive(pathName === url);
+    }, [pathName]);
 
     return (
-        <NFCNavLink url={updatedUrl} title={liveTitle} active={active} disabled={disabled} />
+        <NFCNavLink url={url} title={title} active={active} disabled={disabled} />
     );
 };
 
