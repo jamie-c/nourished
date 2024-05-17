@@ -73,7 +73,7 @@ export const NFCNavLinksVertical = () => {
                     if (title !== "divider") {
                         return (
                             <div key={title} className="h-20">
-                                <NavLink title={title} url={url} />
+                                <NavLink title={title} url={url} disabled={false} />
                             </div>
                         )
                     }

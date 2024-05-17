@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { NFCNavLink } from "@nourishedco/ui";
 import { usePathname } from "next/navigation";
@@ -6,17 +6,18 @@ import { useEffect, useState } from "react";
 import type { NavLinkProps } from "./NavLinkTypes";
 
 const NavLink: React.FC<NavLinkProps> = ({ url, disabled, title }) => {
-    const pathName = usePathname();
-    const [active, setActive] = useState<boolean>(pathName === url);
+	const pathName = usePathname();
+	const [active, setActive] = useState<boolean>(pathName === url);
 
-    // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
-    useEffect(() => {
-        setActive(pathName === url);
-    }, [pathName]);
+	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
+	useEffect(() => {
+		setActive(pathName === url);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [pathName]);
 
-    return (
-        <NFCNavLink url={url} title={title} active={active} disabled={disabled} />
-    );
+	return (
+		<NFCNavLink url={url} title={title} active={active} disabled={disabled} />
+	);
 };
 
 export default NavLink;
