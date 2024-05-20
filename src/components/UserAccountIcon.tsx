@@ -7,10 +7,7 @@ import { useState } from "react";
 
 const Button: React.FC = () => {
 	return (
-		<button
-			type="button"
-			className="size-8 cursor-pointer"
-		>
+		<button type="button" className="size-6 cursor-pointer">
 			<svg
 				className="stroke-white cursor-pointer stroke-1 hover:stroke-2"
 				width="100%"
@@ -28,27 +25,25 @@ const Button: React.FC = () => {
 			</svg>
 		</button>
 	);
-}
-
+};
 
 const UserAccountIcon: React.FC = () => {
 	const { data: session } = useSession();
 	const [open, setOpen] = useState(true);
 
 	if (!session) {
-		return <Button/>;	
+		return <Button />;
 	}
 	if (session?.user?.image) {
 		return (
-			<div className="size-8">
+			<div className="size-7">
 				<Image
 					src={session.user.image}
 					alt="User Account"
 					width={100}
 					height={100}
-					className="rounded-full border-2 -translate-y-0.5 border-white/75 hover:border-white transition-all duration-150 cursor-pointer"
+					className="rounded-full border-2 border-white/75 hover:border-white transition-all duration-150 cursor-pointer"
 				/>
-				{/* <Button/> */}
 			</div>
 		);
 	}
