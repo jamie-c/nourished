@@ -41,8 +41,8 @@ async function Page({ params }) {
 	const Component = componentMap[htmlDataName];
 
 	return (
-		<div className="min-h-screen w-screen flex flex-col items-center">
-			<div className="max-w-7xl w-screen sm:w-7xl px-4 pt-16">
+		<div className="min-h-screen w-full flex flex-col items-center">
+			<div className="max-w-7xl w-full sm:w-7xl px-4 pt-16">
 				<h1 className="text-4xl mb-10">{sectionData.title}</h1>
 				{/* <div className="flex flex-col gap-4">
                     {sectionData.sections.map((subSection, index) => {

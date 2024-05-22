@@ -8,12 +8,12 @@ import NFCMobileNav from "@/components/NFCMobileNav/NFCMobileNav";
 
 export default function Home() {
 	return (
-		<main className="top-0 w-screen flex min-h-screen flex-col items-center justify-start">
+		<main className="top-0 w-full flex min-h-screen flex-col items-center justify-start">
 			<FullWidthImageBehindGradient variant="primary" align="right">
-				<p className="w-screen text-center" />
+				<p className="w-full text-center" />
 			</FullWidthImageBehindGradient>
 			<div className="w-full relative">
-				<div className="absolute top-0 w-screen h-16 bg-bluegreen-500 dark:bg-bluegreen-700" />
+				<div className="absolute top-0 w-full h-16 bg-bluegreen-500 dark:bg-bluegreen-700" />
 				<div className="sticky top-0 hidden sm:flex z-50">
 					<NFCHeader />
 				</div>

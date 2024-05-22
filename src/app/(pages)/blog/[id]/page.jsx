@@ -44,11 +44,11 @@ async function Page({ params }) {
 				variant="primary"
 				imageUrl={`/images/blog/${id}.jpg`}
 			>
-				<p className="font-transat-bold w-screen text-center text-balance uppercase px-4 md:px-20">
+				<p className="font-transat-bold w-full text-center text-balance uppercase px-4 md:px-20">
 					{title}
 				</p>
 			</FullWidthImageBehindGradient>
-			<section className="relative w-screen flex flex-col items-center">
+			<section className="relative w-full flex flex-col items-center">
 				<div
 					id="post-content"
 					className="px-8 md:px-24 lg:px-48 max-w-7xl w-full flex flex-col items-start"

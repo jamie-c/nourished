@@ -8,9 +8,9 @@ const transatBold = localFont({
 
 const FooterLinks = () => (
 	<div
-		className={`${transatBold.className} pt-32 flex flex-col sm:flex-row items-top justify-between text-center text-2xl text-brightgreen-500 uppercase gap-8 w-screen max-w-7xl`}
+		className={`${transatBold.className} pt-32 flex flex-col sm:flex-row items-top justify-between text-center text-2xl text-brightgreen-500 uppercase gap-8 w-full max-w-7xl`}
 	>
-		<span className="w-full sm:w-screen-1/3 flex flex-col items-center justify-start gap-6">
+		<span className="w-full sm:w-full-1/3 flex flex-col items-center justify-start gap-6">
 			<Link href="/about">
 				<button
 					type="button"
@@ -44,7 +44,7 @@ const FooterLinks = () => (
 				</button>
 			</Link>
 		</span>
-		<span className="w-full sm:w-screen-1/3 flex flex-col items-center justify-start gap-6">
+		<span className="w-full sm:w-full-1/3 flex flex-col items-center justify-start gap-6">
 			<Link href="/work-with-us">
 				<button
 					type="button"

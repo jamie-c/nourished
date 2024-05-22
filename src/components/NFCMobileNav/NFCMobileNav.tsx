@@ -15,7 +15,7 @@ const NFCMobileNav = () => {
 	}, [session, status]);
 
 	const headerClassNames = {
-		base: "top-0 left-0 w-screen z-40 bg-opacity-50 dark:bg-opacity-50 bg-bluegreen-500 dark:bg-bluegreen-700 backdrop-filter dark:backdrop-filter backdrop-blur-xl dark:backdrop-blur-xl transition-all duration-300",
+		base: "top-0 left-0 w-full z-40 bg-opacity-50 dark:bg-opacity-50 bg-bluegreen-500 dark:bg-bluegreen-700 backdrop-filter dark:backdrop-filter backdrop-blur-xl dark:backdrop-blur-xl transition-all duration-300",
 		mobileNavLinksHidden: "sticky",
 		mobileNavLinksVisible: "fixed h-screen",
 	};

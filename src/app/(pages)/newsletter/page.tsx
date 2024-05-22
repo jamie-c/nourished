@@ -9,15 +9,13 @@ export default function Page() {
 			<FullWidthImageBehindGradient
 				variant="tertiary"
 				align="center"
-				imageUrl="/images/nourished-newsletter.jpg"
+				imageUrl="/images/headers/nourished-newsletter.jpg"
 			>
-				<p
-					className={`${transatBold.className} w-screen text-center uppercase`}
-				>
+				<p className={`${transatBold.className} w-full text-center uppercase`}>
 					Newsletter
 				</p>
 			</FullWidthImageBehindGradient>
-			<main className="top-0 w-screen flex min-h-screen flex-col items-center justify-start">
+			<main className="top-0 w-full flex min-h-screen flex-col items-center justify-start">
 				<FullWidthColorBackground variant="white" textColor="secondary">
 					<h2
 						className={`${transatBold.className} text-4xl text-center uppercase mb-16 text-darkgreen-500`}
