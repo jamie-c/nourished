@@ -15,7 +15,7 @@ const NFCMobileNav = () => {
 	}, [session, status]);
 
 	const headerClassNames = {
-		base: "top-0 left-0 w-full z-40 bg-opacity-50 dark:bg-opacity-50 bg-bluegreen-500 dark:bg-bluegreen-700 backdrop-filter dark:backdrop-filter backdrop-blur-xl dark:backdrop-blur-xl transition-all duration-300",
+		base: "flex flex-col items-start justify-start top-0 left-0 w-full overflow-hidden h-16 z-40 bg-opacity-50 dark:bg-opacity-50 bg-bluegreen-500 dark:bg-bluegreen-700 backdrop-filter dark:backdrop-filter backdrop-blur-xl dark:backdrop-blur-xl transition-all duration-150 ease-in",
 		mobileNavLinksHidden: "sticky",
 		mobileNavLinksVisible: "fixed h-screen",
 	};
@@ -24,6 +24,13 @@ const NFCMobileNav = () => {
 	const [headerClass, setHeaderClass] = useState(
 		`${headerClassNames.mobileNavLinksHidden} ${headerClassNames.base}`,
 	);
+
+	const closeNav = () => {
+		setToggleHam(false);
+		setHeaderClass(
+			`${headerClassNames.base} ${headerClassNames.mobileNavLinksHidden}`,
+		);
+	};
 
 	const handleHamburgerIconClick = (
 		event: React.MouseEvent | React.KeyboardEvent,
@@ -69,10 +76,10 @@ const NFCMobileNav = () => {
 	return (
 		<header
 			className={scrolled ? `drop-shadow-xl ${headerClass}` : headerClass}
-			onClick={handleHamburgerIconClick}
-			onKeyDown={handleHamburgerIconClick}
+			onClick={closeNav}
+			onKeyDown={closeNav}
 		>
-			<div className="px-7 flex flex-row items-center justify-between max-w-7xl h-16 m-auto ">
+			<div className="px-7 flex flex-row items-center justify-between w-full max-w-7xl max-h-16 min-h-16">
 				<NFCLogo />
 				<button
 					type="button"
@@ -83,9 +90,12 @@ const NFCMobileNav = () => {
 					<NFCHamIcon active={toggleHam} />
 				</button>
 			</div>
-			<div className="h-full flex flex-col">
-				{toggleHam && <NFCNavLinksVertical />}
+			<div className="w-full">
+				<NFCNavLinksVertical />
 			</div>
+			{/* <div className="h-full flex flex-col">
+				{toggleHam && <NFCNavLinksVertical />}
+			</div> */}
 		</header>
 	);
 };

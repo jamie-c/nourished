@@ -16,7 +16,7 @@ const NavLink: React.FC<NavLinkProps> = ({ url, disabled, title }) => {
 	}, [pathName]);
 
 	const staticClasses =
-		"uppercase text-white flex group translate-y-1 items-center transform-gpu justify-center font-transat-bold h-16 relative";
+		"uppercase text-white flex group text-nowrap translate-y-1 items-center transform-gpu justify-center font-transat-bold h-16 relative";
 	const cursorClasses = `${disabled ? "cursor-not-allowed" : "cursor-pointer"}`;
 	const disabledClasses = `${cursorClasses} ${disabled ? "opacity-50" : ""}`;
 

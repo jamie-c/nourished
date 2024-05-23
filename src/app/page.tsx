@@ -14,10 +14,10 @@ export default function Home() {
 			</FullWidthImageBehindGradient>
 			<div className="w-full relative">
 				<div className="absolute top-0 w-full h-16 bg-bluegreen-500 dark:bg-bluegreen-700" />
-				<div className="sticky top-0 hidden sm:flex z-50">
+				<div className="sticky top-0 hidden md:flex z-50">
 					<NFCHeader />
 				</div>
-				<div className="sticky top-0 flex sm:hidden z-50">
+				<div className="sticky top-0 flex md:hidden z-50">
 					<NFCMobileNav />
 				</div>
 				<FxFoodCoaching />

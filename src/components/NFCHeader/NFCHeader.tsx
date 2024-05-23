@@ -13,14 +13,9 @@ const Header = () => {
 		<header className={`drop-shadow-xl ${headerClassNames.navLinksHidden}`}>
 			<div className="px-7 flex flex-row items-center justify-between max-w-7xl h-16 m-auto">
 				<NFCLogo imgUrl="/images/NOURISHED_LOGO_NOTAG_WHITE.png" />
-				<div className="h-full hidden md:flex">
+				<div className="h-full hidden md:flex max-w-full overflow-x-auto">
 					<NFCNavLinksHorizontal />
 				</div>
-				{/* <div
-          className="flex md:hidden flex-row items-center h-16 justify-center m-0 overflow-hidden absolute w-12 right-4 top-0"
-        >
-          <NFCMobileNav />
-        </div> */}
 			</div>
 		</header>
 	);
