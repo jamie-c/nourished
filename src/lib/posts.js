@@ -1,13 +1,13 @@
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
 import dayjs from 'dayjs';
-import {unified} from 'unified'
-import remarkParse from 'remark-parse'
-import remarkRehype from 'remark-rehype'
-import rehypeRaw from 'rehype-raw'
-import rehypeSanitize from 'rehype-sanitize'
-import rehypeStringify from 'rehype-stringify'
+import matter from 'gray-matter';
+import fs from 'node:fs';
+import path from 'node:path';
+import rehypeRaw from 'rehype-raw';
+import rehypeSanitize from 'rehype-sanitize';
+import rehypeStringify from 'rehype-stringify';
+import remarkParse from 'remark-parse';
+import remarkRehype from 'remark-rehype';
+import { unified } from 'unified';
 
 
 const postsDirectory = path.join(process.cwd(), 'src', '_posts');
@@ -40,9 +40,8 @@ export function getSortedPostsData() {
   return allPostsData.sort((a, b) => {
     if (a.date < b.date) {
       return 1;
-    } else {
-      return -1;
     }
+      return -1;
   });
 }
 
