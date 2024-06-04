@@ -1,8 +1,8 @@
 export type VariantsColors =
-  | "bg-nblg-500"
-  | "bg-nbrg-500"
-  | "bg-npag-500"
-  | "bg-ndag-500"
+  | "bg-bluegreen-500"
+  | "bg-brightgreen-500"
+  | "bg-lightgreen-500"
+  | "bg-darkgreen-500"
   | "white";
 export type VariantsOptions =
   | "primary"
@@ -16,9 +16,9 @@ export type Variants = {
 };
 
 export const variants: Variants = {
-  primary: "bg-nblg-500",
-  secondary: "bg-nbrg-500",
-  tertiary: "bg-npag-500",
-  dark: "bg-ndag-500",
+  primary: "bg-bluegreen-500",
+  secondary: "bg-brightgreen-500",
+  tertiary: "bg-lightgreen-500",
+  dark: "bg-darkgreen-500",
   white: "white",
 };

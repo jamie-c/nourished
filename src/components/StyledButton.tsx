@@ -22,10 +22,10 @@ const StyledButton: React.FC<ButtonProps> = ({
         "rounded-md pt-5 pb-4 px-10 text-lg text-white hover:bg-opacity-90 disabled:opacity-50 disabled:cursor-not-allowed"
 
     const variants: variantsType = {
-        primary: "bg-nblg-500",
-        secondary: "bg-nbrg-500",
-        tertiary: "bg-npag-500",
-        dark: "bg-ndag-500",
+        primary: "bg-bluegreen-500",
+        secondary: "bg-brightgreen-500",
+        tertiary: "bg-lightgreen-500",
+        dark: "bg-darkgreen-500",
     }
 
     if (variant && Object.keys(variants).includes(variant)) {

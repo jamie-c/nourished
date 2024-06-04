@@ -9,7 +9,7 @@ export default function RootLayout({
 }) {
 	return (
 		<>
-			<section className="flex flex-col items-center justify-center w-screen">
+			<section className="flex flex-col items-center justify-center w-full">
 				{children}
 				{/* <!-- Practice Better Booking Widget: start --> */}
 				<div

@@ -26,18 +26,18 @@ type bgColorsType = {
 };
 
 const bgColors: bgColorsType = {
-	primary: "bg-nblg-500",
-	secondary: "bg-nbrg-500",
-	tertiary: "bg-npag-500",
-	dark: "bg-ndag-500",
+	primary: "bg-bluegreen-500",
+	secondary: "bg-brightgreen-500",
+	tertiary: "bg-lightgreen-500",
+	dark: "bg-darkgreen-500",
 	white: "bg-white",
 };
 
 const textColors: bgColorsType = {
-	primary: "text-nblg-500",
-	secondary: "text-nbrg-500",
-	tertiary: "text-npag-500",
-	dark: "text-ndag-500",
+	primary: "text-bluegreen-500",
+	secondary: "text-brightgreen-500",
+	tertiary: "text-lightgreen-500",
+	dark: "text-darkgreen-500",
 	white: "text-white",
 };
 
