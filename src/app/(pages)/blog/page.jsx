@@ -30,7 +30,7 @@ const Posts = async () => {
 	});
 
 	return (
-		<>
+		<div className="w-full flex flex-col gap-20">
 			<section className="relative">
 				<FullWidthImageBehindGradient
 					variant="dark"
@@ -39,7 +39,7 @@ const Posts = async () => {
 					<p className="font-transat-bold w-full text-center uppercase">Blog</p>
 				</FullWidthImageBehindGradient>
 			</section>
-			<section className="relative min-h-screen w-full px-4 mt-16 flex flex-col items-center">
+			<section className="relative w-full px-4 flex flex-col items-center">
 				<div id="posts" className="max-w-7xl w-full flex flex-col items-center">
 					<div className="relative grid grid-flow-row grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
 						{mappedData.map(({ id, title, date, year, month }, i, array) => {
@@ -61,7 +61,7 @@ const Posts = async () => {
 			</section>
 			<section
 				id="newsletter"
-				className="relative mt-10 w-full flex flex-col items-center"
+				className="relative w-full flex flex-col items-center"
 			>
 				<p className="font-transat-light max-w-xl text-2xl text-center px-4 pb-10">
 					Sign up for our newsletter for knowledge, know-how and advice for
@@ -69,7 +69,7 @@ const Posts = async () => {
 				</p>
 				<NewsletterForm />
 			</section>
-		</>
+		</div>
 	);
 };
 
