@@ -20,7 +20,7 @@ I&apos;ll never forget a summer day back in 2012. I spent the majority of that d
 
 Unfortunately, this whole experience led to a strong distrust in beauty products, as well as a bit of apathy around routines that I usually enjoyed: **skincare and makeup**.
 
-There are over 10,000 chemicals used in personal care products like cleansers, serums, and makeup – the majority of which have never been evaluated for safety. (I&apos;ll share more about this in future posts, too.) Your skin is your largest organ of detoxification and an important component of your immune system. As someone who has dealt with an overactive immune system since birth, keeping my skin healthy with safe products is critical to my overall health goals. Thankfully, my quest for safer skincare and makeup became much more simple in 2019 after a childhood friend shared Beautycounter with me. (You can read more about this here.)
+There are over 10,000 chemicals used in personal care products like cleansers, serums, and makeup – the majority of which have never been evaluated for safety. (I&apos;ll share more about this in future posts, too.) Your skin is your largest organ of detoxification and an important component of your immune system. As someone who has dealt with an overactive immune system since birth, keeping my skin healthy with safe products is critical to my overall health goals. Thankfully, my quest for safer skincare and makeup became much more simple in 2019 after a childhood friend shared [Beautycounter](https://www.beautycounter.com/lindseyconway?goto=%2F) with me. ([You can read more about this here.](https://www.nourishedfood.co/blog/safer-and-sustainable-products))
 
 When it comes to simplicity, Beautycounter checks all the boxes for me. From a list of 2,800 ingredients they will never use in their formulations to strict safety standards by which every ingredient is screened and assessed, Beautycounter has truly become my one-stop-shop for all things skincare, makeup, and body care.
 
@@ -30,21 +30,21 @@ So, if you’re interested in simplifying your morning makeup routine, you&apos;
 
 ## Here are a few recommendations for getting started, along with my exact simple, summer makeup must-haves:
 
-Image Beautycounter simple makeup
+[![Image Beautycounter simple makeup](/images/blog/2023-07-26/fif-concealer-launch-consultant-social-feed-v1.jpg)](https://www.beautycounter.com/lindseyconway?goto=%2Fflawless-in-five)
 
-### Flawless in Five
+### [Flawless in Five](https://www.beautycounter.com/lindseyconway?goto=%2Fflawless-in-five)
 
 This is the ultimate simple solution for a polished, natural, everyday look in under five minutes. You get six products that are curated to your shade and color preferences. This bundle has streamlined my morning routine, helped me confidently step into my day, and kept my health in the forefront – both with Beautycounter&apos;s commitment to safety AND my mental energy.
 
 **Here’s my exact summer makeup routine:**
 
--   Dew Skin Tinted Moisturizer — this is a great multi-tasker that provides light coverage, SPF 20, a dewy look, and skincare benefits with a blend of nourishing skin ingredients. I don&apos;t go a day without this!
+-   [Dew Skin Tinted Moisturizer](https://www.beautycounter.com/lindseyconway?goto=%2Fproduct%2Fdew-skin-tinted-moisturizer) — this is a great multi-tasker that provides light coverage, SPF 20, a dewy look, and skincare benefits with a blend of nourishing skin ingredients. I don&apos;t go a day without this!
 -   Merit Beauty’s Perfecting Complexion Stick — trying to use this up before getting back to my Beautycounter concealer. This product is a little less creamy than Beautycounter&apos;s concealer, which I don&apos;t love for my skin.
--   Cheeky Clean Cream Blush — another versatile product in my routine that can perform as a blush or lip color, and I&apos;ve even seen some people use it on their eyelids. Like most Beautycounter products, this is makeup and skincare in one product, combining squalane and jojoba esters for moisturizing, supple skin. I love this blush formulation.
--   Cheeky Clean Highlighter Balm — This is one of my favorite new-ish product from Beautycounter and the name says it all: It truly is a balm that leaves my skin both radiant and nourished, thanks to ingredients like squalane and castor oil.
--   Brilliant Brow Gel — this is a daily non-negotiable product for me. If I get sunscreen, groomed brows, and a swipe of gloss, I&apos;m good to go. This brow gel never flakes as the day goes on and is super easy to apply. I don&apos;t fill in my brows with anything else, so it&apos;s literally brush and go!
--   Think Big All in One Mascara — I wasn’t the biggest fan of Beautycounter&apos;s mascara until this formulation came out! It&apos;s incredible and every person that has tried it has said the same thing. It also supports stronger lashes with lash-care conditioners, which is a win in my book!
--   Beyond Gloss in Magnolia Shimmer — this is my go-to gloss for everyday occasions. It leaves my lips feeling conditioned and shiny, and is a breeze to apply. There are several color options, but this was my favorite for a summery look.
+-   [Cheeky Clean Cream Blush](https://www.beautycounter.com/lindseyconway?goto=%2Fproduct%2Fcheeky-clean-cream-blush%2Fvariant-1989) — another versatile product in my routine that can perform as a blush or lip color, and I&apos;ve even seen some people use it on their eyelids. Like most Beautycounter products, this is makeup and skincare in one product, combining squalane and jojoba esters for moisturizing, supple skin. I love this blush formulation.
+-   [Cheeky Clean Highlighter Balm](https://www.beautycounter.com/lindseyconway?goto=%2Fproduct%2Fcheeky-clean-highlighting-balm%2Fvariant-6991585) — This is one of my favorite new-ish product from Beautycounter and the name says it all: It truly is a balm that leaves my skin both radiant and nourished, thanks to ingredients like squalane and castor oil.
+-   [Brilliant Brow Gel](https://www.beautycounter.com/lindseyconway?goto=%2Fproduct%2Fbrilliant-brow-gel) — this is a daily non-negotiable product for me. If I get sunscreen, groomed brows, and a swipe of gloss, I&apos;m good to go. This brow gel never flakes as the day goes on and is super easy to apply. I don&apos;t fill in my brows with anything else, so it&apos;s literally brush and go!
+-   [Think Big All in One Mascara](https://www.beautycounter.com/lindseyconway?goto=%2Fproduct%2Fthink-big-all-in-one-mascara) — I wasn’t the biggest fan of Beautycounter&apos;s mascara until this formulation came out! It&apos;s incredible and every person that has tried it has said the same thing. It also supports stronger lashes with lash-care conditioners, which is a win in my book!
+-   [Beyond Gloss in Magnolia Shimmer](https://www.beautycounter.com/lindseyconway?goto=%2Fproduct%2Fbeyond-gloss) — this is my go-to gloss for everyday occasions. It leaves my lips feeling conditioned and shiny, and is a breeze to apply. There are several color options, but this was my favorite for a summery look.
 
 Whether you’re a busy, on-the-go mom or professional – or you just love a quick clean makeup routine – I love that Beautycounter helps you simplify and feel confident in knowing you&apos;re using products that prioritize your health.
 
