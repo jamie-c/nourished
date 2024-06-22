@@ -1,6 +1,6 @@
 import ConvertKitForm from "./ConvertKitForm/ConvertKitForm";
 
-export default function NewsletterForm() {
+export default function WaitlistForm() {
 	return (
 		<ConvertKitForm
 			scriptSrc="https://f.convertkit.com/ckjs/ck.5.js"
