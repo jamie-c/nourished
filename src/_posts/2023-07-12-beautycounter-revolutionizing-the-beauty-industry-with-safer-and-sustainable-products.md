@@ -13,10 +13,8 @@ From brain fog and autoimmunity to infertility and certain cancers, environmenta
 Over on my [Instagram account](https://www.instagram.com/nourishedco/), I&apos;ve been sharing behind-the-scenes of my skincare and makeup routines. These are two examples — skincare and makeup — of common environmental exposures we encounter 2-3 times per day. I joined Beautycounter&apos;s mission over four years ago, integrating it into my functional nutrition work to provide more comprehensive support to my clients and help make their lives easier.
 
 In today&apos;s post, I want to share more about Beautycounter and why I&apos;m committed to the movement they&apos;re leading.
-IMG_4089.jpeg
-A5EDA41C-BF69-4E8B-9EEE-94312CC6F515.jpeg
-IMG_4376.jpeg
-IMG_4425.jpeg
+
+![Beautycounter products](/images/blog/2023-07-12/2023-07-12-beautycounter-revolutionizing.png)
 
 ### Beautycounter&apos;s Mission and Commitment
 
