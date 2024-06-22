@@ -52,7 +52,7 @@ async function Page({ params }) {
 			<section className="relative w-full max-w-full flex flex-col items-center">
 				<div
 					id="post-content"
-					className="px-8 md:px-24 lg:px-48 max-w-7xl w-full flex flex-col items-start"
+					className="px-4 md:px-24 lg:px-48 max-w-7xl w-full flex flex-col items-start"
 				>
 					{/* element containing a back arrow and link back to the previous page */}
 					<div id="back-link">
@@ -80,7 +80,7 @@ async function Page({ params }) {
 					{/* element containing the title in a heading */}
 					<h1
 						id="post-title"
-						className="text-3xl md:text-5xl font-transat-bold mt-8 mb-4"
+						className="text-3xl text-balance md:text-5xl font-transat-bold mt-8 mb-4"
 					>
 						{title}
 					</h1>
@@ -106,7 +106,7 @@ async function Page({ params }) {
 					{/* finally, element containing the post content */}
 					<div
 						id="inner-html"
-						className="text-xl text-wrap flex flex-col gap-4 [&_ul]:space-y-3 [&_img]:max-w-full [&_img]:lg:max-w-2xl [&_img]:rounded-md pb-24"
+						className="text-xl text-wrap flex max-w-full flex-col gap-4 [&_ul]:space-y-3 [&_img]:max-w-full [&_img]:lg:max-w-2xl [&_img]:rounded-md pb-24"
 						// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
 						dangerouslySetInnerHTML={{ __html: contentHtml }}
 					/>
