@@ -87,10 +87,12 @@ async function Page({ params }) {
 					{/* element containing the post content starting with formattedDate, vertical line, link to author */}
 					<div
 						id="post-metadata"
-						className="flex flex-row items-center justify-start text-sm font-transat-light mb-8 divide-x-2 divide-darkgreen-500"
+						className="flex flex-row items-center justify-start text-base font-transat-med mb-6 divide-x-2 divide-darkgreen-500"
 					>
-						<div className="text-brightgreen-500 pr-6">{formattedDate}</div>
-						<div className="pl-6">
+						<div className="text-brightgreen-500 pr-5 pt-1">
+							{formattedDate}
+						</div>
+						<div className="pl-5 pt-1">
 							<a
 								className="text-bluegreen-500 hover:text-bluegreen-700"
 								href={postAuthorUrl}
@@ -104,7 +106,7 @@ async function Page({ params }) {
 					{/* finally, element containing the post content */}
 					<div
 						id="inner-html"
-						className="text-xl flex flex-col gap-4 [&_ul]:space-y-3 [&_img]:max-w-full [&_img]:lg:max-w-2xl [&_img]:rounded-md pb-24"
+						className="text-xl text-wrap flex flex-col gap-4 [&_ul]:space-y-3 [&_img]:max-w-full [&_img]:lg:max-w-2xl [&_img]:rounded-md pb-24"
 						// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
 						dangerouslySetInnerHTML={{ __html: contentHtml }}
 					/>
