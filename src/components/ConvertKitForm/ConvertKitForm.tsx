@@ -1,3 +1,5 @@
+"use client";
+
 import Script from "next/script";
 
 export default function ConvertKitForm({
@@ -90,7 +92,7 @@ export default function ConvertKitForm({
 						<div className="formkit-field relative">
 							<input
 								id="email_address"
-								className="formkit-input peer h-10 p-4 w-full rounded-md border-3 border-bluegreen-500 text-bluegreen-500 placeholder-transparent focus:outline-none focus:border-3"
+								className="formkit-input peer h-10 p-4 w-full rounded-md border-3 border-bluegreen-500 text-black placeholder-transparent focus:outline-none focus:border-3"
 								name="email_address"
 								aria-label="EMAIL:"
 								placeholder="EMAIL:"
@@ -119,7 +121,7 @@ export default function ConvertKitForm({
 						<div className="formkit-field relative mt-10">
 							<input
 								id="first_name"
-								className="formkit-input peer h-10 p-4 w-full rounded-md border-3 border-bluegreen-500 text-bluegreen-500 placeholder-transparent focus:outline-none focus:border-3"
+								className="formkit-input peer h-10 p-4 w-full rounded-md border-3 border-bluegreen-500 text-black placeholder-transparent focus:outline-none focus:border-3"
 								aria-label="FIRST NAME:"
 								name="fields[first_name]"
 								required
