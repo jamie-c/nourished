@@ -14,7 +14,7 @@ Over on my [Instagram account](https://www.instagram.com/nourishedco/), I&apos;v
 
 In today&apos;s post, I want to share more about Beautycounter and why I&apos;m committed to the movement they&apos;re leading.
 
-![Beautycounter products](/images/blog/2023-07-12/2023-07-12-beautycounter-revolutionizing.png)
+![Beautycounter products](/images/blog/2023/07/12/2023-07-12-beautycounter-revolutionizing.png)
 
 ### Beautycounter&apos;s Mission and Commitment
 

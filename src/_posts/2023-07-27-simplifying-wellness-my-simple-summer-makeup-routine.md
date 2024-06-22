@@ -6,7 +6,7 @@ author: "Lindsey Conway"
 
 Do you want to live a healthier lifestyle, but feel completely overwhelmed trying to figure out where to start or what advice to follow? In my conversations with clients, the top barrier to taking action usually comes from feelings of overwhelm and confusion on how to find the tools and habits that are actually sustainable for the long-haul. There&apos;s a lot of information to sort through, and more diets, products, and resources than ever! In some ways, it seems like we’ve been over-complicating and over-thinking health and wellness for a long time. Only now, instead of the low-fat diets and jazzercise crazes of my youth (80s babe), we’ve broadened our perspective, focusing on sleep, mindset, stress management, relationships, and more. Phew!
 
-![Woman with hands held at heart center](/images/blog/2023-07-27/20_1108_Kim_EO_Fitness_238.jpg)
+![Woman with hands held at heart center](/images/blog/2023/07/27/20_1108_Kim_EO_Fitness_238.jpg)
 
 As a functional nutritionist and health educator, I&apos;m in full support of taking care of the body in a holistic way. But, the key to leading a sustainable healthy lifestyle that encompasses all of these areas lies in simplicity. Finding the tools and actions you can easily implement and integrate into your life on a consistent basis is foundational to grow on your own health path. Because, when you consistently stick with small actions, they eventually make a big difference in your health and happiness.
 
@@ -30,7 +30,7 @@ So, if you’re interested in simplifying your morning makeup routine, you&apos;
 
 ## Here are a few recommendations for getting started, along with my exact simple, summer makeup must-haves:
 
-[![Image Beautycounter simple makeup](/images/blog/2023-07-26/fif-concealer-launch-consultant-social-feed-v1.jpg)](https://www.beautycounter.com/lindseyconway?goto=%2Fflawless-in-five)
+[![Image Beautycounter simple makeup](/images/blog/2023/07/26/fif-concealer-launch-consultant-social-feed-v1.jpg)](https://www.beautycounter.com/lindseyconway?goto=%2Fflawless-in-five)
 
 ### [Flawless in Five](https://www.beautycounter.com/lindseyconway?goto=%2Fflawless-in-five)
 

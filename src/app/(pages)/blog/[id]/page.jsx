@@ -27,6 +27,7 @@ async function Page({ params }) {
 	const { id, contentHtml, title, date, author } = await getHTML(params.id); // get all meta data
 
 	const formattedDate = dayjs(date).format("MMM DD, YYYY"); // format the date for display on the page
+	const [year, month, day, ...rest] = id.split("-"); // get the year, month, and day from the id
 
 	const authors = {
 		"Jamie Conway": "https://twitter.com/jamie_conway",
@@ -42,13 +43,13 @@ async function Page({ params }) {
 		<>
 			<FullWidthImageBehindGradient
 				variant="primary"
-				imageUrl={`/images/blog/${id}.jpg`}
+				imageUrl={`/images/blog/${year}/${month}/${day}/${id}.jpg`}
 			>
 				<p className="font-transat-bold w-full text-center text-balance uppercase px-4 md:px-20">
 					{title}
 				</p>
 			</FullWidthImageBehindGradient>
-			<section className="relative w-full flex flex-col items-center">
+			<section className="relative w-full max-w-full flex flex-col items-center">
 				<div
 					id="post-content"
 					className="px-8 md:px-24 lg:px-48 max-w-7xl w-full flex flex-col items-start"
