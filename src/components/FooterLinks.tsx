@@ -61,7 +61,7 @@ const FooterLinks = () => (
 					Online Classes
 				</button>
 			</Link>
-			<Link href="/body-wisdom/course-content">
+			<Link href="https://my.practicebetter.io/#/6452605f4c15a8e1b30dd2df/bookings?c=6641804b6c0a3ac512999b29">
 				<button
 					type="button"
 					className="border-b-2 border-b-brightgreen-500 uppercase disabled:opacity-50 disabled:cursor-not-allowed"
