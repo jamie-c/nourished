@@ -22,7 +22,24 @@ export default function ConvertKitForm({
 		dataUid,
 	});
 
-	const [response, setResponse] = useState({
+	interface FormResponse {
+		subscription: {
+			id: number | null;
+			state: string;
+			created_at: string;
+			source: string | null;
+			referrer: string | null;
+			subscribable_id: number;
+			subscribable_type: string;
+			subscriber: {
+				id: number | null;
+			};
+			message?: string;
+			error?: string;
+		};
+	}
+
+	const [response, setResponse] = useState<FormResponse>({
 		subscription: {
 			id: null,
 			state: "",
