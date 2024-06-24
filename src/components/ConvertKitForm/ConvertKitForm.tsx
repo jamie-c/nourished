@@ -57,8 +57,22 @@ export default function ConvertKitForm({
 	const [loading, setLoading] = useState(false);
 
 	async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-		setLoading(true);
 		e.preventDefault();
+		setLoading(true);
+		setResponse({
+			subscription: {
+				id: null,
+				state: "",
+				created_at: "",
+				source: null,
+				referrer: null,
+				subscribable_id: 1,
+				subscribable_type: "",
+				subscriber: {
+					id: null,
+				},
+			},
+		});
 
 		try {
 			const results = await fetch("/api/subscribe", {
@@ -73,6 +87,11 @@ export default function ConvertKitForm({
 			console.log("error", error);
 		}
 		setLoading(false);
+		setFormData({
+			...formData,
+			first_name: "",
+			email: "",
+		});
 	}
 	if (
 		response?.subscription?.subscriber?.id === null ||
