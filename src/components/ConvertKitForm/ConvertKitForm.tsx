@@ -57,7 +57,10 @@ export default function ConvertKitForm({
 		}
 		setLoading(false);
 	}
-	if (response?.subscription?.subscriber?.id === null) {
+	if (
+		response?.subscription?.subscriber?.id === null ||
+		response?.subscription?.id === undefined
+	) {
 		return (
 			<>
 				<form
@@ -76,7 +79,12 @@ export default function ConvertKitForm({
 							className="formkit-alert formkit-alert-error"
 							data-element="errors"
 							data-group="alert"
-						/>
+						>
+							<li data-element="error" />
+							<div className="text-red-500 w-full text-center">
+								{response?.subscription?.message ?? " "}
+							</div>
+						</ul>
 						<div
 							data-element="fields"
 							data-stacked="false"
@@ -160,7 +168,16 @@ export default function ConvertKitForm({
 			</>
 		);
 	}
-	if (response?.subscription?.subscriber?.id !== null) {
-		return <div>{successMessage}</div>;
+	if (
+		response?.subscription?.subscriber?.id !== null &&
+		response?.subscription?.error !== null &&
+		response?.subscription?.error !== undefined
+	) {
+		return (
+			<>
+				<div>{successMessage}</div>
+				<pre>{JSON.stringify(response)}</pre>
+			</>
+		);
 	}
 }
