@@ -132,7 +132,7 @@ const Form: NextPage = () => {
 					}
 				/>
 				{loading ? (
-					<span className="w-full flex flex-row items-center justify-center py-4">
+					<div className="w-full flex flex-row items-center justify-center py-4">
 						<div
 							className="text-bluegreen-500 h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite] cursor-not-allowed"
 							role="status"
@@ -141,7 +141,7 @@ const Form: NextPage = () => {
 								Loading...
 							</span>
 						</div>
-					</span>
+					</div>
 				) : (
 					<input
 						type="submit"
