@@ -1,7 +1,6 @@
 import CTAFeelNourished from "@/components/CTAFeelNourished";
 import FullWidthColorBackground from "@/components/FullWidthColorBackground";
 import FullWidthImageBehindGradient from "@/components/FullWidthImageBehindGradient";
-import StyledButton from "@/components/StyledButton";
 import WhoWeWorkWithV2 from "@/components/WhoWeWorkWithV2";
 
 export default function Home() {
@@ -25,9 +24,6 @@ export default function Home() {
 				</h1>
 			</FullWidthColorBackground>
 			<WhoWeWorkWithV2 />
-			<FullWidthColorBackground variant="white">
-				<StyledButton href="/call">BOOK A FREE STRATEGY SESSION</StyledButton>
-			</FullWidthColorBackground>
 			<FullWidthColorBackground variant="primary">
 				<CTAFeelNourished href="/call">BOOK NOW</CTAFeelNourished>
 			</FullWidthColorBackground>
