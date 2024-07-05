@@ -1,11 +1,10 @@
 "use client";
 
 import FullWidthColorBackground from "@/components/FullWidthColorBackground";
-import { NFCText, NFCTextArea } from "@nourishedco/ui";
-import type { NextPage } from "next";
+import { NFCButton, NFCText, NFCTextArea } from "@nourishedco/ui";
 import { useState } from "react";
 
-const Form: NextPage = () => {
+const Form = () => {
 	const [formData, setFormData] = useState({
 		firstName: "",
 		lastName: "",
@@ -131,24 +130,9 @@ const Form: NextPage = () => {
 						setFormData({ ...formData, message: e.target.value })
 					}
 				/>
-				{loading ? (
-					<div className="w-full flex flex-row items-center justify-center py-4">
-						<div
-							className="text-bluegreen-500 h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite] cursor-not-allowed"
-							role="status"
-						>
-							<span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
-								Loading...
-							</span>
-						</div>
-					</div>
-				) : (
-					<input
-						type="submit"
-						value="SEND"
-						className="mt-10 mb-32 pb-2 pt-3 rounded-md bg-bluegreen-500 hover:bg-opacity-90 text-white font-transat-bold text-center block w-full focus:outline-none focus:ring focus:ring-offset-2 focus:ring-rose-500 focus:ring-opacity-80 cursor-pointer"
-					/>
-				)}
+				<NFCButton type="submit" loading={loading} classes="h-10 relative">
+					SEND
+				</NFCButton>
 			</form>
 		);
 	}

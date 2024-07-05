@@ -9,12 +9,12 @@ export async function POST(request: NextRequest) {
             method: 'POST',
             headers: {"Content-Type": "application/json; charset=utf-8"},
 			body: JSON.stringify({
-				api_key,
+                api_key,
 				email: body.email,
                 first_name: body?.first_name,
 			}),
 		},
 	);
     const subscription = await results.json();
-    return Response.json({subscription});
+    return Response.json(subscription);
 }
