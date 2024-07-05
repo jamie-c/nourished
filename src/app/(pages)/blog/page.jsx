@@ -43,7 +43,8 @@ const Posts = async () => {
 				<div id="posts" className="max-w-7xl w-full flex flex-col items-center">
 					<div className="relative grid grid-flow-row grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
 						{mappedData.map(({ id, title, date }, i, array) => {
-							const lastItemAfter = array.length - 1 === i ? "after:content-[' hello ']" : "";
+							const lastItemAfter =
+								array.length - 1 === i ? "after:content-[' hello ']" : "";
 							const [year, month, day, ...rest] = id.split("-"); // get the year, month, and day from the id
 							return (
 								<Link href={`/blog/${id}`} key={id} className={lastItemAfter}>
@@ -61,7 +62,7 @@ const Posts = async () => {
 			</section>
 			<section
 				id="newsletter"
-				className="relative w-full flex flex-col items-center"
+				className="relative w-full flex flex-col items-center mb-10"
 			>
 				<p className="font-transat-light max-w-xl text-2xl text-center px-4 pb-10">
 					Sign up for our newsletter for knowledge, know-how and advice for

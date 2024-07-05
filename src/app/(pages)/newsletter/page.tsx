@@ -15,7 +15,7 @@ export default function Page() {
 					Newsletter
 				</p>
 			</FullWidthImageBehindGradient>
-			<main className="top-0 w-full flex min-h-screen flex-col items-center justify-start">
+			<main className="top-0 w-full flex mb-24 flex-col items-center justify-start">
 				<FullWidthColorBackground variant="white" textColor="secondary">
 					<h2
 						className={`${transatBold.className} text-4xl text-center uppercase mb-16 text-darkgreen-500`}
