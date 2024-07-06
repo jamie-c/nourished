@@ -174,7 +174,7 @@ function Page() {
 					To get in touch with us, fill out the form.
 				</p>
 			</FullWidthColorBackground>
-			<div className="px-4 mx-auto max-w-3xl">
+			<div className="px-4 mx-auto max-w-3xl mb-24">
 				<Form />
 			</div>
 		</>
