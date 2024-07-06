@@ -106,7 +106,7 @@ async function Page({ params }) {
 					{/* finally, element containing the post content */}
 					<div
 						id="inner-html"
-						className="text-xl text-wrap flex max-w-full flex-col gap-4 [&_ul]:space-y-3 [&_ul]:mb-6 [&_img]:max-w-full [&_img]:lg:max-w-2xl [&_img]:rounded-md [&_img]:my-8 pb-24"
+						className="text-xl text-wrap flex max-w-full flex-col gap-4 [&_h2]:text-3xl [&_h3]:text-2xl [&_a]:text-bluegreen-500 hover:[&_a]:text-bluegreen-400 [&_a]:underline [&_a]:decoration-2 [&_a]:decoration-bluegreen-500 hover:[&_a]:decoration-bluegreen-400 [&_a]:underline-offset-4 [&_ul]:space-y-3 [&_ul]:mb-6 [&_img]:max-w-full [&_img]:lg:max-w-2xl [&_img]:rounded-md [&_img]:my-8 pb-24"
 						// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
 						dangerouslySetInnerHTML={{ __html: contentHtml }}
 					/>

@@ -64,6 +64,6 @@ These are the items that we go through most quickly in our home. There’s usual
 
 Thrive Market is a one-stop shop for quality, nutritious ingredients and products. It provides a convenient and smart way to keep your kitchen stocked and your mind clear and calm so you can cook up your favorite healthy meals with more ease. 
 
-If you want to make life easier in the kitchen, consider joining Thrive Market to save time, money, and mental energy. You can get __40% off your first order__ when you join [HERE](http://thrv.me/rXha2h).
+If you want to make life easier in the kitchen, consider joining Thrive Market to save time, money, and mental energy. You can get __40% off your first order__ when you [join Thrive Market](https://thrv.me/rXha2h).
 
 Are you already a member of Thrive Market? Share your favorite finds in the comments! If you’re not, share what you’ll do with the time you’ll save by simplifying your grocery shopping experience!
