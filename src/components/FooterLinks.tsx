@@ -1,83 +1,55 @@
-import localFont from "next/font/local";
 import Link from "next/link";
 
-const transatBold = localFont({
-	src: "../app/fonts/transat/TransatBold.ttf",
-	display: "swap",
-});
-
 const FooterLinks = () => (
-	<div
-		className={`${transatBold.className} pt-32 flex flex-col sm:flex-row items-top justify-between text-center text-2xl text-brightgreen-500 uppercase gap-8 w-full max-w-7xl`}
-	>
-		<span className="w-full sm:w-full-1/3 flex flex-col items-center justify-start gap-6">
-			<Link href="/about">
-				<button
-					type="button"
-					className="border-b-2 border-b-brightgreen-500 uppercase disabled:opacity-50 disabled:cursor-not-allowed"
-				>
-					About
-				</button>
-			</Link>
-			<Link href="/blog">
-				<button
-					type="button"
-					className="border-b-2 border-b-brightgreen-500 uppercase disabled:opacity-50 disabled:cursor-not-allowed"
-				>
-					Blog
-				</button>
-			</Link>
-			<Link href="/newsletter">
-				<button
-					type="button"
-					className="border-b-2 border-b-brightgreen-500 uppercase disabled:opacity-50 disabled:cursor-not-allowed"
-				>
-					Newsletter
-				</button>
-			</Link>
-			<Link href="/contact">
-				<button
-					type="button"
-					className="border-b-2 border-b-brightgreen-500 uppercase disabled:opacity-50 disabled:cursor-not-allowed"
-				>
-					Contact
-				</button>
-			</Link>
-		</span>
-		<span className="w-full sm:w-full-1/3 flex flex-col items-center justify-start gap-6">
-			<Link href="/work-with-us">
-				<button
-					type="button"
-					className="border-b-2 border-b-brightgreen-500 uppercase disabled:opacity-50 disabled:cursor-not-allowed"
-				>
-					Work With Us
-				</button>
-			</Link>
-			<Link href="/body-wisdom">
-				<button
-					type="button"
-					className="border-b-2 border-b-brightgreen-500 uppercase disabled:opacity-50 disabled:cursor-not-allowed"
-				>
-					Online Classes
-				</button>
-			</Link>
-			<Link href="https://my.practicebetter.io/#/6452605f4c15a8e1b30dd2df/bookings?c=6641804b6c0a3ac512999b29">
-				<button
-					type="button"
-					className="border-b-2 border-b-brightgreen-500 uppercase disabled:opacity-50 disabled:cursor-not-allowed"
-				>
-					Body Wisdom Mini-Course
-				</button>
-			</Link>
-			<Link href="/call">
-				<button
-					type="button"
-					className="border-b-2 border-b-brightgreen-500 uppercase disabled:opacity-50 disabled:cursor-not-allowed"
-				>
-					Book A Discovery Call
-				</button>
-			</Link>
-		</span>
+	<div className="font-transat-bold mt-16 flex flex-col sm:p-8 sm:flex-row flex-wrap items-top justify-center text-center text-xl text-brightgreen-500 uppercase gap-4 w-full max-w-7xl">
+		<Link
+			href="/about"
+			className="border-b-2 border-b-brightgreen-500 hover:border-b-brightgreen-400 hover:text-brightgreen-400 uppercase text-nowrap"
+		>
+			About
+		</Link>
+		<Link
+			href="/blog"
+			className="border-b-2 border-b-brightgreen-500 hover:border-b-brightgreen-400 hover:text-brightgreen-400 uppercase text-nowrap"
+		>
+			Blog
+		</Link>
+		<Link
+			href="/newsletter"
+			className="border-b-2 border-b-brightgreen-500 hover:border-b-brightgreen-400 hover:text-brightgreen-400 uppercase text-nowrap"
+		>
+			Newsletter
+		</Link>
+		<Link
+			href="/contact"
+			className="border-b-2 border-b-brightgreen-500 hover:border-b-brightgreen-400 hover:text-brightgreen-400 uppercase text-nowrap"
+		>
+			Contact
+		</Link>
+		<Link
+			href="/work-with-us"
+			className="border-b-2 border-b-brightgreen-500 hover:border-b-brightgreen-400 hover:text-brightgreen-400 uppercase text-nowrap"
+		>
+			Work With Us
+		</Link>
+		<Link
+			href="/body-wisdom"
+			className="border-b-2 border-b-brightgreen-500 hover:border-b-brightgreen-400 hover:text-brightgreen-400 uppercase text-nowrap"
+		>
+			Online Classes
+		</Link>
+		<Link
+			href="https://my.practicebetter.io/#/6452605f4c15a8e1b30dd2df/bookings?c=6641804b6c0a3ac512999b29"
+			className="border-b-2 border-b-brightgreen-500 hover:border-b-brightgreen-400 hover:text-brightgreen-400 uppercase text-nowrap"
+		>
+			Body Wisdom Mini-Course
+		</Link>
+		<Link
+			href="/call"
+			className="border-b-2 border-b-brightgreen-500 hover:border-b-brightgreen-400 hover:text-brightgreen-400 uppercase text-nowrap"
+		>
+			Book A Discovery Call
+		</Link>
 	</div>
 );
 

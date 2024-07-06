@@ -1,5 +1,6 @@
 import NFCLogoCopyright from "@/components/Copyright";
 import FooterLinks from "@/components/FooterLinks";
+import TermsOfServiceLinks from "@/components/TermsOfServiceLinks";
 
 import type { Metadata } from "next";
 
@@ -21,9 +22,10 @@ export default function RootLayout({
 			<body className="font-transat">
 				<ProviderWrapper>
 					{children}
-					<footer className="pt-10 pb-32 w-full flex flex-col items-center justify-start">
+					<footer className="pt-10 w-full flex flex-col items-center justify-start">
 						<NFCLogoCopyright />
 						<FooterLinks />
+						<TermsOfServiceLinks />
 					</footer>
 				</ProviderWrapper>
 			</body>

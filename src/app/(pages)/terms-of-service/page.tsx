@@ -1,6 +1,6 @@
 export default function Page() {
 	return (
-		<div className="max-w-7xl mx-auto py-24 text-lg">
+		<div className="max-w-7xl mx-auto py-12 sm:py-24 text-lg px-2">
 			<h1 className="text-4xl my-8">Terms of Service</h1>
 			<div>
 				BY VISITING NOURISHEDFOOD.CO, YOU ARE CONSENTING TO OUR TERMS OF
