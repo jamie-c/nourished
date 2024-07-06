@@ -2,14 +2,17 @@ import NFCLogoCopyright from "@/components/Copyright";
 import FooterLinks from "@/components/FooterLinks";
 import TermsOfServiceLinks from "@/components/TermsOfServiceLinks";
 
-import type { Metadata } from "next";
-
+import type { Metadata, Viewport } from "next";
 import ProviderWrapper from "./ProviderWrapper";
 import "./globals.css";
 
 export const metadata: Metadata = {
 	title: "Nourished Co",
 	description: "Functional Nutrition Consulting",
+};
+
+export const viewport: Viewport = {
+	themeColor: "#009681",
 };
 
 export default function RootLayout({
