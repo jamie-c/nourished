@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 const FooterLinks = () => (
-	<div className="font-transat-bold mt-16 flex flex-col sm:p-8 sm:flex-row flex-wrap items-top justify-center text-center text-xl text-brightgreen-500 uppercase gap-4 w-full max-w-7xl">
+	<div className="font-transat-bold mt-6 flex flex-col sm:p-8 sm:flex-row flex-wrap items-top justify-center text-center text-xl text-brightgreen-500 uppercase gap-4 w-full max-w-7xl">
 		<Link
 			href="/about"
 			className="border-b-2 border-b-brightgreen-500 hover:border-b-brightgreen-400 hover:text-brightgreen-400 uppercase text-nowrap"

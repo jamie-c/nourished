@@ -2,6 +2,7 @@ import NFCLogoCopyright from "@/components/Copyright";
 import FooterLinks from "@/components/FooterLinks";
 import TermsOfServiceLinks from "@/components/TermsOfServiceLinks";
 
+import SocialLinks from "@/components/SocialIcons";
 import type { Metadata, Viewport } from "next";
 import ProviderWrapper from "./ProviderWrapper";
 import "./globals.css";
@@ -27,6 +28,7 @@ export default function RootLayout({
 					{children}
 					<footer className="pt-10 w-full flex flex-col items-center justify-start">
 						<NFCLogoCopyright />
+						<SocialLinks />
 						<FooterLinks />
 						<TermsOfServiceLinks />
 					</footer>
