@@ -26,11 +26,11 @@ const footerLinks = [
 		href: "/work-with-us",
 		id: "footer-link-work-with-us",
 	},
-	{
-		text: "Online Classes",
-		href: "/body-wisdom",
-		id: "footer-link-body-wisdom",
-	},
+	// {
+	// 	text: "Online Classes",
+	// 	href: "/body-wisdom",
+	// 	id: "footer-link-body-wisdom",
+	// },
 	{
 		text: "Body Wisdom Mini-Course",
 		href: "https://my.practicebetter.io/#/6452605f4c15a8e1b30dd2df/bookings?c=6641804b6c0a3ac512999b29",

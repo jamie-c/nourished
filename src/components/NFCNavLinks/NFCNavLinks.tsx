@@ -1,7 +1,6 @@
 import NavLink from "@/components/NavLink/NavLink";
 
 import type { NavLinks } from "@/components/NFCNavLinks/NFCNavLinksTypes";
-import UserAccountIcon from "../UserAccountIcon";
 
 const mainNavItems: NavLinks[] = [
 	{
@@ -57,8 +56,8 @@ export const NFCNavLinksHorizontal = () => {
 				}
 				return;
 			})}
-			<span className="bg-white h-1.5 rounded-full w-1.5" />
-			<UserAccountIcon />
+			{/* <span className="bg-white h-1.5 rounded-full w-1.5" />
+			<UserAccountIcon /> */}
 		</nav>
 	);
 };

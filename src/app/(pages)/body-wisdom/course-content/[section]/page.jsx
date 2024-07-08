@@ -29,7 +29,7 @@ async function Page({ params }) {
 
 	if (!sectionData) {
 		// if the section is not valid, automatically redirect to the course content page
-		console.log("redirecting to course content");
+		// console.log("redirecting to course content");
 		return <Link href="/body-wisdom/course-content">Redirecting...</Link>;
 	}
 

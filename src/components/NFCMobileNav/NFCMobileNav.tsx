@@ -11,7 +11,7 @@ const NFCMobileNav = () => {
 	const { data: session, status } = useSession();
 
 	useEffect(() => {
-		console.log(session, status);
+		// console.log(session, status);
 	}, [session, status]);
 
 	const headerClassNames = {
@@ -45,7 +45,7 @@ const NFCMobileNav = () => {
 			return;
 		}
 		if ("key" in event && event.key !== "Enter") {
-			console.log("event.key", event.key);
+			// console.log("event.key", event.key);
 			return;
 		}
 		const { base, mobileNavLinksHidden, mobileNavLinksVisible } =
