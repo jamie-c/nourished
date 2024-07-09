@@ -90,38 +90,12 @@ const Form = () => {
 						setFormData({ ...formData, lastName: e.target.value })
 					}
 				/>
-				<div className="relative">
-					<input
-						id="email"
-						type="email"
-						name="email"
-						className="peer h-10 p-4 w-full rounded-md border-3 border-bluegreen-500 text-bluegreen-500 placeholder-transparent focus:outline-none focus:border-3"
-						placeholder="Email:"
-						required
-						value={formData.email}
-						onChange={(e) =>
-							setFormData({ ...formData, email: e.target.value })
-						}
-					/>
-					<label
-						htmlFor="email"
-						className="absolute capitalize left-1 -top-5 
-                        text-lightgreen-500 text-sm 
-                        transition-all 
-                        peer-placeholder-shown:left-4
-                        peer-placeholder-shown:text-base 
-                        peer-placeholder-shown:text-bluegreen-500 
-                        peer-placeholder-shown:top-2.5 
-                        peer-placeholder-shown:uppercase
-                        peer-focus:-top-5 
-                        peer-focus:left-1 
-                        peer-focus:text-lightgreen-500 
-                        peer-focus:text-sm 
-                        peer-focus:capitalize"
-					>
-						Email:
-					</label>
-				</div>
+				<NFCText
+					label="Email"
+					placeholder="Email:"
+					value={formData.email}
+					onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+				/>
 				<NFCTextArea
 					label="Message"
 					placeholder="Your Questions or Comments:"
