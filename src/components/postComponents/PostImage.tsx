@@ -32,10 +32,13 @@ const PostImage: React.FC<OuterProps> = ({
 	children,
 }) => {
 	const colors: gradientColorsType = {
-		primary: "absolute inset-0 bg-gradient-to-b opacity-75 from-bluegreen-500 from-50% to-transparent dark:from-darkgreen-500 dark:from-50% dark:to-transparent",
-		secondary: "absolute inset-0 bg-gradient-to-b opacity-75 from-brightgreen-500 from-50% to-transparent dark:from-brightgreen-500 dark:from-50% dark:to-transparent",
-		tertiary: "absolute inset-0 bg-gradient-to-b opacity-75 from-lightgreen-500 from-50% to-transparent dark:from-lightgreen-500 dark:from-50% dark:to-transparent",
-		dark: "absolute inset-0 bg-gradient-to-b opacity-75 from-darkgreen-500 from-50% to-transparent dark:from-darkgreen-500 dark:from-50% dark:to-transparent",
+		primary:
+			"absolute inset-0 bg-gradient-to-b from-bluegreen-500/75 from-50% to-transparent dark:from-darkgreen-500/75",
+		secondary:
+			"absolute inset-0 bg-gradient-to-b from-brightgreen-500/75 from-50% to-transparent dark:from-brightgreen-500/75",
+		tertiary:
+			"absolute inset-0 bg-gradient-to-b from-lightgreen-500/75 from-50% to-transparent dark:from-lightgreen-500/75",
+		dark: "absolute inset-0 bg-gradient-to-b from-darkgreen-500/75 from-50% to-transparent dark:from-darkgreen-500/75",
 	};
 	const aligns = ["left", "center", "right"];
 	const color = colors[variant] ? colors[variant] : colors.primary;
@@ -59,7 +62,7 @@ const PostImage: React.FC<OuterProps> = ({
 	}
 
 	return (
-		<div className="relative h-72 w-96 max-w-xs sm:max-w-md max-h-md">
+		<div className="relative h-72 w-96 max-w-full max-h-md">
 			<Image
 				className={imageClassName}
 				src={imageUrl}

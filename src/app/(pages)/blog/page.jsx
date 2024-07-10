@@ -41,13 +41,15 @@ const Posts = async () => {
 			</section>
 			<section className="relative w-full px-4 flex flex-col items-center">
 				<div id="posts" className="max-w-7xl w-full flex flex-col items-center">
-					<div className="relative grid grid-flow-row grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+					<div className="relative grid grid-flow-row grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
 						{mappedData.map(({ id, title, date }, i, array) => {
-							const lastItemAfter =
-								array.length - 1 === i ? "after:content-[' hello ']" : "";
 							const [year, month, day, ...rest] = id.split("-"); // get the year, month, and day from the id
 							return (
-								<Link href={`/blog/${id}`} key={id} className={lastItemAfter}>
+								<Link
+									href={`/blog/${id}`}
+									key={id}
+									className="group hover:scale-105 transition-all duration-200 ease-in"
+								>
 									<PostImage
 										variant="primary"
 										imageUrl={`/images/blog/${year}/${month}/${day}/${id}.jpg`}
