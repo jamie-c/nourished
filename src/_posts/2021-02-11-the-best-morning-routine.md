@@ -1,5 +1,5 @@
 ---
-title: " The Best Morning Routine"
+title: "The Best Morning Routine"
 date: 2021-02-11
 author: "Lindsey Conway"
 ---
