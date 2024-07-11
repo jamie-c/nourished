@@ -7,7 +7,7 @@ interface InnerProps {
 const InnerProps: React.FC<InnerProps> = ({ children }) => {
 	return (
 		<div className="absolute w-full h-full flex flex-row items-center content-center text-white text-2xl p-10">
-			<p className="font-transat-bold text-balance text-center uppercase">
+			<p className="font-chalet-ny text-balance text-center uppercase line-clamp-4">
 				{children}
 			</p>
 		</div>
@@ -32,16 +32,16 @@ const PostImage: React.FC<OuterProps> = ({
 	children,
 }) => {
 	const colors: gradientColorsType = {
-		primary:
-			"absolute inset-0 bg-gradient-to-b from-bluegreen-500/75 from-50% to-transparent dark:from-darkgreen-500/75",
-		secondary:
-			"absolute inset-0 bg-gradient-to-b from-brightgreen-500/75 from-50% to-transparent dark:from-brightgreen-500/75",
-		tertiary:
-			"absolute inset-0 bg-gradient-to-b from-lightgreen-500/75 from-50% to-transparent dark:from-lightgreen-500/75",
-		dark: "absolute inset-0 bg-gradient-to-b from-darkgreen-500/75 from-50% to-transparent dark:from-darkgreen-500/75",
+		primary: "from-bluegreen-500/75 dark:from-darkgreen-500/75",
+		secondary: "from-brightgreen-500/75 dark:from-brightgreen-500/75",
+		tertiary: "from-lightgreen-500/75 dark:from-lightgreen-500/75",
+		dark: "from-darkgreen-500/75 dark:from-darkgreen-500/75",
 	};
 	const aligns = ["left", "center", "right"];
 	const color = colors[variant] ? colors[variant] : colors.primary;
+	const baseClassName =
+		"absolute inset-0 bg-gradient-to-b from-100% to-transparent mix-blend-multiply backdrop-blur-lg";
+	const bgColorClassName = `${baseClassName} ${color}`;
 
 	interface imageClassNamesType {
 		[key: string]: string;
@@ -70,7 +70,7 @@ const PostImage: React.FC<OuterProps> = ({
 				alt="blog post image"
 				priority
 			/>
-			<div className={`${color}`} />
+			<div className={bgColorClassName} />
 			<InnerProps>{children}</InnerProps>
 		</div>
 	);

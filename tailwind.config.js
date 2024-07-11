@@ -11,6 +11,10 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
+                "chalet-ny": [
+                    '"Chalet NY 1970"',
+                    ...defaultTheme.fontFamily.sans,
+                ],
                 "transat-light": [
                     '"Transat Light"',
                     ...defaultTheme.fontFamily.sans,

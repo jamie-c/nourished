@@ -48,3 +48,8 @@
     font-family: "Transat Black Oblique";
     src: url("./fonts/transat/TransatBlackOblique.ttf");
 }
+
+@font-face {
+    font-family: "Chalet NY 1970";
+    src: url("./fonts/chaletnewyorknineteenseventy.ttf");
+}
