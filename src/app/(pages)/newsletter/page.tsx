@@ -1,4 +1,3 @@
-import { transatBold } from "@/app/fonts/fonts";
 import FullWidthColorBackground from "@/components/FullWidthColorBackground";
 import FullWidthImageBehindGradient from "@/components/FullWidthImageBehindGradient";
 import NewsletterForm from "@/components/NewsletterForm";
@@ -11,15 +10,13 @@ export default function Page() {
 				align="center"
 				imageUrl="/images/headers/nourished-newsletter.jpg"
 			>
-				<p className={`${transatBold.className} w-full text-center uppercase`}>
+				<p className="font-transat-bold w-full drop-shadow-lg text-center uppercase">
 					Newsletter
 				</p>
 			</FullWidthImageBehindGradient>
 			<main className="top-0 w-full flex mb-24 flex-col items-center justify-start">
 				<FullWidthColorBackground variant="white" textColor="secondary">
-					<h2
-						className={`${transatBold.className} text-4xl text-center uppercase mb-16 text-darkgreen-500`}
-					>
+					<h2 className="font-transat-bold text-4xl text-center uppercase mb-16 text-darkgreen-500">
 						Subscribe to Our Newsletter
 					</h2>
 					<p className="max-w-2xl">

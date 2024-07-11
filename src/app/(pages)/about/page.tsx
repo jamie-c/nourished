@@ -8,7 +8,7 @@ export default function Home() {
 	return (
 		<main className="top-0 w-full flex min-h-screen flex-col items-center justify-start">
 			<FullWidthImageBehindGradient variant="primary" align="right">
-				<p className="font-transat-bold w-full text-center uppercase">
+				<p className="font-transat-bold w-full drop-shadow-lg text-center uppercase">
 					Functional Food Coaching
 				</p>
 			</FullWidthImageBehindGradient>

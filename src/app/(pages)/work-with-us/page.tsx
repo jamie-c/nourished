@@ -11,7 +11,7 @@ export default function Home() {
 				imageUrl="/images/headers/work-with-us-header-nourished-co.jpg"
 				align="center"
 			>
-				<p className="font-transat-bold w-full text-center uppercase">
+				<p className="font-transat-bold w-full text-center drop-shadow-lg uppercase">
 					Work With Us
 				</p>
 			</FullWidthImageBehindGradient>

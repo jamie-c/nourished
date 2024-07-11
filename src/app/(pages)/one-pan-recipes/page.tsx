@@ -17,7 +17,7 @@ export default function OnePanRecipes() {
 				imageUrl="/images/headers/one-pan-dinners-header.jpg"
 				align="center"
 			>
-				<p className="font-transat-bold w-full text-center uppercase">
+				<p className="font-transat-bold w-full text-center drop-shadow-lg uppercase">
 					One Pan Recipes
 				</p>
 			</FullWidthImageBehindGradient>

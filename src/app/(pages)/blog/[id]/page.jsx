@@ -45,7 +45,7 @@ async function Page({ params }) {
 				variant="primary"
 				imageUrl={`/images/blog/${year}/${month}/${day}/${id}.jpg`}
 			>
-				<p className="font-transat-bold w-full text-center text-balance uppercase px-4 md:px-20">
+				<p className="font-transat-bold w-full text-center text-balance drop-shadow-lg uppercase px-4 md:px-20">
 					{title}
 				</p>
 			</FullWidthImageBehindGradient>

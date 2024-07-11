@@ -36,7 +36,9 @@ const Posts = async () => {
 					variant="dark"
 					imageUrl="/images/nourished-typing-on-computer.jpg"
 				>
-					<p className="font-transat-bold w-full text-center uppercase">Blog</p>
+					<p className="font-transat-bold w-full text-center uppercase drop-shadow-lg">
+						Blog
+					</p>
 				</FullWidthImageBehindGradient>
 			</section>
 			<section className="relative w-full px-4 flex flex-col items-center">
@@ -48,7 +50,7 @@ const Posts = async () => {
 								<Link
 									href={`/blog/${id}`}
 									key={id}
-									className="group hover:scale-105 hover:shadow-lg hover:shadow-darkgreen-200 transition-all duration-200 ease-in"
+									className="group rounded overflow-hidden hover:scale-105 hover:shadow-lg hover:shadow-darkgreen-200 transition-all duration-200 ease-in"
 								>
 									<PostImage
 										variant="primary"
