@@ -22,14 +22,18 @@ export default function Home() {
 				</div>
 				<FxFoodCoaching />
 				<FullWidthColorBackground variant="dark">
-					With our targeted guidance and perceptive insights, we help you focus
-					on the actions and habits that will{" "}
-					<em>create the health results you&apos;re seeking</em>.
+					<span className="text-2xl sm:text-3xl">
+						With our targeted guidance and perceptive insights, we help you
+						focus on the actions and habits that will{" "}
+						<em>create the health results you&apos;re seeking</em>.
+					</span>
 				</FullWidthColorBackground>
 				<CircleIconsSubMenu />
 				<FullWidthColorBackground textColor="white" variant="secondary">
-					We&apos;re going to walk alongside you until the changes you&apos;re
-					seeking finally take root.
+					<span className="text-2xl sm:text-3xl">
+						We&apos;re going to walk alongside you until the changes you&apos;re
+						seeking finally take root.
+					</span>
 				</FullWidthColorBackground>
 				<div className="w-full h-32" />
 				<FullWidthImageBehindGradient
