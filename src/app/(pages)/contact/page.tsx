@@ -76,7 +76,7 @@ const Form = () => {
 			>
 				<NFCText
 					label="First Name"
-					placeholder="First Name:"
+					placeholder="First Name"
 					value={formData.firstName}
 					onChange={(e) =>
 						setFormData({ ...formData, firstName: e.target.value })
@@ -84,7 +84,7 @@ const Form = () => {
 				/>
 				<NFCText
 					label="Last Name"
-					placeholder="Last Name:"
+					placeholder="Last Name"
 					value={formData.lastName}
 					onChange={(e) =>
 						setFormData({ ...formData, lastName: e.target.value })
@@ -92,7 +92,7 @@ const Form = () => {
 				/>
 				<NFCText
 					label="Email"
-					placeholder="Email:"
+					placeholder="Email"
 					value={formData.email}
 					onChange={(e) => setFormData({ ...formData, email: e.target.value })}
 				/>

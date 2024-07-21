@@ -137,21 +137,28 @@ export default function ConvertKitForm({
 									/>
 									<label
 										htmlFor="email_address"
-										className="absolute capitalize left-1 -top-5 
-                    			    			text-lightgreen-500 text-sm 
-                    			    			transition-all 
-                    			    			peer-placeholder-shown:left-4
-                    			    			peer-placeholder-shown:text-base 
-                    			    			peer-placeholder-shown:text-bluegreen-500 
-                    			    			peer-placeholder-shown:top-2.5 
-                    			    			peer-placeholder-shown:uppercase
-                    			    			peer-focus:-top-5 
-                    			    			peer-focus:left-1 
-                    			    			peer-focus:text-lightgreen-500 
-                    			    			peer-focus:text-sm 
-                    			    			peer-focus:capitalize"
+										className="absolute capitalize px-1 -top-6
+						                    font-transat-black
+						                    text-bluegreen-400 text-base 
+						                    transition-all 
+						                    peer-placeholder-shown:px-4
+						                    peer-placeholder-shown:text-base 
+						                    peer-placeholder-shown:text-bluegreen-500 
+						                    peer-placeholder-shown:top-2.5 
+						                    peer-placeholder-shown:uppercase
+						                    peer-placeholder-shown:line-clamp-none
+						                    peer-placeholder-shown:after:content-[':']
+						                    peer-focus:-top-6 
+						                    peer-focus:px-1
+						                    peer-focus:text-bluegreen-400 
+						                    peer-focus:text-base 
+						                    peer-focus:capitalize
+						                    peer-focus:line-clamp-1
+						                    peer-focus:after:content-['']
+						                    line-clamp-1
+						                    peer-disabled:cursor-not-allowed"
 									>
-										Email:
+										Email
 									</label>
 								</div>
 								<div className="formkit-field relative">
@@ -169,21 +176,28 @@ export default function ConvertKitForm({
 									/>
 									<label
 										htmlFor="first_name"
-										className="absolute capitalize left-1 -top-5 
-                    			    			text-lightgreen-500 text-sm 
-                    			    			transition-all 
-                    			    			peer-placeholder-shown:left-4
-                    			    			peer-placeholder-shown:text-base 
-                    			    			peer-placeholder-shown:text-bluegreen-500 
-                    			    			peer-placeholder-shown:top-2.5 
-                    			    			peer-placeholder-shown:uppercase
-                    			    			peer-focus:-top-5 
-                    			    			peer-focus:left-1 
-                    			    			peer-focus:text-lightgreen-500 
-                    			    			peer-focus:text-sm 
-                    			    			peer-focus:capitalize"
+										className="absolute capitalize px-1 -top-6
+						                    font-transat-black
+						                    text-bluegreen-400 text-base 
+						                    transition-all 
+						                    peer-placeholder-shown:px-4
+						                    peer-placeholder-shown:text-base 
+						                    peer-placeholder-shown:text-bluegreen-500 
+						                    peer-placeholder-shown:top-2.5 
+						                    peer-placeholder-shown:uppercase
+						                    peer-placeholder-shown:line-clamp-none
+						                    peer-placeholder-shown:after:content-[':']
+						                    peer-focus:-top-6 
+						                    peer-focus:px-1
+						                    peer-focus:text-bluegreen-400 
+						                    peer-focus:text-base 
+						                    peer-focus:capitalize
+						                    peer-focus:line-clamp-1
+						                    peer-focus:after:content-['']
+						                    line-clamp-1
+						                    peer-disabled:cursor-not-allowed"
 									>
-										First Name:
+										First Name
 									</label>
 								</div>
 							</>
