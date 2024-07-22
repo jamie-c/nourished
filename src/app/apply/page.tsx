@@ -2,7 +2,7 @@
 
 import FullWidthColorBackground from "@/components/FullWidthColorBackground";
 import FullWidthImageBehindGradient from "@/components/FullWidthImageBehindGradient";
-import { NFCRadio, NFCText, NFCTextArea } from "@nourishedco/ui";
+import { NFCButton, NFCRadio, NFCText, NFCTextArea } from "@nourishedco/ui";
 import { useState } from "react";
 
 const commitmentOptions = [
@@ -27,7 +27,6 @@ export default function Home() {
 		lastName: "",
 		email: "",
 		phone: "",
-		message: "",
 		intro: "",
 		uncover_the_problem: "",
 		commitment: "",
@@ -62,69 +61,73 @@ export default function Home() {
 	const handleSubmit = async (e: { preventDefault: () => void }) => {
 		setLoading(true);
 		e.preventDefault();
+		setTimeout(() => {
+			setLoading(false);
+		}, 5000);
+		return;
 
-		const JSONdata = JSON.stringify(formData);
-		const endpoint = "/api/contact";
-		const options = {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSONdata,
-		};
-		try {
-			const res = await fetch(endpoint, options);
-			const json = await res.json();
+		// const JSONdata = JSON.stringify(formData);
+		// const endpoint = "/api/contact";
+		// const options = {
+		// 	method: "POST",
+		// 	headers: {
+		// 		"Content-Type": "application/json",
+		// 	},
+		// 	body: JSONdata,
+		// };
+		// try {
+		// 	const res = await fetch(endpoint, options);
+		// 	const json = await res.json();
 
-			if (res.ok) {
-				setResponse({
-					...json.data,
-					type: "success",
-					message: "We've received your message and will be in touch shortly.",
-				});
-			} else {
-				setResponse({
-					type: "error",
-					message: json.formData.message,
-					firstName: "",
-					lastName: "",
-					email: "",
-					phone: "",
-					intro: "",
-					uncover_the_problem: "",
-					commitment: "",
-					more_about_problems: "",
-					solutions_tried: "",
-					future_state: "",
-					beliefs: "",
-					why_you: "",
-					thank_you: "",
-				});
-			}
-		} catch (error) {
-			console.error("Error:", error);
-			setResponse({
-				type: "error",
-				message: "An error occurred while submitting the form.",
-				firstName: "",
-				lastName: "",
-				email: "",
-				phone: "",
-				intro: "",
-				uncover_the_problem: "",
-				commitment: "",
-				more_about_problems: "",
-				solutions_tried: "",
-				future_state: "",
-				beliefs: "",
-				why_you: "",
-				thank_you: "",
-			});
-		}
-		setLoading(false);
+		// 	if (res.ok) {
+		// 		setResponse({
+		// 			...json.data,
+		// 			type: "success",
+		// 			message: "We've received your message and will be in touch shortly.",
+		// 		});
+		// 	} else {
+		// 		setResponse({
+		// 			type: "error",
+		// 			message: json.formData.message,
+		// 			firstName: "",
+		// 			lastName: "",
+		// 			email: "",
+		// 			phone: "",
+		// 			intro: "",
+		// 			uncover_the_problem: "",
+		// 			commitment: "",
+		// 			more_about_problems: "",
+		// 			solutions_tried: "",
+		// 			future_state: "",
+		// 			beliefs: "",
+		// 			why_you: "",
+		// 			thank_you: "",
+		// 		});
+		// 	}
+		// } catch (error) {
+		// 	console.error("Error:", error);
+		// 	setResponse({
+		// 		type: "error",
+		// 		message: "An error occurred while submitting the form.",
+		// 		firstName: "",
+		// 		lastName: "",
+		// 		email: "",
+		// 		phone: "",
+		// 		intro: "",
+		// 		uncover_the_problem: "",
+		// 		commitment: "",
+		// 		more_about_problems: "",
+		// 		solutions_tried: "",
+		// 		future_state: "",
+		// 		beliefs: "",
+		// 		why_you: "",
+		// 		thank_you: "",
+		// 	});
+		// }
+		// setLoading(false);
 	};
 	return (
-		<main className="top-0 w-full flex min-h-screen flex-col items-center justify-start">
+		<main className="top-0 w-full flex min-h-screen flex-col items-center justify-start mb-24">
 			<FullWidthImageBehindGradient
 				variant="primary"
 				imageUrl="/images/lindsey-headshots-032.jpg"
@@ -142,7 +145,7 @@ export default function Home() {
 					</span>
 					<span className="text-bluegreen-500 uppercase"> Application</span>
 				</h1>
-				<div className="text-darkgreen-500 space-y-4 py-8 text-2xl">
+				<div className="text-darkgreen-500 space-y-4 pt-8 text-2xl">
 					<p>Your 1:1 Coaching Program to Restore Your Gut Health and</p>
 					<p className="underline underline-offset-4 decoration-current font-transat-bold">
 						transform your health from the inside out…
@@ -193,14 +196,19 @@ export default function Home() {
 					value={formData.intro}
 					onChange={(e) => setFormData({ ...formData, intro: e.target.value })}
 				/>
-				<NFCTextArea
-					label="Uncover The Problem"
-					placeholder="WHAT PROBLEMS ARE YOU CURRENTLY FACING WITH YOUR GUT OR HEALTH? Ex: bloating, constipation, joint pain, fatigue"
-					value={formData.uncover_the_problem}
-					onChange={(e) =>
-						setFormData({ ...formData, uncover_the_problem: e.target.value })
-					}
-				/>
+				<div className="flex flex-col gap-6">
+					<span className="p-1 text-bluegreen-500 text-lg font-transat-black">
+						What problems are you currently facing with your gut or health?
+					</span>
+					<NFCTextArea
+						label="Uncover The Problem"
+						placeholder="Ex: bloating, constipation, joint pain, fatigue"
+						value={formData.uncover_the_problem}
+						onChange={(e) =>
+							setFormData({ ...formData, uncover_the_problem: e.target.value })
+						}
+					/>
+				</div>
 				<NFCTextArea
 					label="More About Problems"
 					placeholder="HOW IS THIS IMPACTING YOUR LIFE ON A DAY-TO-DAY BASIS?"
@@ -225,14 +233,19 @@ export default function Home() {
 						setFormData({ ...formData, future_state: e.target.value })
 					}
 				/>
-				<NFCTextArea
-					label="Intro"
-					placeholder="DO YOU BELIEVE YOU CAN AND WILL ACHIEVE YOUR DESIRED HEALTH GOALS? Yes? No? Unsure? Feel free to share your full thoughts here."
-					value={formData.beliefs}
-					onChange={(e) =>
-						setFormData({ ...formData, beliefs: e.target.value })
-					}
-				/>
+				<div className="flex flex-col gap-6">
+					<span className="p-1 text-bluegreen-500 text-lg font-transat-black">
+						Do you believe you can and will achieve your desired health goals?
+					</span>
+					<NFCTextArea
+						label="Intro"
+						placeholder="Yes? No? Unsure? Feel free to share your full thoughts here."
+						value={formData.beliefs}
+						onChange={(e) =>
+							setFormData({ ...formData, beliefs: e.target.value })
+						}
+					/>
+				</div>
 				<NFCRadio
 					name="commitment"
 					label="How willing are you to take action and invest in the growth of your health right now?"
@@ -243,22 +256,36 @@ export default function Home() {
 						setFormData({ ...formData, commitment: e.target.value })
 					}
 				/>
-				<NFCTextArea
-					label="Intro"
-					placeholder="THIS PROGRAM IS DESIGNED FOR ACTION-ORIENTED WOMEN WHO ARE READY TO LEARN, GROW, BE COACHED, AND INVEST IN THEMSELVES. Please share a few words about why you are a good fit for a coaching spot. Anything I need to know to move forward with you?"
-					value={formData.why_you}
-					onChange={(e) =>
-						setFormData({ ...formData, why_you: e.target.value })
-					}
-				/>
-				<NFCTextArea
-					label="Thank You"
-					placeholder="THANK YOU FOR SHARING MORE ABOUT YOUR HEALTH GOALS. If you have anything questions you'd like answered, feel free to leave them here."
-					value={formData.thank_you}
-					onChange={(e) =>
-						setFormData({ ...formData, thank_you: e.target.value })
-					}
-				/>
+				<div className="flex flex-col gap-6">
+					<span className="p-1 text-bluegreen-500 text-lg font-transat-black">
+						This program is designed for action-oriented women who are ready to
+						learn, grow, be coached, and invest in themselves.
+					</span>
+					<NFCTextArea
+						label="Intro"
+						placeholder="Please share a few words about why you are a good fit for a coaching spot. Anything I need to know to move forward with you?"
+						value={formData.why_you}
+						onChange={(e) =>
+							setFormData({ ...formData, why_you: e.target.value })
+						}
+					/>
+				</div>
+				<div className="flex flex-col gap-6">
+					<span className="p-1 text-bluegreen-500 text-lg font-transat-black">
+						Thank you for sharing more about your health goals.
+					</span>
+					<NFCTextArea
+						label="Thank You"
+						placeholder="If you have anything questions you'd like answered, feel free to leave them here."
+						value={formData.thank_you}
+						onChange={(e) =>
+							setFormData({ ...formData, thank_you: e.target.value })
+						}
+					/>
+				</div>
+				<NFCButton type="submit" loading={loading} classes="h-10 relative">
+					SUBMIT
+				</NFCButton>
 			</form>
 		</main>
 	);
