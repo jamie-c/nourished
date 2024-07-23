@@ -1,44 +1,114 @@
-// route to handle contact form submission
+// route to handle /apply form submission
 
-import dbConnect from "@/db/db";
-import Contact from "@/db/models/Contact";
-import { sendMail } from "@/lib/sendMail";
-import { NextResponse, type NextRequest } from "next/server";
+import dbConnect from "@/db/db"
+import Apply from "@/db/models/Apply"
+import { sendMail } from "@/lib/sendMail"
+import { type NextRequest, NextResponse } from "next/server"
 
 export async function POST(request: NextRequest) {
-	interface FormData {
-		firstName: string;
-		lastName: string;
-		email: string;
-		message: string;
-	}
 
-	await dbConnect();
+    interface FormData {
+        first_name: string
+        last_name: string
+        email: string
+        phone: string
+        intro: string
+        uncover_the_problem: string
+        more_about_problems: string
+        solutions_tried: string
+        future_state: string
+        beliefs: string
+        commitment: string
+        why_you: string
+        thank_you: string
+    }
 
-	const formData: FormData = await request.json();
+    const formData: FormData = await request.json()
+    console.log("🚀 ~ POST ~ formData:", formData)
 
-	const { firstName, lastName, email, message }: FormData = formData;
+    const {
+        first_name,
+        last_name,
+        email,
+        phone,
+        intro,
+        uncover_the_problem,
+        more_about_problems,
+        solutions_tried,
+        future_state,
+        beliefs,
+        commitment,
+        why_you,
+        thank_you,
+    } = formData
 
-	if (request.method !== "POST") {
-		return NextResponse.json({ message: "Method not allowed" });
-	}
+    if ( !first_name || !last_name || !email || !phone || !intro || !uncover_the_problem || !more_about_problems || !solutions_tried || !future_state || !beliefs || !commitment || !why_you) {
+        return NextResponse.json({ message: "Invalid input" })
+    }
 
-	if (!firstName || !lastName || !email || !message) {
-		return NextResponse.json({ message: "Invalid input" });
-	}
+    let newApply = null
 
-	const newContact = new Contact({
-		firstName,
-		lastName,
-		email,
-		message,
-	});
+    try {
+        await dbConnect()
 
-	await newContact.save();
+        newApply = new Apply({
+            first_name,
+            last_name,
+            email,
+            phone,
+            intro,
+            uncover_the_problem,
+            more_about_problems,
+            solutions_tried,
+            future_state,
+            beliefs,
+            commitment,
+            why_you,
+            thank_you,
+        })
 
-	await sendMail({ name: `${firstName} ${lastName}`, email, message }).catch(
-		console.error,
-	);
+        await newApply.save()
 
-	return NextResponse.json({ message: "Message received", data: newContact });
+    } catch (error) {
+        return NextResponse.json({ message: "There was an error saving your application, please try again.", code: "application.save" })
+    }
+
+    try {
+        const message = [
+            `<p>first_name: ${first_name}`,
+            `last_name: ${last_name}`,
+            `email: ${email}`,
+            `phone: ${phone}`,
+            `intro: ${intro}`,
+            `uncover_the_problem: ${uncover_the_problem}`,
+            `more_about_problems: ${more_about_problems}`,
+            `solutions_tried: ${solutions_tried}`,
+            `future_state: ${future_state}`,
+            `beliefs: ${beliefs}`,
+            `commitment: ${commitment}`,
+            `why_you: ${why_you}`,
+            `thank_you: ${thank_you ?? ""}</p>`,
+        ].join("<br>")
+        console.log("🚀 ~ POST ~ message:", message)
+
+        const subject = `New Application from ${first_name} ${last_name}`
+        console.log("🚀 ~ POST ~ subject:", subject)
+
+        await sendMail({
+            name: `${first_name} ${last_name}`,
+            email,
+            message,
+            subject,
+        }).catch(console.error)
+
+    } catch (error) {
+        console.log(error)
+        return NextResponse.json({ message: "There was an error sending your application.", code: "application.send" })
+    }
+
+    return NextResponse.json({
+        message: "Application received",
+        code: "application.success",
+        data: newApply,
+    })
 }

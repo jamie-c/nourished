@@ -13,7 +13,7 @@ const ApplySchema = new mongoose.Schema({
     beliefs: { type: String, required: true },
     commitment: { type: String, required: true },
     why_you: { type: String, required: true },
-    thank_you: { type: String, required: true },
+    thank_you: { type: String, required: false },
     createdAt: { type: Date, default: Date.now }
 });
 

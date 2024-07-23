@@ -3,7 +3,7 @@
 import dbConnect from "@/db/db";
 import Contact from "@/db/models/Contact";
 import { sendMail } from "@/lib/sendMail";
-import { NextResponse, type NextRequest } from "next/server";
+import { type NextRequest, NextResponse } from "next/server";
 
 export async function POST(request: NextRequest) {
 	interface FormData {
@@ -33,10 +33,11 @@ export async function POST(request: NextRequest) {
 		email,
 		message,
 	});
+	const subject = "New  message from the Nourished contact form";
 
 	await newContact.save();
 
-	await sendMail({ name: `${firstName} ${lastName}`, email, message }).catch(
+	await sendMail({ name: `${firstName} ${lastName}`, email, message, subject }).catch(
 		console.error,
 	);
 
