@@ -1,114 +1,77 @@
 // route to handle /apply form submission
 
-import dbConnect from "@/db/db"
-import Apply from "@/db/models/Apply"
-import { sendMail } from "@/lib/sendMail"
-import { type NextRequest, NextResponse } from "next/server"
+import dbConnect from "@/db/db";
+import Apply from "@/db/models/Apply";
+import { sendMail } from "@/lib/sendMail";
+import { type FormData, validateFormData } from "@/types/apply-form";
+import { type NextRequest, NextResponse } from "next/server";
+
+await dbConnect();
 
 export async function POST(request: NextRequest) {
+    const formData: FormData = await request.json();
 
-    interface FormData {
-        first_name: string
-        last_name: string
-        email: string
-        phone: string
-        intro: string
-        uncover_the_problem: string
-        more_about_problems: string
-        solutions_tried: string
-        future_state: string
-        beliefs: string
-        commitment: string
-        why_you: string
-        thank_you: string
+    const {isValid, errors, data} = validateFormData(formData);
+
+    if (!isValid) {
+        return NextResponse.json({ message: errors?.[0] ?? "Invalid input", code: "error.application.invalid" });
     }
 
-    const formData: FormData = await request.json()
-    console.log("🚀 ~ POST ~ formData:", formData)
-
-    const {
-        first_name,
-        last_name,
-        email,
-        phone,
-        intro,
-        uncover_the_problem,
-        more_about_problems,
-        solutions_tried,
-        future_state,
-        beliefs,
-        commitment,
-        why_you,
-        thank_you,
-    } = formData
-
-    if ( !first_name || !last_name || !email || !phone || !intro || !uncover_the_problem || !more_about_problems || !solutions_tried || !future_state || !beliefs || !commitment || !why_you) {
-        return NextResponse.json({ message: "Invalid input" })
-    }
-
-    let newApply = null
+    let newApply = null;
+    let message: string | null = "Application received";
+    let code: string | null = "success.application";
 
     try {
-        await dbConnect()
-
-        newApply = new Apply({
-            first_name,
-            last_name,
-            email,
-            phone,
-            intro,
-            uncover_the_problem,
-            more_about_problems,
-            solutions_tried,
-            future_state,
-            beliefs,
-            commitment,
-            why_you,
-            thank_you,
-        })
-
-        await newApply.save()
+        newApply = new Apply({...formData});
+        await newApply.save();
 
     } catch (error) {
-        return NextResponse.json({ message: "There was an error saving your application, please try again.", code: "application.save" })
+        console.error("Error saving application:", error);
+        message = "There was an error saving your application, please try again.";
+        code = "error.application.save";
     }
 
+    console.log("🚀 ~ POST ~ message", message);
+    console.log("🚀 ~ POST ~ code", code);
+
     try {
-        const message = [
-            `<p>first_name: ${first_name}`,
-            `last_name: ${last_name}`,
-            `email: ${email}`,
-            `phone: ${phone}`,
-            `intro: ${intro}`,
-            `uncover_the_problem: ${uncover_the_problem}`,
-            `more_about_problems: ${more_about_problems}`,
-            `solutions_tried: ${solutions_tried}`,
-            `future_state: ${future_state}`,
-            `beliefs: ${beliefs}`,
-            `commitment: ${commitment}`,
-            `why_you: ${why_you}`,
-            `thank_you: ${thank_you ?? ""}</p>`,
-        ].join("<br>")
+        const emailMessage = [
+            `<p>first_name: ${formData.first_name}`,
+            `last_name: ${formData.last_name}`,
+            `email: ${formData.email}`,
+            `phone: ${formData.phone}`,
+            `intro: ${formData.intro}`,
+            `uncover_the_problem: ${formData.uncover_the_problem}`,
+            `more_about_problems: ${formData.more_about_problems}`,
+            `solutions_tried: ${formData.solutions_tried}`,
+            `future_state: ${formData.future_state}`,
+            `beliefs: ${formData.beliefs}`,
+            `commitment: ${formData.commitment}`,
+            `why_you: ${formData.why_you}`,
+            `thank_you: ${formData.thank_you ?? ""}</p>`,
+        ].join("</p><p>");
         console.log("🚀 ~ POST ~ message:", message)
 
-        const subject = `New Application from ${first_name} ${last_name}`
-        console.log("🚀 ~ POST ~ subject:", subject)
+        const subject = `New Application from ${formData.first_name} ${formData.last_name}`
 
+        console.log("🚀 ~ POST ~ subject:", subject)
         await sendMail({
-            name: `${first_name} ${last_name}`,
-            email,
-            message,
+            name: `${formData.first_name} ${formData.last_name}`,
+            email: formData.email,
+            message: emailMessage,
             subject,
         }).catch(console.error)
-
     } catch (error) {
-        console.log(error)
-        return NextResponse.json({ message: "There was an error sending your application.", code: "application.send" })
+        message = "There was an error sending your application, please try again."
+        code = "error.application.send"
     }
 
+    console.log("🚀 ~ POST ~ message", message);
+    console.log("🚀 ~ POST ~ code", code);
+
     return NextResponse.json({
-        message: "Application received",
-        code: "application.success",
+        message,
+        code,
         data: newApply,
     })
 }

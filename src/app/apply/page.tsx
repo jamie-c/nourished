@@ -2,6 +2,7 @@
 
 import FullWidthColorBackground from "@/components/FullWidthColorBackground";
 import FullWidthImageBehindGradient from "@/components/FullWidthImageBehindGradient";
+import { type FormData, validateFormData } from "@/types/apply-form";
 import { NFCButton, NFCRadio, NFCText, NFCTextArea } from "@nourishedco/ui";
 import { useState } from "react";
 
@@ -22,7 +23,7 @@ const commitmentOptions = [
 ];
 
 export default function Home() {
-	const [formData, setFormData] = useState({
+	const [formData, setFormData] = useState<FormData>({
 		first_name: "",
 		last_name: "",
 		email: "",
@@ -38,7 +39,9 @@ export default function Home() {
 		thank_you: "",
 	});
 
-	const [response, setResponse] = useState({
+	const [response, setResponse] = useState<
+		FormData & { type: string; message: string }
+	>({
 		type: "",
 		message: "",
 		first_name: "",
@@ -59,9 +62,20 @@ export default function Home() {
 	const [loading, setLoading] = useState(false);
 
 	const handleSubmit = async (e: { preventDefault: () => void }) => {
-		setLoading(true);
 		e.preventDefault();
-		console.log("🚀 ~ handleSubmit ~ formData:", formData);
+
+		const { isValid, errors, data } = validateFormData(formData);
+		if (!isValid) {
+			console.error("Invalid input", errors);
+			setResponse({
+				...formData,
+				type: "error",
+				message: errors?.[0] ?? "Invalid input",
+			});
+			return;
+		}
+
+		setLoading(true);
 
 		const JSONdata = JSON.stringify(formData);
 		const endpoint = "/api/apply";
@@ -74,34 +88,21 @@ export default function Home() {
 		};
 		try {
 			const res = await fetch(endpoint, options);
-			console.log("🚀 ~ handleSubmit ~ res:", res);
 			const json = await res.json();
 			console.log("🚀 ~ handleSubmit ~ json:", json);
 
-			if (res.ok) {
+			if (json.code === "success.application") {
 				setResponse({
 					...json.data,
 					type: "success",
 					message:
-						"You're application has been received and I am excited for you!.",
+						"You're application has been received and I am excited for you!",
 				});
 			} else {
 				setResponse({
+					...formData,
 					type: "error",
-					message: json.formData.message,
-					first_name: "",
-					last_name: "",
-					email: "",
-					phone: "",
-					intro: "",
-					uncover_the_problem: "",
-					more_about_problems: "",
-					solutions_tried: "",
-					future_state: "",
-					beliefs: "",
-					commitment: "",
-					why_you: "",
-					thank_you: "",
+					message: json.message,
 				});
 			}
 		} catch (error) {
@@ -157,7 +158,7 @@ export default function Home() {
 					</p>
 				</div>
 			</FullWidthColorBackground>
-			{!response?.message ? (
+			{response?.type !== "success" ? (
 				<form
 					className="font-transat-bold flex flex-col gap-10 w-full max-w-screen-sm p-2"
 					onSubmit={handleSubmit}
@@ -305,13 +306,18 @@ export default function Home() {
 							}
 						/>
 					</div>
+					{response?.type === "error" && (
+						<p className="text-red-500 text-center">
+							There was an error: &quot;{response.message}&quot;
+						</p>
+					)}
 					<NFCButton type="submit" loading={loading} classes="h-10 relative">
 						SUBMIT
 					</NFCButton>
 				</form>
 			) : (
 				<FullWidthColorBackground variant="white" textColor="dark">
-					<p className="text-center text-4xl">{`Hi ${response.first_name}. ${response.message}`}</p>
+					<p className="text-center text-4xl">{`Hi ${response.first_name}! ${response.message}`}</p>
 				</FullWidthColorBackground>
 			)}
 		</main>
