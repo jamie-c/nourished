@@ -300,7 +300,7 @@ export default function Home() {
 						<NFCTextArea
 							label="Thank You"
 							placeholder="If you have anything questions you'd like answered, feel free to leave them here."
-							value={formData.thank_you}
+							value={formData.thank_you ?? ""}
 							onChange={(e) =>
 								setFormData({ ...formData, thank_you: e.target.value })
 							}
