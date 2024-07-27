@@ -15,7 +15,6 @@ export async function POST(request: NextRequest) {
 	const formData: NFCContactFormData = await request.json();
 
 	const { isValid, errors, data } = validateFormData(formData);
-	console.log("🚀 ~ POST ~ { isValid, errors, data }:", { isValid, errors, data })
 
     if (!isValid) {
         return NextResponse.json({ response_message: errors?.[0] ?? "Invalid input", code: "error.application.invalid" });
@@ -28,7 +27,6 @@ export async function POST(request: NextRequest) {
     try {
         newContact = new Contact({...formData});
         await newContact.save();
-		console.log("🚀 ~ POST ~ newContact", newContact)
 
     } catch (error) {
         console.error("Error saving application:", error);
@@ -38,7 +36,6 @@ export async function POST(request: NextRequest) {
 
 	try{
 	const subject = "New message from the Nourished contact form";
-	console.log("🚀 ~ POST ~ subject:", subject)
 
 	await sendMail({
 		name: `${formData.first_name} ${formData.last_name}`,

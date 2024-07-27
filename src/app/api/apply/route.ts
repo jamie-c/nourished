@@ -31,30 +31,25 @@ export async function POST(request: NextRequest) {
         code = "error.application.save";
     }
 
-    console.log("🚀 ~ POST ~ message", message);
-    console.log("🚀 ~ POST ~ code", code);
-
     try {
         const emailMessage = [
-            `<p>first_name: ${formData.first_name}`,
-            `last_name: ${formData.last_name}`,
-            `email: ${formData.email}`,
-            `phone: ${formData.phone}`,
-            `intro: ${formData.intro}`,
-            `uncover_the_problem: ${formData.uncover_the_problem}`,
-            `more_about_problems: ${formData.more_about_problems}`,
-            `solutions_tried: ${formData.solutions_tried}`,
-            `future_state: ${formData.future_state}`,
-            `beliefs: ${formData.beliefs}`,
-            `commitment: ${formData.commitment}`,
-            `why_you: ${formData.why_you}`,
-            `thank_you: ${formData.thank_you ?? ""}</p>`,
+            `<p>First Name: ${formData.first_name}`,
+            `Last Name: ${formData.last_name}`,
+            `Email: ${formData.email}`,
+            `Phone: ${formData.phone}`,
+            `Intro: ${formData.intro}`,
+            `Uncover The Problem: ${formData.uncover_the_problem}`,
+            `More About Problems: ${formData.more_about_problems}`,
+            `Solutions Tried: ${formData.solutions_tried}`,
+            `Future State: ${formData.future_state}`,
+            `Beliefs: ${formData.beliefs}`,
+            `Commitment: ${formData.commitment}`,
+            `Why You: ${formData.why_you}`,
+            `Thank You: ${formData.thank_you ?? ""}</p>`,
         ].join("</p><p>");
-        console.log("🚀 ~ POST ~ message:", message)
 
         const subject = `New Application from ${formData.first_name} ${formData.last_name}`
 
-        console.log("🚀 ~ POST ~ subject:", subject)
         await sendMail({
             name: `${formData.first_name} ${formData.last_name}`,
             email: formData.email,
@@ -66,9 +61,6 @@ export async function POST(request: NextRequest) {
         message = "There was an error sending your application, please try again."
         code = "error.application.send"
     }
-
-    console.log("🚀 ~ POST ~ message", message);
-    console.log("🚀 ~ POST ~ code", code);
 
     return NextResponse.json({
         message,
