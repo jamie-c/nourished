@@ -102,7 +102,8 @@ export default function Home() {
 				setResponse({
 					...formData,
 					type: "error",
-					message: json.message,
+					message:
+						json.message ?? "An error occurred while submitting the form.",
 				});
 			}
 		} catch (error) {

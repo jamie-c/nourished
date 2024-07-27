@@ -26,7 +26,7 @@ export async function POST(request: NextRequest) {
         await newApply.save();
 
     } catch (error) {
-        console.error("Error saving application:", error);
+        console.error("Error saving application submission:", error);
         message = "There was an error saving your application, please try again.";
         code = "error.application.save";
     }
@@ -62,6 +62,7 @@ export async function POST(request: NextRequest) {
             subject,
         }).catch(console.error)
     } catch (error) {
+        console.error("Error sending Apply email:", error);
         message = "There was an error sending your application, please try again."
         code = "error.application.send"
     }
