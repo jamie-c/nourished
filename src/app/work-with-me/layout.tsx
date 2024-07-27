@@ -6,7 +6,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<div className="min-h-screen">
+		<div className="min-h-screen max-w-full">
 			<div className="absolute top-0 w-full h-16 bg-bluegreen-500 dark:bg-bluegreen-700" />
 			<div className="sticky top-0 flex z-50">
 				<header className="sticky top-0 w-full z-40 bg-opacity-50 dark:bg-opacity-50 bg-bluegreen-500 dark:bg-bluegreen-700 backdrop-blur-xl dark:backdrop-blur-xl transition-all duration-300">

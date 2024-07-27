@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export default function Home() {
 	return (
-		<main className="top-0 w-full flex min-h-screen flex-col items-center justify-start">
+		<main className="top-0 w-full min-w-full max-w-full flex min-h-screen flex-col items-center justify-start">
 			<FullWidthImageBehindGradient
 				variant="primary"
 				imageUrl="/images/lindsey-headshots-032.jpg"
