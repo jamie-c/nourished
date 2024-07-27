@@ -263,8 +263,13 @@ export default function Home() {
 					</div>
 				</div>
 			</div>
-			<div className="w-full bg-lightgreen-500 my-32">
-				<Testimonials />
+			<div className="w-full mt-28">
+				<h1 className="font-transat-black-obl text-balance py-2 sm:pt-3 text-3xl sm:text-5xl text-center">
+					<span className="text-bluegreen-500 uppercase"> Testimonials</span>
+				</h1>
+				<div className="bg-lightgreen-500 w-full">
+					<Testimonials />
+				</div>
 			</div>
 			<div className="w-full my-32">
 				<FullWidthColorBackground variant="primary">
