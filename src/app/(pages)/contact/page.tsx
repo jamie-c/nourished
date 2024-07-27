@@ -1,30 +1,49 @@
 "use client";
 
 import FullWidthColorBackground from "@/components/FullWidthColorBackground";
+import {
+	type NFCContactFormData,
+	validateFormData,
+} from "@/types/contact-form";
 import { NFCButton, NFCText, NFCTextArea } from "@nourishedco/ui";
 import { useState } from "react";
 
 const Form = () => {
-	const [formData, setFormData] = useState({
-		firstName: "",
-		lastName: "",
+	const [formData, setFormData] = useState<NFCContactFormData>({
+		first_name: "",
+		last_name: "",
 		email: "",
 		message: "",
 	});
 
-	const [response, setResponse] = useState({
+	const [response, setResponse] = useState<
+		NFCContactFormData & { type: string; response_message: string }
+	>({
 		type: "",
-		message: "",
-		firstName: "",
-		lastName: "",
+		response_message: "",
+		first_name: "",
+		last_name: "",
 		email: "",
+		message: "",
 	});
 
 	const [loading, setLoading] = useState(false);
 
 	const handleSubmit = async (e: { preventDefault: () => void }) => {
-		setLoading(true);
 		e.preventDefault();
+
+		const { isValid, errors, data } = validateFormData(formData);
+		if (!isValid) {
+			console.error("Invalid input", errors);
+			setResponse({
+				...formData,
+				type: "error",
+				response_message: errors?.[0] ?? "Invalid input",
+			});
+			return;
+		}
+
+		setLoading(true);
 
 		const JSONdata = JSON.stringify(formData);
 		const endpoint = "/api/contact";
@@ -39,35 +58,33 @@ const Form = () => {
 			const res = await fetch(endpoint, options);
 			const json = await res.json();
 
-			if (res.ok) {
+			if (json.code === "success.contact") {
 				setResponse({
 					...json.data,
 					type: "success",
-					message: "We've received your message and will be in touch shortly.",
+					response_message:
+						"We've received your message and will be in touch shortly.",
 				});
 			} else {
 				setResponse({
+					...formData,
 					type: "error",
-					message: json.formData.message,
-					firstName: " ",
-					lastName: " ",
-					email: " ",
+					response_message:
+						json.message ?? "An error occurred while submitting the form.",
 				});
 			}
 		} catch (error) {
 			console.error("Error:", error);
 			setResponse({
+				...formData,
 				type: "error",
-				message: "An error occurred while submitting the form.",
-				firstName: " ",
-				lastName: " ",
-				email: " ",
+				response_message: "An error occurred while submitting the form.",
 			});
 		}
 		setLoading(false);
 	};
 
-	if (!response?.message) {
+	if (response?.type !== "success") {
 		return (
 			<form
 				className="font-transat-bold flex flex-col gap-10"
@@ -77,17 +94,17 @@ const Form = () => {
 				<NFCText
 					label="First Name"
 					placeholder="First Name"
-					value={formData.firstName}
+					value={formData.first_name}
 					onChange={(e) =>
-						setFormData({ ...formData, firstName: e.target.value })
+						setFormData({ ...formData, first_name: e.target.value })
 					}
 				/>
 				<NFCText
 					label="Last Name"
 					placeholder="Last Name"
-					value={formData.lastName}
+					value={formData.last_name}
 					onChange={(e) =>
-						setFormData({ ...formData, lastName: e.target.value })
+						setFormData({ ...formData, last_name: e.target.value })
 					}
 				/>
 				<NFCText
@@ -104,19 +121,23 @@ const Form = () => {
 						setFormData({ ...formData, message: e.target.value })
 					}
 				/>
+				{response?.type === "error" && (
+					<p className="text-red-500 text-center">
+						Error: &quot;{response.response_message}
+						&quot;
+					</p>
+				)}
 				<NFCButton type="submit" loading={loading} classes="h-10 relative">
 					SEND
 				</NFCButton>
 			</form>
 		);
 	}
-	if (response?.message) {
-		return (
-			<FullWidthColorBackground variant="white" textColor="dark">
-				<p className="text-center text-4xl">{`Hi ${response.firstName}. ${response.message}`}</p>
-			</FullWidthColorBackground>
-		);
-	}
+	return (
+		<FullWidthColorBackground variant="white" textColor="dark">
+			<p className="text-center text-4xl">{`Hi ${response.first_name}. ${response.response_message}`}</p>
+		</FullWidthColorBackground>
+	);
 };
 
 function Page() {

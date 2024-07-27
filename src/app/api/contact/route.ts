@@ -3,43 +3,55 @@
 import dbConnect from "@/db/db";
 import Contact from "@/db/models/Contact";
 import { sendMail } from "@/lib/sendMail";
+import {
+	type NFCContactFormData,
+	validateFormData,
+} from "@/types/contact-form";
 import { type NextRequest, NextResponse } from "next/server";
 
+await dbConnect();
+
 export async function POST(request: NextRequest) {
-	interface FormData {
-		firstName: string;
-		lastName: string;
-		email: string;
-		message: string;
+	const formData: NFCContactFormData = await request.json();
+
+	const { isValid, errors, data } = validateFormData(formData);
+	console.log("🚀 ~ POST ~ { isValid, errors, data }:", { isValid, errors, data })
+
+    if (!isValid) {
+        return NextResponse.json({ response_message: errors?.[0] ?? "Invalid input", code: "error.application.invalid" });
+    }
+
+    let newContact = null;
+    let response_message: string | null = "Message received";
+    let code: string | null = "success.contact";
+
+    try {
+        newContact = new Contact({...formData});
+        await newContact.save();
+		console.log("🚀 ~ POST ~ newContact", newContact)
+
+    } catch (error) {
+        console.error("Error saving application:", error);
+        response_message = "There was an error saving your message, please try again.";
+        code = "error.contact.save";
+    }
+
+	try{
+	const subject = "New message from the Nourished contact form";
+	console.log("🚀 ~ POST ~ subject:", subject)
+
+	await sendMail({
+		name: `${formData.first_name} ${formData.last_name}`,
+		email: formData.email,
+		message: formData.message,
+		subject,
+	}).catch(console.error);
+
+	} catch (error) {
+		console.error("Error sending Contact email:", error);
+		response_message = "There was an error sending your message, please try again.";
+		code = "error.contact.email";
 	}
 
-	await dbConnect();
-
-	const formData: FormData = await request.json();
-
-	const { firstName, lastName, email, message }: FormData = formData;
-
-	if (request.method !== "POST") {
-		return NextResponse.json({ message: "Method not allowed" });
-	}
-
-	if (!firstName || !lastName || !email || !message) {
-		return NextResponse.json({ message: "Invalid input" });
-	}
-
-	const newContact = new Contact({
-		firstName,
-		lastName,
-		email,
-		message,
-	});
-	const subject = "New  message from the Nourished contact form";
-
-	await newContact.save();
-
-	await sendMail({ name: `${firstName} ${lastName}`, email, message, subject }).catch(
-		console.error,
-	);
-
-	return NextResponse.json({ message: "Message received", data: newContact });
+	return NextResponse.json({ response_message, code, data: newContact });
 }
