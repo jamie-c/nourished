@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export default function Home() {
 	return (
-		<main className="top-0 w-full min-w-full max-w-full flex min-h-screen flex-col items-center justify-start">
+		<main className="top-0 w-full flex min-h-screen flex-col items-center justify-start mb-24">
 			<FullWidthImageBehindGradient
 				variant="primary"
 				imageUrl="/images/lindsey-headshots-032.jpg"
@@ -267,11 +267,11 @@ export default function Home() {
 				<h1 className="font-transat-black-obl text-balance py-2 sm:pt-3 text-3xl sm:text-5xl text-center">
 					<span className="text-bluegreen-500 uppercase"> Testimonials</span>
 				</h1>
-				<div className="bg-lightgreen-500 w-full">
+				<div className="bg-lightgreen-500 h-[425px] w-full">
 					<Testimonials />
 				</div>
 			</div>
-			<div className="w-full my-32">
+			<div className="w-full my-32 overflow-hidden">
 				<FullWidthColorBackground variant="primary">
 					<CTAFeelNourished href="/apply">
 						SUBMIT YOUR APPLICATION NOW
