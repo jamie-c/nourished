@@ -22,9 +22,9 @@ const footerLinks = [
 		id: "footer-link-contact",
 	},
 	{
-		text: "Work With Us",
-		href: "/work-with-us",
-		id: "footer-link-work-with-us",
+		text: "Work With Me",
+		href: "/work-with-me",
+		id: "footer-link-work-with-me",
 	},
 	// {
 	// 	text: "Online Classes",

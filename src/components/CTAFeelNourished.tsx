@@ -16,7 +16,7 @@ const CTAFeelNourished = ({
 		</p>
 		{children && (
 			<div className="w-max mx-auto">
-				<NFCButton as="a" href={href || "/work-with-us"} variant="tertiary">
+				<NFCButton as="a" href={href || "/work-with-me"} variant="tertiary">
 					{children}
 				</NFCButton>
 			</div>

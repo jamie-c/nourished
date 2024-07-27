@@ -9,9 +9,9 @@ const mainNavItems: NavLinks[] = [
 		id: "about",
 	},
 	{
-		title: "Work With Us",
-		url: "/work-with-us",
-		id: "work-with-us",
+		title: "Work With Me",
+		url: "/work-with-me",
+		id: "work-with-me",
 	},
 	{
 		title: "Blog",

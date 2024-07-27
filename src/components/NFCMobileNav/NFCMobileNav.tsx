@@ -10,9 +10,9 @@ import { NFCNavLinksVertical } from "../NFCNavLinks/NFCNavLinks";
 const NFCMobileNav = () => {
 	const { data: session, status } = useSession();
 
-	useEffect(() => {
-		// console.log(session, status);
-	}, [session, status]);
+	// useEffect(() => {
+	// 	// console.log(session, status);
+	// }, [session, status]);
 
 	const headerClassNames = {
 		base: "flex flex-col items-start justify-start top-0 left-0 w-full overflow-hidden h-16 z-40 bg-opacity-50 dark:bg-opacity-50 bg-bluegreen-500 dark:bg-bluegreen-700 backdrop-filter dark:backdrop-filter backdrop-blur-xl dark:backdrop-blur-xl transition-all duration-150 ease-in",
