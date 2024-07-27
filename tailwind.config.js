@@ -6,7 +6,7 @@ module.exports = {
         "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
         "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
         "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-        "./node_modules/@nourishedco/ui/dist/**/*.js"
+        "./node_modules/@nourishedco/ui/dist/**/*.js",
     ],
     theme: {
         extend: {
@@ -136,6 +136,16 @@ module.exports = {
                     800: "#370c19",
                     900: "#1b060d",
                 },
+            },
+            keyframes: {
+                wiggle: {
+                    "0%": { transform: "rotate(-3deg)" },
+                    "50%": { transform: "rotate(2deg)" },
+                    "100%": { transform: "rotate(1deg)" },
+                },
+            },
+            animation: {
+                wiggle: "wiggle 0.35s ease-out",
             },
         },
         plugins: [],

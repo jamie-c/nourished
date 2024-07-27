@@ -1,6 +1,7 @@
 import CTAFeelNourished from "@/components/CTAFeelNourished";
 import FullWidthColorBackground from "@/components/FullWidthColorBackground";
 import FullWidthImageBehindGradient from "@/components/FullWidthImageBehindGradient";
+import Testimonials from "@/components/Testimonials";
 import { NFCCircle } from "@nourishedco/ui";
 import Image from "next/image";
 
@@ -215,9 +216,9 @@ export default function Home() {
 							</h2>
 							<p>
 								High-touch support through monthly 1:1 sessions, weekly group
-								Zoom calls to meet you where you’re at in life, establish your
-								customized action steps, and make sure you’re on track to reach
-								your goals . (Value: $5,000)
+								Zoom calls to meet you where you&apos;re at in life, establish
+								your customized action steps, and make sure you&apos;re on track
+								to reach your goals. (Value: $5,000)
 							</p>
 						</div>
 						<div className="grid grid-rows-[48px_48px_200px] gap-2">
@@ -261,6 +262,9 @@ export default function Home() {
 						</div>
 					</div>
 				</div>
+			</div>
+			<div className="w-full bg-lightgreen-500 my-32">
+				<Testimonials />
 			</div>
 			<div className="w-full my-32">
 				<FullWidthColorBackground variant="primary">
