@@ -277,7 +277,7 @@ export default function Home() {
 			</div>
 			<div className="w-full my-20 overflow-hidden">
 				<FullWidthColorBackground variant="white" textColor="secondary">
-					<div className="text-center w-full text-balance text-2xl sm:text-4xl">
+					<div className="text-center font-transat-bold w-full text-balance text-3xl uppercase sm:text-4xl">
 						I teach you the science of your body & the strategy to support it.
 					</div>
 				</FullWidthColorBackground>
