@@ -1,7 +1,7 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { useSession } from "next-auth/react";
-import Image from "next/image";
 import type React from "react";
 import { useState } from "react";
 
@@ -37,12 +37,13 @@ const UserAccountIcon: React.FC = () => {
 	if (session?.user?.image) {
 		return (
 			<div className="size-7">
-				<Image
+				<img
 					src={session.user.image}
 					alt="User Account"
 					width={100}
 					height={100}
 					className="rounded-full border-2 border-white/75 hover:border-white transition-all duration-150 cursor-pointer"
+					loading="eager"
 				/>
 			</div>
 		);

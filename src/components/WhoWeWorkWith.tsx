@@ -1,4 +1,4 @@
-import Image from "next/image";
+/* eslint-disable @next/next/no-img-element */
 
 const WhoWeWorkWith = () => (
 	<>
@@ -10,12 +10,13 @@ const WhoWeWorkWith = () => (
 				id="work-with-individuals"
 				className="flex flex-col items-center max-w-[400px] text-center text-brightgreen-500"
 			>
-				<Image
+				<img
 					className="mb-4"
 					src="/images/heart-brightgreen-circle.png"
 					width={300}
 					height={300}
 					alt="Individuals Seeking Health and Wellness"
+					loading="lazy"
 				/>
 				<h2 className="font-transat-bold text-balance uppercase text-3xl">
 					INDIVIDUALS SEEKING HEALTH & FOOD-CHANGE
@@ -33,12 +34,13 @@ const WhoWeWorkWith = () => (
 				id="work-with-professionals"
 				className="flex flex-col items-center max-w-[400px] text-center text-bluegreen-500"
 			>
-				<Image
+				<img
 					className="mb-4"
 					src="/images/cross-bluegreen-circle.png"
 					width={300}
 					height={300}
 					alt="Other Health and Wellness Professionals"
+					loading="lazy"
 				/>
 				<h2 className="font-transat-bold text-balance uppercase text-3xl">
 					OTHER HEALTH & WELLNESS PROFESSIONALS

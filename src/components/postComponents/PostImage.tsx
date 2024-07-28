@@ -1,4 +1,4 @@
-import Image from "next/image";
+/* eslint-disable @next/next/no-img-element */
 
 interface InnerProps {
 	children: React.ReactNode;
@@ -63,12 +63,11 @@ const PostImage: React.FC<OuterProps> = ({
 
 	return (
 		<div className="relative h-72 w-96 max-w-full max-h-md">
-			<Image
+			<img
 				className={imageClassName}
 				src={imageUrl}
-				fill
-				alt="blog post image"
-				priority
+				alt="blog post"
+				loading="lazy"
 			/>
 			<div className={bgColorClassName} />
 			<InnerProps>{children}</InnerProps>

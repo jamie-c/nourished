@@ -1,4 +1,4 @@
-import Image from "next/image";
+/* eslint-disable @next/next/no-img-element */
 
 interface InnerProps {
 	children: React.ReactNode;
@@ -41,7 +41,7 @@ const FullWidthImageBehindGradient: React.FC<OuterProps> = ({
 		transparent: "transparent",
 	};
 	const aligns = ["left", "center", "right"];
-	const color = colors[variant] ? colors[variant] : colors["primary"];
+	const color = colors[variant] ? colors[variant] : colors.primary;
 
 	interface imageClassNamesType {
 		[key: string]: string;
@@ -58,18 +58,18 @@ const FullWidthImageBehindGradient: React.FC<OuterProps> = ({
 	if (align && aligns.includes(align)) {
 		imageClassName = imageClassNames[align];
 	} else {
-		imageClassName = imageClassNames["center"];
+		imageClassName = imageClassNames.center;
 	}
 
 	return (
 		<div className="relative h-screen-2/3 w-full">
-			<Image
+			<img
 				className={imageClassName}
 				src={imageUrl || "/images/headers/NourishedCoJamieandLindsey-04.jpg"}
 				width={1800}
 				height={989}
-				alt="Large image of Jamie and Lindsey Conway"
-				priority
+				alt="Jamie and Lindsey Conway"
+				loading="eager"
 			/>
 			<div
 				className={`absolute inset-0 bg-gradient-to-b opacity-75 ${color}`}

@@ -1,9 +1,9 @@
+/* eslint-disable @next/next/no-img-element */
 import CTAFeelNourished from "@/components/CTAFeelNourished";
 import FullWidthColorBackground from "@/components/FullWidthColorBackground";
 import FullWidthImageBehindGradient from "@/components/FullWidthImageBehindGradient";
 import Testimonials from "@/components/Testimonials";
 import { NFCCircle } from "@nourishedco/ui";
-import Image from "next/image";
 
 export default function Home() {
 	return (
@@ -30,11 +30,12 @@ export default function Home() {
 						className="relative flex flex-col gap-6 items-center max-w-[500px] mx-auto text-center text-brightgreen-500"
 					>
 						<div className="flex items-center overflow-hidden rounded-lg aspect-square">
-							<Image
+							<img
 								src="/images/lindsey-headshots-103.jpg"
 								width={400}
 								height={400}
-								alt="Photo of Lindsey"
+								alt="Lindsey Conway"
+								loading="eager"
 							/>
 						</div>
 						<div className="flex flex-col font-transat-bold gap-4 text-2xl text-center text-balance">
@@ -65,11 +66,12 @@ export default function Home() {
 									discomfort in your body.
 								</p>
 							</div>
-							{/* <Image
+							{/* <img
 								src="/images/microbiome-makeover-mockup-full-stack.png"
 								width={400}
 								height={400}
 								alt="Other Health and Wellness Professionals"
+								loading="lazy"
 							/> */}
 						</div>
 						<div className="flex flex-col font-transat-bold gap-4 text-2xl text-center text-balance">
@@ -124,11 +126,12 @@ export default function Home() {
 				</div>
 				<div className="grid grid-cols-1 sm:grid-cols-2 px-2 sm:px-4 items-start content-center gap-20 text-center text-balance  max-w-7xl mx-auto">
 					<div className="flex flex-col items-center gap-4 text-darkgreen-500 text-xl max-w-[400px] mx-auto">
-						<Image
+						<img
 							src="/images/nourished-website-icons-clipboard-circle.png"
 							width={300}
 							height={300}
 							alt="Individuals Seeking Health and Wellness"
+							loading="lazy"
 						/>
 						<div className="uppercase text-darkgreen-500 mb-6 text-3xl font-transat-med">
 							What I Offer
@@ -198,11 +201,12 @@ export default function Home() {
 						</div>
 					</div>
 					<div className="flex flex-col items-center gap-4 text-brightgreen-500 text-xl max-w-[400px] mx-auto">
-						<Image
+						<img
 							src="/images/nourished-website-icons-heart-circle.png"
 							width={300}
 							height={300}
 							alt="Individuals Seeking Health and Wellness"
+							loading="lazy"
 						/>
 						<div className="uppercase text-brightgreen-500 mb-6 text-3xl font-transat-med text-center text-balance">
 							What You Get

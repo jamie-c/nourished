@@ -1,5 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
 import { NFCButton } from "@nourishedco/ui";
-import Image from "next/image";
 import type React from "react";
 
 const AboutLindseyAndJamie: React.FC = () => (
@@ -8,12 +8,13 @@ const AboutLindseyAndJamie: React.FC = () => (
 			id="lindsey-conway"
 			className="flex flex-col items-center sm:items-end max-w-[400px] text-center sm:text-right text-bluegreen-500"
 		>
-			<Image
-				className="mb-4"
+			<img
+				className="mb-4 rounded-md"
 				src="/images/lindsey-conway.jpg"
 				width={400}
 				height={400}
 				alt="Lindsey Conway"
+				loading="lazy"
 			/>
 			<h2 className="font-transat-bold text-balance uppercase text-2xl">
 				FOOD STRATEGY & GUIDANCE WITH LINDSEY
@@ -31,12 +32,13 @@ const AboutLindseyAndJamie: React.FC = () => (
 			id="jamie-conway"
 			className="flex flex-col items-center sm:items-start max-w-[400px] text-center sm:text-left text-darkgreen-500"
 		>
-			<Image
-				className="mb-4"
+			<img
+				className="mb-4 rounded-md"
 				src="/images/jamie-conway.jpg"
 				width={400}
 				height={400}
 				alt="Jamie Conway"
+				loading="lazy"
 			/>
 			<h2 className="font-transat-bold text-balance uppercase text-2xl">
 				FOOD ALCHEMY & RECIPES WITH JAMIE
