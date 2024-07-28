@@ -1,5 +1,5 @@
 import FullWidthColorBackground from "@/components/FullWidthColorBackground";
-import WaitlistForm from "@/components/WaitlistForm";
+import WaitlistForm from "@/components/forms/WaitlistForm";
 
 export default function Page() {
 	return (
