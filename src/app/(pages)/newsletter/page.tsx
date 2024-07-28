@@ -1,6 +1,6 @@
 import FullWidthColorBackground from "@/components/FullWidthColorBackground";
 import FullWidthImageBehindGradient from "@/components/FullWidthImageBehindGradient";
-import NewsletterForm from "@/components/NewsletterForm";
+import NewsletterForm from "@/components/forms/NewsletterForm";
 
 export default function Page() {
 	return (

@@ -1,5 +1,5 @@
 import FullWidthImageBehindGradient from "@/components/FullWidthImageBehindGradient";
-import NewsletterForm from "@/components/NewsletterForm";
+import NewsletterForm from "@/components/forms/NewsletterForm";
 import PostImage from "@/components/postComponents/PostImage";
 import { getSortedPostsData } from "@/lib/posts";
 import dayjs from "dayjs";

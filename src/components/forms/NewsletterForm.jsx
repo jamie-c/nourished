@@ -1,4 +1,4 @@
-import ConvertKitForm from "./ConvertKitForm/ConvertKitForm";
+import ConvertKitForm from "./ConvertKitForm";
 
 export default function NewsletterForm() {
 	return (
