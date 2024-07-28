@@ -30,7 +30,7 @@ export default function RootLayout({
 			<body className="font-transat">
 				<ProviderWrapper>
 					{children}
-					<footer className="pt-10 w-full flex flex-col items-center justify-start">
+					<footer className="w-full flex flex-col pb-2 pt-16 gap-16 items-center justify-start">
 						<NFCLogoCopyright />
 						<SocialLinks />
 						<FooterLinks />

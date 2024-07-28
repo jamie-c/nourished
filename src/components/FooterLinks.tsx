@@ -44,7 +44,7 @@ const footerLinks = [
 ];
 
 const FooterLinks = () => (
-	<div className="font-transat-bold mt-6 flex flex-col sm:p-8 sm:flex-row flex-wrap items-top justify-center text-center text-xl text-brightgreen-500 uppercase gap-4 w-full max-w-7xl">
+	<div className="font-transat-bold flex flex-col sm:flex-row flex-wrap items-top justify-center text-center text-xl text-brightgreen-500 uppercase gap-4 w-full max-w-7xl">
 		{footerLinks.map((link) => (
 			<Link
 				key={link.id}

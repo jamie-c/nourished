@@ -119,7 +119,7 @@ function SocialLink({
 
 export default function SocialLinks() {
 	return (
-		<div className="mt-6 p-4 flex gap-6">
+		<div className="flex gap-6">
 			<SocialLink
 				href="https://twitter.com/nourishedco"
 				aria-label="Follow on X"

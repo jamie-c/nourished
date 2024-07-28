@@ -40,17 +40,35 @@ const FullWidthImageBehindGradient: React.FC<OuterProps> = ({
 		white: "white",
 		transparent: "transparent",
 	};
-	const aligns = ["left", "center", "right"];
+	const aligns = [
+		"left",
+		"center",
+		"right",
+		"top",
+		"bottom",
+		"left-top",
+		"right-top",
+		"left-bottom",
+		"right-bottom",
+	];
 	const color = colors[variant] ? colors[variant] : colors.primary;
 
 	interface imageClassNamesType {
 		[key: string]: string;
 	}
 
+	const imageClassBase = "absolute inset-0 w-full h-full object-cover";
+
 	const imageClassNames: imageClassNamesType = {
-		left: "absolute inset-0 w-full h-full object-cover object-left",
-		center: "absolute inset-0 w-full h-full object-cover object-center",
-		right: "absolute inset-0 w-full h-full object-cover object-right",
+		top: `${imageClassBase} object-top`,
+		right: `${imageClassBase} object-right`,
+		bottom: `${imageClassBase} object-bottom`,
+		left: `${imageClassBase} object-left`,
+		center: `${imageClassBase} object-center`,
+		"left-top": `${imageClassBase} object-left-top`,
+		"right-top": `${imageClassBase} object-right-top`,
+		"left-bottom": `${imageClassBase} object-left-bottom`,
+		"right-bottom": `${imageClassBase} object-right-bottom`,
 	};
 
 	let imageClassName = "";
@@ -66,8 +84,8 @@ const FullWidthImageBehindGradient: React.FC<OuterProps> = ({
 			<img
 				className={imageClassName}
 				src={imageUrl || "/images/headers/NourishedCoJamieandLindsey-04.jpg"}
-				width={1800}
-				height={989}
+				width="100%"
+				height="auto"
 				alt="Jamie and Lindsey Conway"
 				loading="eager"
 			/>

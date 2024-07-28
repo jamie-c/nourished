@@ -7,7 +7,7 @@ import { NFCCircle } from "@nourishedco/ui";
 
 export default function Home() {
 	return (
-		<main className="top-0 w-full flex min-h-screen flex-col items-center justify-start mb-24">
+		<main className="top-0 w-full flex min-h-screen flex-col items-center justify-start">
 			<FullWidthImageBehindGradient
 				variant="primary"
 				imageUrl="/images/lindsey-headshots-032.jpg"
@@ -275,7 +275,14 @@ export default function Home() {
 					<Testimonials />
 				</div>
 			</div>
-			<div className="w-full my-32 overflow-hidden">
+			<div className="w-full my-20 overflow-hidden">
+				<FullWidthColorBackground variant="white" textColor="secondary">
+					<div className="text-center w-full text-balance text-2xl sm:text-4xl">
+						I teach you the science of your body & the strategy to support it.
+					</div>
+				</FullWidthColorBackground>
+			</div>
+			<div className="w-full overflow-hidden">
 				<FullWidthColorBackground variant="primary">
 					<CTAFeelNourished href="/apply">
 						SUBMIT YOUR APPLICATION NOW
