@@ -1,5 +1,4 @@
-import Image from "next/image";
-
+/* eslint-disable @next/next/no-img-element */
 const testimonialsData = [
 	"feedback-brittanym-01.jpg",
 	"feedback-cherylz-highlighted-01.jpg",
@@ -23,12 +22,13 @@ export default function Testimonials() {
 		<div className="snap-x snap-always snap-mandatory flex sm:scroll-pl-6 px-6 flex-row items-center h-full w-full max-w-7xl mx-auto gap-6 overflow-x-auto">
 			{testimonialsData.map((testimonial) => (
 				<div key={testimonial} className="snap-center sm:snap-start flex-none">
-					<Image
+					<img
 						src={`/images/testimonials/${testimonial}`}
 						className="rounded-lg shadow-xl transition-all duration-150 ease-in"
 						alt="Testimonial"
 						width={300}
 						height={300}
+						loading="lazy"
 					/>
 				</div>
 			))}
