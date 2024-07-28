@@ -34,7 +34,7 @@ const Posts = async () => {
 			<section className="relative">
 				<FullWidthImageBehindGradient
 					variant="dark"
-					imageUrl="/images/nourished-typing-on-computer.jpg"
+					imageUrl="/images/headers/nourished-living.jpg"
 				>
 					<p className="font-transat-bold w-full text-center uppercase drop-shadow-lg">
 						Blog
