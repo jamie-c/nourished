@@ -9,7 +9,11 @@ import NFCMobileNav from "@/components/NFCMobileNav/NFCMobileNav";
 export default function Home() {
 	return (
 		<main className="top-0 w-full flex min-h-screen flex-col items-center justify-start">
-			<FullWidthImageBehindGradient variant="primary" align="right">
+			<FullWidthImageBehindGradient
+				imageUrl="/images/lindsey-headshots-014.jpg"
+				variant="primary"
+				align="right"
+			>
 				<p className="w-full text-center" />
 			</FullWidthImageBehindGradient>
 			<div className="w-full relative">
