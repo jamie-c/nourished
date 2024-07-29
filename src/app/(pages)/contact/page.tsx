@@ -27,7 +27,18 @@ const Form = () => {
 		message: "",
 	});
 
+	const [errors, setErrors] = useState<Partial<
+		Record<keyof NFCContactFormData, string>
+	> | null>(null);
+
 	const [loading, setLoading] = useState(false);
+
+	function validate() {
+		const { isValid, errors } = validateFormData(formData);
+		if (!isValid) {
+			setErrors(errors);
+		}
+	}
 
 	const handleSubmit = async (e: { preventDefault: () => void }) => {
 		e.preventDefault();
@@ -35,11 +46,7 @@ const Form = () => {
 		const { isValid, errors, data } = validateFormData(formData);
 		if (!isValid) {
 			console.error("Invalid input", errors);
-			setResponse({
-				...formData,
-				type: "error",
-				response_message: errors?.[0] ?? "Invalid input",
-			});
+			setErrors(errors);
 			return;
 		}
 
@@ -95,31 +102,45 @@ const Form = () => {
 					label="First Name"
 					placeholder="First Name"
 					value={formData.first_name}
-					onChange={(e) =>
-						setFormData({ ...formData, first_name: e.target.value })
-					}
+					error={errors?.first_name ?? ""}
+					onChange={(e) => {
+						setFormData({ ...formData, first_name: e.target.value });
+						validate();
+						setErrors({ ...errors, first_name: "" });
+					}}
 				/>
 				<NFCText
 					label="Last Name"
 					placeholder="Last Name"
 					value={formData.last_name}
-					onChange={(e) =>
-						setFormData({ ...formData, last_name: e.target.value })
-					}
+					error={errors?.last_name ?? ""}
+					onChange={(e) => {
+						setFormData({ ...formData, last_name: e.target.value });
+						validate();
+						setErrors({ ...errors, last_name: "" });
+					}}
 				/>
 				<NFCText
 					label="Email"
 					placeholder="Email"
 					value={formData.email}
-					onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+					error={errors?.email ?? ""}
+					onChange={(e) => {
+						setFormData({ ...formData, email: e.target.value });
+						validate();
+						setErrors({ ...errors, email: "" });
+					}}
 				/>
 				<NFCTextArea
 					label="Message"
 					placeholder="Your Questions or Comments:"
 					value={formData.message}
-					onChange={(e) =>
-						setFormData({ ...formData, message: e.target.value })
-					}
+					error={errors?.message ?? ""}
+					onChange={(e) => {
+						setFormData({ ...formData, message: e.target.value });
+						validate();
+						setErrors({ ...errors, message: "" });
+					}}
 				/>
 				{response?.type === "error" && (
 					<p className="text-red-500 text-center">
