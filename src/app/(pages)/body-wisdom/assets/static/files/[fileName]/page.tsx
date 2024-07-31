@@ -3,8 +3,6 @@
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
-export const runtime = "edge";
-
 const fetchPDF = async (fileName: string) => {
 	try {
 		const response = await fetch("/api/pdf/", {
@@ -37,6 +35,7 @@ function Page({ params }: { params: { fileName: string } }) {
 	const { fileName } = params;
 	// console.log("🚀 ~ file: page.tsx:24 ~ Page ~ fileName:", fileName)
 
+	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
 		if (!fileName) return;
 		fetchPDF(fileName);

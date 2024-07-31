@@ -4,8 +4,6 @@ import SideNav from "../../SideNav";
 import { WelcomeStartHere } from "../courseContent";
 import { bodyWisdomCourseSections, titleToUrl } from "../courseSections";
 
-export const runtime = "edge";
-
 const binderNotesPdf = "binder-notes-nourished-co-body-wisdom.pdf";
 
 const componentMap = {
