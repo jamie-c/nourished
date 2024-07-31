@@ -2,8 +2,6 @@ import type { NextRequest, NextResponse } from "next/server";
 import fs from "node:fs";
 import path from "node:path";
 
-export const runtime = "edge";
-
 export async function GET(request: NextRequest, response: NextResponse) {
 	const fileName = request.headers.get("file-name");
 
