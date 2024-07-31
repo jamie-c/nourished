@@ -3,8 +3,6 @@ import { validateFormData } from "@/types/subscribe-form";
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 
-export const runtime = "edge";
-
 export async function POST(request: NextRequest) {
     const formData: NFCSubscribeFormData = await request.json();
 
