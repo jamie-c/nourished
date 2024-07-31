@@ -2,6 +2,8 @@ import Link from "next/link";
 import SideNav from "../../../SideNav";
 import { bodyWisdomCourseSections, titleToUrl } from "../../courseSections";
 
+export const runtime = "edge";
+
 const urls = bodyWisdomCourseSections.map(({ title }) => {
 	return titleToUrl(title);
 });

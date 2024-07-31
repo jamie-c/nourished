@@ -1,6 +1,8 @@
 "use client";
 import { useSession } from "next-auth/react";
 
+export const runtime = "edge";
+
 function Page() {
 	const { data: session } = useSession();
 	if (!session) return <div>Please sign in to view this content...</div>;

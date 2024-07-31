@@ -6,6 +6,8 @@ import { sendMail } from "@/lib/sendMail";
 import { type FormData, validateFormData } from "@/types/apply-form";
 import { type NextRequest, NextResponse } from "next/server";
 
+export const runtime = 'edge';
+
 await dbConnect();
 
 export async function POST(request: NextRequest) {

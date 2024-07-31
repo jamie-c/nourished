@@ -3,9 +3,11 @@
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
+export const runtime = "edge";
+
 const fetchPDF = async (fileName: string) => {
 	try {
-		const response = await fetch(`/api/pdf/`, {
+		const response = await fetch("/api/pdf/", {
 			method: "GET",
 			headers: {
 				"file-name": fileName,

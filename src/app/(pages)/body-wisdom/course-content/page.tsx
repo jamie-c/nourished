@@ -1,5 +1,7 @@
 import SideNav from "../SideNav";
 
+export const runtime = "edge";
+
 function Page() {
 	return (
 		<div className="min-h-screen w-full flex flex-col items-center">
