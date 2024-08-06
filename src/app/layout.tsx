@@ -10,10 +10,6 @@ import "./globals.css";
 export const metadata: Metadata = {
 	title: "Nourished Co",
 	description: "Functional Nutrition Consulting",
-	other: {
-		rel: "dns-prefetch",
-		url: "https://practicebetter.io",
-	},
 };
 
 export const viewport: Viewport = {

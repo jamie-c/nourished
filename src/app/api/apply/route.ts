@@ -3,18 +3,23 @@
 import dbConnect from "@/db/db";
 import Apply from "@/db/models/Apply";
 import { sendMail } from "@/lib/sendMail";
-import { type FormData, validateFormData } from "@/types/apply-form";
+import { type NFCApplyFormData, validateFormData } from "@/types/apply-form";
 import { type NextRequest, NextResponse } from "next/server";
 
 await dbConnect();
 
 export async function POST(request: NextRequest) {
-    const formData: FormData = await request.json();
+    const formData: NFCApplyFormData = await request.json();
 
     const {isValid, errors, data} = validateFormData(formData);
 
     if (!isValid) {
-        return NextResponse.json({ message: errors?.[0] ?? "Invalid input", code: "error.application.invalid" });
+        if (errors !== null && Object.keys(errors).length > 0) {
+			return NextResponse.json({
+				message: "Please resolve errors in the form.",
+				code: "error.application.invalid",
+			});
+		}
     }
 
     let newApply = null;

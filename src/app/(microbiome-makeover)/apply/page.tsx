@@ -2,7 +2,7 @@
 
 import FullWidthColorBackground from "@/components/FullWidthColorBackground";
 import FullWidthImageBehindGradient from "@/components/FullWidthImageBehindGradient";
-import { type FormData, validateFormData } from "@/types/apply-form";
+import { type NFCApplyFormData, validateFormData } from "@/types/apply-form";
 import { NFCButton, NFCRadio, NFCText, NFCTextArea } from "@nourishedco/ui";
 import { useState } from "react";
 
@@ -23,7 +23,7 @@ const commitmentOptions = [
 ];
 
 export default function Home() {
-	const [formData, setFormData] = useState<FormData>({
+	const [formData, setFormData] = useState<NFCApplyFormData>({
 		first_name: "",
 		last_name: "",
 		email: "",
@@ -40,26 +40,39 @@ export default function Home() {
 	});
 
 	const [response, setResponse] = useState<
-		FormData & { type: string; message: string }
+		{ data: NFCApplyFormData } & { type: string; message: string }
 	>({
 		type: "",
 		message: "",
-		first_name: "",
-		last_name: "",
-		phone: "",
-		email: "",
-		intro: "",
-		uncover_the_problem: "",
-		more_about_problems: "",
-		solutions_tried: "",
-		future_state: "",
-		beliefs: "",
-		commitment: "",
-		why_you: "",
-		thank_you: "",
+		data: {
+			first_name: "",
+			last_name: "",
+			phone: "",
+			email: "",
+			intro: "",
+			uncover_the_problem: "",
+			more_about_problems: "",
+			solutions_tried: "",
+			future_state: "",
+			beliefs: "",
+			commitment: "",
+			why_you: "",
+			thank_you: "",
+		},
 	});
 
+	const [errors, setErrors] = useState<Partial<
+		Record<keyof NFCApplyFormData, string>
+	> | null>(null);
+
 	const [loading, setLoading] = useState(false);
+
+	function validate() {
+		const { isValid, errors } = validateFormData(formData);
+		if (!isValid) {
+			setErrors(errors);
+		}
+	}
 
 	const handleSubmit = async (e: { preventDefault: () => void }) => {
 		e.preventDefault();
@@ -67,11 +80,7 @@ export default function Home() {
 		const { isValid, errors, data } = validateFormData(formData);
 		if (!isValid) {
 			console.error("Invalid input", errors);
-			setResponse({
-				...formData,
-				type: "error",
-				message: errors?.[0] ?? "Invalid input",
-			});
+			setErrors(errors);
 			return;
 		}
 
@@ -93,14 +102,18 @@ export default function Home() {
 
 			if (json.code === "success.application") {
 				setResponse({
-					...json.data,
+					data: {
+						...json.data,
+					},
 					type: "success",
 					message:
 						"You're application has been received and I am excited for you!",
 				});
 			} else {
 				setResponse({
-					...formData,
+					data: {
+						...formData,
+					},
 					type: "error",
 					message:
 						json.message ?? "An error occurred while submitting the form.",
@@ -111,19 +124,21 @@ export default function Home() {
 			setResponse({
 				type: "error",
 				message: "An error occurred while submitting the form.",
-				first_name: "",
-				last_name: "",
-				email: "",
-				phone: "",
-				intro: "",
-				uncover_the_problem: "",
-				more_about_problems: "",
-				solutions_tried: "",
-				future_state: "",
-				beliefs: "",
-				commitment: "",
-				why_you: "",
-				thank_you: "",
+				data: {
+					first_name: "",
+					last_name: "",
+					email: "",
+					phone: "",
+					intro: "",
+					uncover_the_problem: "",
+					more_about_problems: "",
+					solutions_tried: "",
+					future_state: "",
+					beliefs: "",
+					commitment: "",
+					why_you: "",
+					thank_you: "",
+				},
 			});
 		}
 		setLoading(false);
@@ -169,46 +184,61 @@ export default function Home() {
 						label="First Name"
 						placeholder="First Name"
 						value={formData.first_name}
+						error={errors?.first_name ?? ""}
 						required
-						onChange={(e) =>
-							setFormData({ ...formData, first_name: e.target.value })
-						}
+						onChange={(e) => {
+							setFormData({ ...formData, first_name: e.target.value });
+							setErrors({ ...errors, first_name: "" });
+							validate();
+						}}
 					/>
 					<NFCText
 						label="Last Name"
 						placeholder="Last Name"
 						value={formData.last_name}
+						error={errors?.last_name ?? ""}
 						required
-						onChange={(e) =>
-							setFormData({ ...formData, last_name: e.target.value })
-						}
+						onChange={(e) => {
+							setFormData({ ...formData, last_name: e.target.value });
+							setErrors({ ...errors, last_name: "" });
+							validate();
+						}}
 					/>
 					<NFCText
 						label="Email"
 						placeholder="Email"
 						value={formData.email}
+						error={errors?.email ?? ""}
 						required
-						onChange={(e) =>
-							setFormData({ ...formData, email: e.target.value })
-						}
+						onChange={(e) => {
+							setFormData({ ...formData, email: e.target.value });
+							setErrors({ ...errors, email: "" });
+							validate();
+						}}
 					/>
 					<NFCText
 						label="Phone"
 						placeholder="Phone"
 						value={formData.phone}
+						error={errors?.phone ?? ""}
 						required
-						onChange={(e) =>
-							setFormData({ ...formData, phone: e.target.value })
-						}
+						onChange={(e) => {
+							setFormData({ ...formData, phone: e.target.value });
+							setErrors({ ...errors, phone: "" });
+							validate();
+						}}
 					/>
 					<NFCTextArea
 						label="Intro"
 						placeholder="How did you hear about coaching with Nourished Co?"
 						value={formData.intro}
+						error={errors?.intro ?? ""}
 						required
-						onChange={(e) =>
-							setFormData({ ...formData, intro: e.target.value })
-						}
+						onChange={(e) => {
+							setFormData({ ...formData, intro: e.target.value });
+							setErrors({ ...errors, intro: "" });
+							validate();
+						}}
 					/>
 					<div className="flex flex-col gap-6">
 						<span className="p-1 text-bluegreen-500 text-lg font-transat-black">
@@ -218,41 +248,53 @@ export default function Home() {
 							label="Uncover The Problem"
 							placeholder="Ex: bloating, constipation, joint pain, fatigue"
 							value={formData.uncover_the_problem}
+							error={errors?.uncover_the_problem ?? ""}
 							required
-							onChange={(e) =>
+							onChange={(e) => {
 								setFormData({
 									...formData,
 									uncover_the_problem: e.target.value,
-								})
-							}
+								});
+								setErrors({ ...errors, uncover_the_problem: "" });
+								validate();
+							}}
 						/>
 					</div>
 					<NFCTextArea
 						label="More About Problems"
 						placeholder="HOW IS THIS IMPACTING YOUR LIFE ON A DAY-TO-DAY BASIS?"
 						value={formData.more_about_problems}
+						error={errors?.more_about_problems ?? ""}
 						required
-						onChange={(e) =>
-							setFormData({ ...formData, more_about_problems: e.target.value })
-						}
+						onChange={(e) => {
+							setFormData({ ...formData, more_about_problems: e.target.value });
+							setErrors({ ...errors, more_about_problems: "" });
+							validate();
+						}}
 					/>
 					<NFCTextArea
 						label="Solutions Tried"
 						placeholder="WHAT HAVE YOU TRIED TO RESOLVE THESE PROBLEMS?"
 						value={formData.solutions_tried}
+						error={errors?.solutions_tried ?? ""}
 						required
-						onChange={(e) =>
-							setFormData({ ...formData, solutions_tried: e.target.value })
-						}
+						onChange={(e) => {
+							setFormData({ ...formData, solutions_tried: e.target.value });
+							setErrors({ ...errors, solutions_tried: "" });
+							validate();
+						}}
 					/>
 					<NFCTextArea
 						label="Future State"
 						placeholder="WHAT ARE YOUR TOP 3 HEALTH GOALS?"
 						value={formData.future_state}
+						error={errors?.future_state ?? ""}
 						required
-						onChange={(e) =>
-							setFormData({ ...formData, future_state: e.target.value })
-						}
+						onChange={(e) => {
+							setFormData({ ...formData, future_state: e.target.value });
+							setErrors({ ...errors, future_state: "" });
+							validate();
+						}}
 					/>
 					<div className="flex flex-col gap-6">
 						<span className="p-1 text-bluegreen-500 text-lg font-transat-black">
@@ -262,10 +304,13 @@ export default function Home() {
 							label="Intro"
 							placeholder="Yes? No? Unsure? Feel free to share your full thoughts here."
 							value={formData.beliefs}
+							error={errors?.beliefs ?? ""}
 							required
-							onChange={(e) =>
-								setFormData({ ...formData, beliefs: e.target.value })
-							}
+							onChange={(e) => {
+								setFormData({ ...formData, beliefs: e.target.value });
+								setErrors({ ...errors, beliefs: "" });
+								validate();
+							}}
 						/>
 					</div>
 					<NFCRadio
@@ -274,10 +319,13 @@ export default function Home() {
 						help="Microbiome Makeover is a high-touch 1:1 coaching program designed to help transform your health (and life) from the inside out."
 						options={commitmentOptions}
 						value={formData.commitment}
+						error={errors?.commitment ?? ""}
 						required
-						onChange={(e) =>
-							setFormData({ ...formData, commitment: e.target.value })
-						}
+						onChange={(e) => {
+							setFormData({ ...formData, commitment: e.target.value });
+							setErrors({ ...errors, commitment: "" });
+							validate();
+						}}
 					/>
 					<div className="flex flex-col gap-6">
 						<span className="p-1 text-bluegreen-500 text-lg font-transat-black">
@@ -288,10 +336,13 @@ export default function Home() {
 							label="Intro"
 							placeholder="Please share a few words about why you are a good fit for a coaching spot. Anything I need to know to move forward with you?"
 							value={formData.why_you}
+							error={errors?.why_you ?? ""}
 							required
-							onChange={(e) =>
-								setFormData({ ...formData, why_you: e.target.value })
-							}
+							onChange={(e) => {
+								setFormData({ ...formData, why_you: e.target.value });
+								setErrors({ ...errors, why_you: "" });
+								validate();
+							}}
 						/>
 					</div>
 					<div className="flex flex-col gap-6">
@@ -302,9 +353,12 @@ export default function Home() {
 							label="Thank You"
 							placeholder="If you have anything questions you'd like answered, feel free to leave them here."
 							value={formData.thank_you ?? ""}
-							onChange={(e) =>
-								setFormData({ ...formData, thank_you: e.target.value })
-							}
+							error={errors?.thank_you ?? ""}
+							onChange={(e) => {
+								setFormData({ ...formData, thank_you: e.target.value });
+								setErrors({ ...errors, thank_you: "" });
+								validate();
+							}}
 						/>
 					</div>
 					{response?.type === "error" && (
@@ -318,7 +372,7 @@ export default function Home() {
 				</form>
 			) : (
 				<FullWidthColorBackground variant="white" textColor="dark">
-					<p className="text-center text-4xl">{`Hi ${response.first_name}! ${response.message}`}</p>
+					<p className="text-center text-4xl">{`Hi ${response.data.first_name}! ${response.message}`}</p>
 				</FullWidthColorBackground>
 			)}
 		</main>
