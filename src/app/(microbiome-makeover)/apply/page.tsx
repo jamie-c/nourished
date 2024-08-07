@@ -4,7 +4,8 @@ import FullWidthColorBackground from "@/components/FullWidthColorBackground";
 import FullWidthImageBehindGradient from "@/components/FullWidthImageBehindGradient";
 import { type NFCApplyFormData, validateFormData } from "@/types/apply-form";
 import { NFCButton, NFCRadio, NFCText, NFCTextArea } from "@nourishedco/ui";
-import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 const commitmentOptions = [
 	{
@@ -23,6 +24,25 @@ const commitmentOptions = [
 ];
 
 export default function Home() {
+	const router = useRouter();
+	const [response, setResponse] = useState<
+		({ data: NFCApplyFormData } & { type: string; message: string }) | null
+	>(null);
+	const [loading, setLoading] = useState(false);
+	const [countdown, setCountdown] = useState(5);
+
+	useEffect(() => {
+		let timer: NodeJS.Timeout;
+		if (response?.type === "success" && countdown > 0) {
+			timer = setTimeout(() => {
+				setCountdown((prevCountdown) => prevCountdown - 1);
+			}, 1000);
+		} else if (countdown === 0) {
+			router.push("/call");
+		}
+		return () => clearTimeout(timer);
+	}, [response, countdown, router]);
+
 	const [formData, setFormData] = useState<NFCApplyFormData>({
 		first_name: "",
 		last_name: "",
@@ -39,33 +59,9 @@ export default function Home() {
 		thank_you: "",
 	});
 
-	const [response, setResponse] = useState<
-		{ data: NFCApplyFormData } & { type: string; message: string }
-	>({
-		type: "",
-		message: "",
-		data: {
-			first_name: "",
-			last_name: "",
-			phone: "",
-			email: "",
-			intro: "",
-			uncover_the_problem: "",
-			more_about_problems: "",
-			solutions_tried: "",
-			future_state: "",
-			beliefs: "",
-			commitment: "",
-			why_you: "",
-			thank_you: "",
-		},
-	});
-
 	const [errors, setErrors] = useState<Partial<
 		Record<keyof NFCApplyFormData, string>
 	> | null>(null);
-
-	const [loading, setLoading] = useState(false);
 
 	function validate() {
 		const { isValid, errors } = validateFormData(formData);
@@ -98,7 +94,6 @@ export default function Home() {
 		try {
 			const res = await fetch(endpoint, options);
 			const json = await res.json();
-			console.log("🚀 ~ handleSubmit ~ json:", json);
 
 			if (json.code === "success.application") {
 				setResponse({
@@ -109,6 +104,7 @@ export default function Home() {
 					message:
 						"You're application has been received and I am excited for you!",
 				});
+				setLoading(false);
 			} else {
 				setResponse({
 					data: {
@@ -118,6 +114,7 @@ export default function Home() {
 					message:
 						json.message ?? "An error occurred while submitting the form.",
 				});
+				setLoading(false);
 			}
 		} catch (error) {
 			console.error("Error:", error);
@@ -140,8 +137,8 @@ export default function Home() {
 					thank_you: "",
 				},
 			});
+			setLoading(false);
 		}
-		setLoading(false);
 	};
 	return (
 		<main className="top-0 w-full flex min-h-screen flex-col items-center justify-start mb-24">
@@ -372,7 +369,11 @@ export default function Home() {
 				</form>
 			) : (
 				<FullWidthColorBackground variant="white" textColor="dark">
-					<p className="text-center text-4xl">{`Hi ${response.data.first_name}! ${response.message}`}</p>
+					<p className="text-center text-3xl">{`Hi ${response.data.first_name}! ${response.message}`}</p>
+					<p className="text-center text-2xl">
+						You will be redirected to the scheduling page in {countdown}{" "}
+						seconds...
+					</p>
 				</FullWidthColorBackground>
 			)}
 		</main>
