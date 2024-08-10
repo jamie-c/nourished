@@ -1,4 +1,5 @@
 import FullWidthImageBehindGradient from "@/components/FullWidthImageBehindGradient";
+import NewsletterForm from "@/components/forms/NewsletterForm";
 import { getAllPostIds, getPostData } from "@/lib/posts";
 import dayjs from "dayjs";
 import Link from "next/link";
@@ -111,6 +112,16 @@ async function Page({ params }) {
 						dangerouslySetInnerHTML={{ __html: contentHtml }}
 					/>
 				</div>
+			</section>
+			<section
+				id="newsletter"
+				className="relative w-full flex flex-col items-center mb-10"
+			>
+				<p className="font-transat-light max-w-xl text-2xl text-center px-4 pb-10">
+					Sign up for our newsletter for knowledge, know-how and advice for
+					living an abundantly nourished life:
+				</p>
+				<NewsletterForm />
 			</section>
 		</>
 	);
