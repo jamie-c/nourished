@@ -5,6 +5,7 @@ import FullWidthImageBehindGradient from "@/components/FullWidthImageBehindGradi
 import FxFoodCoaching from "@/components/FxFoodCoaching";
 import NFCHeader from "@/components/NFCHeader/NFCHeader";
 import NFCMobileNav from "@/components/NFCMobileNav/NFCMobileNav";
+import { NFCButton } from "@nourishedco/ui";
 
 export default function Home() {
 	return (
@@ -26,18 +27,32 @@ export default function Home() {
 				</div>
 				<FxFoodCoaching />
 				<FullWidthColorBackground variant="dark">
-					<span className="text-2xl sm:text-3xl">
-						With our targeted guidance and perceptive insights, we help you
-						focus on the actions and habits that will{" "}
-						<em>create the health results you&apos;re seeking</em>.
-					</span>
+					<div className="flex flex-col gap-10">
+						<span className="text-2xl sm:text-3xl">
+							With our targeted guidance and perceptive insights, we help you
+							focus on the actions and habits that will{" "}
+							<em>create the health results you&apos;re seeking</em>.
+						</span>
+						<div className="w-max mx-auto">
+							<NFCButton as="a" href="/call" variant="secondary">
+								BOOK A CALL
+							</NFCButton>
+						</div>
+					</div>
 				</FullWidthColorBackground>
 				<CircleIconsSubMenu />
 				<FullWidthColorBackground textColor="white" variant="secondary">
-					<span className="text-2xl sm:text-3xl">
-						We&apos;re going to walk alongside you until the changes you&apos;re
-						seeking finally take root.
-					</span>
+					<div className="flex flex-col gap-10">
+						<span className="text-2xl sm:text-3xl">
+							We&apos;re going to walk alongside you until the changes
+							you&apos;re seeking finally take root.
+						</span>
+						<div className="w-max mx-auto">
+							<NFCButton as="a" href="/call" variant="tertiary">
+								BOOK A CALL
+							</NFCButton>
+						</div>
+					</div>
 				</FullWidthColorBackground>
 				<div className="w-full h-32" />
 				<FullWidthImageBehindGradient
