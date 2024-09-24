@@ -5,6 +5,7 @@ import FullWidthImageBehindGradient from "@/components/FullWidthImageBehindGradi
 import FxFoodCoaching from "@/components/FxFoodCoaching";
 import NFCHeader from "@/components/NFCHeader/NFCHeader";
 import NFCMobileNav from "@/components/NFCMobileNav/NFCMobileNav";
+import Testimonials from "@/components/Testimonials";
 import { NFCButton } from "@nourishedco/ui";
 
 export default function Home() {
@@ -40,6 +41,14 @@ export default function Home() {
 						</div>
 					</div>
 				</FullWidthColorBackground>
+				<div className="w-full mt-28">
+					<h1 className="font-transat-black-obl text-balance py-2 sm:pt-3 text-3xl sm:text-5xl text-center">
+						<span className="text-bluegreen-500 uppercase"> Testimonials</span>
+					</h1>
+					<div className="bg-lightgreen-500 h-[425px] w-full">
+						<Testimonials />
+					</div>
+				</div>
 				<CircleIconsSubMenu />
 				<FullWidthColorBackground textColor="white" variant="secondary">
 					<div className="flex flex-col gap-10">
