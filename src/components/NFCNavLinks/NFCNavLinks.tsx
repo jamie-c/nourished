@@ -3,25 +3,30 @@ import NavLink from "@/components/NavLink/NavLink";
 import type { NavLinks } from "@/components/NFCNavLinks/NFCNavLinksTypes";
 
 const mainNavItems: NavLinks[] = [
-	{
-		title: "About",
-		url: "/about",
-		id: "about",
-	},
-	{
-		title: "Work With Me",
-		url: "/work-with-me",
-		id: "work-with-me",
-	},
+	// {
+	// 	title: "About",
+	// 	url: "/about",
+	// 	id: "about",
+	// },
+	// {
+	// 	title: "Work With Me",
+	// 	url: "/work-with-me",
+	// 	id: "work-with-me",
+	// },
 	{
 		title: "Blog",
 		url: "/blog",
 		id: "blog",
 	},
+	// {
+	// 	title: "Contact",
+	// 	url: "/contact",
+	// 	id: "contact",
+	// },
 	{
-		title: "Contact",
-		url: "/contact",
-		id: "contact",
+		title: "Book a Call",
+		url: "/call",
+		id: "call",
 	},
 ];
 
