@@ -12,11 +12,13 @@ export default function Home() {
 	return (
 		<main className="top-0 w-full flex min-h-screen flex-col items-center justify-start">
 			<FullWidthImageBehindGradient
-				imageUrl="/images/lindsey-headshots-014.jpg"
+				imageUrl="/images/headers/nourished-co-lindsey-conway-wellness-nutrition-v2.jpg"
 				variant="primary"
 				align="right"
 			>
-				<p className="w-full text-center" />
+				<p className="flex h-full sm:items-center justify-center sm:w-3/4 p-6 w-full text-center uppercase font-transat-bold text-4xl sm:text-6xl mb-6 drop-shadow-lg">
+					Lindsey Conway
+				</p>
 			</FullWidthImageBehindGradient>
 			<div className="w-full relative">
 				<div className="absolute top-0 w-full h-16 bg-bluegreen-500 dark:bg-bluegreen-700" />
