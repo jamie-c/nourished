@@ -11,7 +11,9 @@ const NavLink: React.FC<NavLinkProps> = ({ url, disabled, title }) => {
 
 	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
-		setActive(pathName === url);
+		setActive(
+			pathName === url || (pathName !== "/" && pathName.startsWith(url)),
+		);
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [pathName]);
 
