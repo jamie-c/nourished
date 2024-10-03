@@ -9,6 +9,7 @@ const NFCSubscribeFormData = z.object({
         .max(50, { message: "Last name must be less than 50 characters" })
         .optional(),
     email: z.string().email(),
+    dataForm: z.string(),
 })
 export type NFCSubscribeFormData = z.infer<typeof NFCSubscribeFormData>
 
