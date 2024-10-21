@@ -51,23 +51,18 @@ export default function OnePanRecipes() {
 			<FullWidthColorBackground variant="white" textColor="secondary">
 				<div className="w-full text-left max-w-5xl flex flex-col gap-2 mb-12">
 					<div className="w-full mx-auto p-2">
-						<details
-							className="open:bg-white open:ring-1 open:ring-black/5 open:shadow-lg p-6 rounded-lg transition-all duration-150 ease-in-out"
-							open
-						>
-							<summary className="text-2xl md:text-3xl h-12 p-4 rounded-md leading-6 text-darkgreen-800 font-semibold select-none">
-								RECIPES INCLUDE
-							</summary>
-							<div className="mt-3 text-xl leading-6 whitespace-normal text-slate-600 transition-all duration-150 ease-in-out">
-								<p>
-									You don&apos;t need a lot of cooking skills to bring these
-									recipes to the table, and they&apos;re incredibly flexible.
-									Best of all, they come together in only 30 minutes, so you can
-									spend your evenings doing more of the things you enjoy while
-									sticking to your healthy eating goals.
-								</p>
-							</div>
-						</details>
+						<h2 className="text-2xl md:text-3xl h-12 p-4 rounded-md leading-6 text-darkgreen-800 font-semibold select-none">
+							HERE&apos;S THE SCOOP
+						</h2>
+						<div className="mt-3 text-xl leading-6 whitespace-normal text-slate-600 transition-all duration-150 ease-in-out">
+							<p>
+								You don&apos;t need a lot of cooking skills to bring these
+								recipes to the table, and they&apos;re incredibly flexible. Best
+								of all, they come together in only 30 minutes, so you can spend
+								your evenings doing more of the things you enjoy while sticking
+								to your healthy eating goals.
+							</p>
+						</div>
 					</div>
 					<div className="w-full mx-auto p-2">
 						<details
